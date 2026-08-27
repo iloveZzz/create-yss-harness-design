@@ -1,0 +1,33 @@
+{
+  "name": "create-yss-strategic-design",
+  "version": "0.1.0",
+  "description": "Initialize a YSS strategic design harness project instance",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iloveZzz/create-yss-strategic-design.git"
+  },
+  "homepage": "https://github.com/iloveZzz/create-yss-strategic-design#readme",
+  "bugs": {
+    "url": "https://github.com/iloveZzz/create-yss-strategic-design/issues"
+  },
+  "files": [
+    "bin",
+    "src",
+    "template",
+    "template.manifest.json",
+    "template.snapshot.json"
+  ],
+  "bin": {
+    "create-yss-strategic-design": "bin/create-yss-strategic-design.js"
+  },
+  "scripts": {
+    "sync-template": "node scripts/sync-template.js",
+    "pretest": "npm run sync-template",
+    "test": "node --test tests/*.test.js",
+    "prepack": "npm run sync-template"
+  },
+  "engines": {
+    "node": ">=22 <27"
+  },
+  "license": "UNLICENSED"
+}

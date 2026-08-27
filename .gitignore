@@ -1,0 +1,7 @@
+node_modules/
+template/
+template.manifest.json
+template.snapshot.json
+.template-staging-*
+.template-backup-*
+.DS_Store
