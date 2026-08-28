@@ -11,7 +11,7 @@ const targetTemplateRoot = path.join(packageRoot, "template");
 const targetManifestPath = path.join(packageRoot, "template.manifest.json");
 const targetSnapshotPath = path.join(packageRoot, "template.snapshot.json");
 const siblingHarness = path.resolve(packageRoot, "../yss-strategic-design-harness");
-const defaultRemote = "https://github.com/iloveZzz/yss-strategic-design-harness.git";
+const defaultRemote = "https://github.com/iloveZzz/yss-strategic-design-agent.git";
 const NPM_IGNORED_BASENAMES = new Set([".gitignore", ".npmignore", ".npmrc"]);
 
 function isLocalRepo(value) {
@@ -252,9 +252,9 @@ if (require.main === module) {
     }
     const snapshotMetadata = {
       schemaVersion: 1,
-      templateName: "yss-strategic-design-harness",
+      templateName: "yss-strategic-design-agent",
       profileId: manifest.profileId,
-      templateSource: "github:iloveZzz/yss-strategic-design-harness",
+      templateSource: "github:iloveZzz/yss-strategic-design-agent",
       templateRepository: templateRepo,
       requestedRef: templateRef,
       templateCommit,

@@ -112,7 +112,7 @@ test("init generates a strategic design project-instance", () => {
   );
   const metadata = JSON.parse(fs.readFileSync(path.join(targetDir, metadataFileName), "utf8"));
   assert.equal(metadata.metadataSchemaVersion, 1);
-  assert.equal(metadata.templateName, "yss-strategic-design-harness");
+  assert.equal(metadata.templateName, "yss-strategic-design-agent");
   assert.equal(metadata.profileId, "harness.business-ddd-strategy-handoff");
   assert.equal(metadata.cliVersion, packageVersion);
   assert.match(metadata.templateCommit, /^[0-9a-f]{40}$/);
