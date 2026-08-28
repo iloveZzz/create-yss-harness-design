@@ -8,9 +8,9 @@ const { treeHash } = require("../src/template-hash");
 const { shouldDistribute } = require("../src/manifest");
 
 const repoRoot = path.resolve(__dirname, "..");
-const cliBin = path.join(repoRoot, "bin/create-yss-strategic-design.js");
+const cliBin = path.join(repoRoot, "bin/create-yss-harness-design.js");
 const packageVersion = JSON.parse(fs.readFileSync(path.join(repoRoot, "package.json"), "utf8")).version;
-const metadataFileName = ".yss-strategic-design.json";
+const metadataFileName = ".yss-harness-design.json";
 
 function runCli(args, { input = "", timeout = 120000 } = {}) {
   return spawnSync(process.execPath, [cliBin, ...args], {
@@ -24,11 +24,11 @@ function runCli(args, { input = "", timeout = 120000 } = {}) {
 test("help and version do not write files", () => {
   const help = runCli(["--help"]);
   assert.equal(help.status, 0, help.stderr);
-  assert.match(help.stdout, /create-yss-strategic-design/);
+  assert.match(help.stdout, /create-yss-harness-design/);
   assert.match(help.stdout, /不是 create-yss-spec/);
   const version = runCli(["--version"]);
   assert.equal(version.status, 0, version.stderr);
-  assert.match(version.stdout, new RegExp(`create-yss-strategic-design ${packageVersion}`));
+  assert.match(version.stdout, new RegExp(`create-yss-harness-design ${packageVersion}`));
 });
 
 test("v1 rejects attach and sync", () => {
@@ -38,7 +38,7 @@ test("v1 rejects attach and sync", () => {
 });
 
 test("dry-run does not create the target directory", () => {
-  const sandboxDir = fs.mkdtempSync(path.join(os.tmpdir(), "create-yss-strategic-design-"));
+  const sandboxDir = fs.mkdtempSync(path.join(os.tmpdir(), "create-yss-harness-design-"));
   const targetDir = path.join(sandboxDir, "preview");
   const result = runCli([
     "--project-name",
@@ -55,7 +55,7 @@ test("dry-run does not create the target directory", () => {
 });
 
 test("non-empty target is rejected without --force", () => {
-  const sandboxDir = fs.mkdtempSync(path.join(os.tmpdir(), "create-yss-strategic-design-"));
+  const sandboxDir = fs.mkdtempSync(path.join(os.tmpdir(), "create-yss-harness-design-"));
   const targetDir = path.join(sandboxDir, "existing");
   fs.mkdirSync(targetDir);
   fs.writeFileSync(path.join(targetDir, "keep.txt"), "no");
@@ -85,7 +85,7 @@ test("init generates a strategic design project-instance", () => {
   assert.equal(shouldDistribute("docs/templates/openapi-spec-template.yaml", manifest), false);
   assert.equal(shouldDistribute("docs/process/harness-profile.yaml", manifest), true);
 
-  const sandboxDir = fs.mkdtempSync(path.join(os.tmpdir(), "create-yss-strategic-design-"));
+  const sandboxDir = fs.mkdtempSync(path.join(os.tmpdir(), "create-yss-harness-design-"));
   const targetDir = path.join(sandboxDir, "demo-project");
   const result = runCli(
     [

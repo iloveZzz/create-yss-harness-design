@@ -1,4 +1,4 @@
-# create-yss-strategic-design
+# create-yss-harness-design
 
 用于从 `yss-harness-design-agent` 初始化战略设计 `project-instance` 的 npm CLI。
 
@@ -7,13 +7,13 @@
 ## 用法
 
 ```bash
-npm create yss-strategic-design@latest
+npm create yss-harness-design@latest
 ```
 
 或：
 
 ```bash
-npx create-yss-strategic-design@latest \
+npx create-yss-harness-design@latest \
   --project-name "项目名称" \
   --business-domain "业务领域" \
   --target-dir "./project" \
@@ -22,7 +22,7 @@ npx create-yss-strategic-design@latest \
 
 v1 只支持空目录 `init`。`--dry-run` 预览，`--force` 覆盖非空目录。不创建远端仓库、CI 或 Ticket Board。
 
-实例 metadata 写入 `.yss-strategic-design.json`，并记录 40 位 `templateCommit` 与 `profileId`。CLI 运行时不拉取模板仓库。
+实例 metadata 写入 `.yss-harness-design.json`，并记录 40 位 `templateCommit` 与 `profileId`。CLI 运行时不拉取模板仓库。
 
 ## 开发
 

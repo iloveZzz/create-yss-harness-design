@@ -16,7 +16,7 @@ const BUNDLED_MANIFEST_PATH = path.join(PACKAGE_ROOT, "template.manifest.json");
 const BUNDLED_SNAPSHOT_PATH = path.join(PACKAGE_ROOT, "template.snapshot.json");
 const TEMPLATE_SOURCE = "github:iloveZzz/yss-harness-design-agent";
 const PROFILE_ID = "harness.business-ddd-strategy-handoff";
-const TEMPLATE_METADATA_FILENAME = ".yss-strategic-design.json";
+const TEMPLATE_METADATA_FILENAME = ".yss-harness-design.json";
 const METADATA_SCHEMA_VERSION = 1;
 const HELP_FLAGS = new Set(["--help", "-h", "-help"]);
 const VERSION_FLAGS = new Set(["--version", "-v", "-version"]);
@@ -471,14 +471,14 @@ function initializeGitRepository(targetDir) {
 }
 
 function printVersion() {
-  console.log(`create-yss-strategic-design ${PACKAGE_MANIFEST.version}`);
+  console.log(`create-yss-harness-design ${PACKAGE_MANIFEST.version}`);
 }
 
 function printHelp() {
-  console.log(`create-yss-strategic-design ${PACKAGE_MANIFEST.version}
+  console.log(`create-yss-harness-design ${PACKAGE_MANIFEST.version}
 
 USAGE
-  $ create-yss-strategic-design [OPTIONS]
+  $ create-yss-harness-design [OPTIONS]
 
 本 CLI 只从 yss-harness-design-agent 生成战略设计 project-instance。
 它不是 create-yss-spec，也不进入 OpenAPI / 垂直切片实现。
@@ -497,8 +497,8 @@ OPTIONS
   -v, --version                      显示 CLI 版本
 
 EXAMPLES
-  $ npm create yss-strategic-design@latest
-  $ npx create-yss-strategic-design@latest \\
+  $ npm create yss-harness-design@latest
+  $ npx create-yss-harness-design@latest \\
       --project-name "Acme Strategy" \\
       --business-domain "供应链协同" \\
       --target-dir "./acme-strategy" \\
@@ -543,7 +543,7 @@ async function runInit(argv = []) {
   const created = !targetState.exists;
   let backupRoot = null;
   if (targetState.clearEntries) {
-    backupRoot = fs.mkdtempSync(path.join(os.tmpdir(), "create-yss-strategic-design-backup-"));
+    backupRoot = fs.mkdtempSync(path.join(os.tmpdir(), "create-yss-harness-design-backup-"));
     fs.cpSync(targetDir, backupRoot, { recursive: true });
   }
   try {
