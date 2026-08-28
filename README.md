@@ -1,6 +1,6 @@
 # create-yss-strategic-design
 
-用于从 `yss-strategic-design-agent` 初始化战略设计 `project-instance` 的 npm CLI。
+用于从 `yss-harness-design-agent` 初始化战略设计 `project-instance` 的 npm CLI。
 
 本工具不是 [`create-yss-spec`](https://github.com/iloveZzz/create-yss-spec)。`create-yss-spec` 面向全生命周期模板 `yss-spec-project-template`。本 CLI 只生成 `harness.business-ddd-strategy-handoff` 项目实例，本地终点是 Strategic Design Handoff。
 

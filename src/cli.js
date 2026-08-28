@@ -14,7 +14,7 @@ const PACKAGE_MANIFEST = JSON.parse(
 const BUNDLED_TEMPLATE_ROOT = path.join(PACKAGE_ROOT, "template");
 const BUNDLED_MANIFEST_PATH = path.join(PACKAGE_ROOT, "template.manifest.json");
 const BUNDLED_SNAPSHOT_PATH = path.join(PACKAGE_ROOT, "template.snapshot.json");
-const TEMPLATE_SOURCE = "github:iloveZzz/yss-strategic-design-agent";
+const TEMPLATE_SOURCE = "github:iloveZzz/yss-harness-design-agent";
 const PROFILE_ID = "harness.business-ddd-strategy-handoff";
 const TEMPLATE_METADATA_FILENAME = ".yss-strategic-design.json";
 const METADATA_SCHEMA_VERSION = 1;
@@ -414,7 +414,7 @@ function buildMetadata(variables, operations, targetDir, snapshot, manifestText)
   }
   return {
     metadataSchemaVersion: METADATA_SCHEMA_VERSION,
-    templateName: "yss-strategic-design-agent",
+    templateName: "yss-harness-design-agent",
     profileId: PROFILE_ID,
     cliVersion: PACKAGE_MANIFEST.version,
     templateSource: TEMPLATE_SOURCE,
@@ -480,7 +480,7 @@ function printHelp() {
 USAGE
   $ create-yss-strategic-design [OPTIONS]
 
-本 CLI 只从 yss-strategic-design-agent 生成战略设计 project-instance。
+本 CLI 只从 yss-harness-design-agent 生成战略设计 project-instance。
 它不是 create-yss-spec，也不进入 OpenAPI / 垂直切片实现。
 
 OPTIONS
