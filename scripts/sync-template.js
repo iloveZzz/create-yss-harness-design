@@ -250,6 +250,16 @@ if (require.main === module) {
     if (!/^[0-9a-f]{40}$/.test(templateCommit)) {
       throw new Error("模板快照必须绑定 40 位 templateCommit");
     }
+    const templateCommitTime = run(
+      "git",
+      ["show", "-s", "--format=%cI", templateCommit],
+      source.sourceRoot,
+    ).trim();
+    const parsedCommitTime = new Date(templateCommitTime);
+    if (Number.isNaN(parsedCommitTime.getTime())) {
+      throw new Error("模板快照无法解析 templateCommit 提交时间");
+    }
+    const generatedAt = parsedCommitTime.toISOString();
     const snapshotMetadata = {
       schemaVersion: 1,
       templateName: "yss-harness-design-agent",
@@ -261,7 +271,7 @@ if (require.main === module) {
       manifestHash: sha256(manifestText),
       encodedPaths,
       snapshotHash: treeHash(stagingRoot),
-      generatedAt: new Date().toISOString(),
+      generatedAt,
     };
     replaceTemplateRoot(stagingRoot, snapshotMetadata, manifestText);
     console.log(

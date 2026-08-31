@@ -21,6 +21,27 @@ function runCli(args, { input = "", timeout = 120000 } = {}) {
   });
 }
 
+function runTemplateSync() {
+  return spawnSync(process.execPath, [path.join(repoRoot, "scripts/sync-template.js")], {
+    cwd: repoRoot,
+    encoding: "utf8",
+    timeout: 120000,
+    env: process.env,
+  });
+}
+
+test("stable template commit produces byte-identical snapshot metadata", () => {
+  const first = runTemplateSync();
+  assert.equal(first.status, 0, first.stderr);
+  const firstSnapshot = fs.readFileSync(path.join(repoRoot, "template.snapshot.json"));
+
+  const second = runTemplateSync();
+  assert.equal(second.status, 0, second.stderr);
+  const secondSnapshot = fs.readFileSync(path.join(repoRoot, "template.snapshot.json"));
+
+  assert.deepEqual(secondSnapshot, firstSnapshot);
+});
+
 test("help and version do not write files", () => {
   const help = runCli(["--help"]);
   assert.equal(help.status, 0, help.stderr);
