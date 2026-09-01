@@ -148,6 +148,17 @@ test("init generates a strategic design project-instance", () => {
     fs.existsSync(path.join(targetDir, ".agents/skills/yss-strategic-design/SKILL.md")),
     true,
   );
+  assert.equal(fs.existsSync(path.join(targetDir, "scripts/verify-template-fast")), true);
+  assert.equal(fs.existsSync(path.join(targetDir, "scripts/verify-template-candidate")), true);
+  assert.equal(fs.existsSync(path.join(targetDir, "scripts/run-template-verification")), true);
+  assert.equal(
+    fs.existsSync(path.join(targetDir, "scripts/lib/template-verification.mjs")),
+    true,
+  );
+  assert.equal(
+    fs.existsSync(path.join(targetDir, "docs/process/template-verification-profiles.yaml")),
+    true,
+  );
 
   for (const forbidden of [
     ".template-source",
