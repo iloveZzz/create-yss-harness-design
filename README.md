@@ -1,6 +1,6 @@
 # create-yss-harness-design
 
-当前版本：`0.1.1`。
+当前版本：`0.2.0`。
 
 用于从 `yss-harness-design-agent` 初始化战略设计 `project-instance` 的 npm CLI。
 
@@ -22,7 +22,7 @@ npx create-yss-harness-design@latest \
   --git-init
 ```
 
-v1 只支持空目录 `init`。`--dry-run` 预览，`--force` 覆盖非空目录。不创建远端仓库、CI 或 Ticket Board。
+CLI 协议 v1 只支持空目录 `init`。`--dry-run` 预览，`--force` 覆盖非空目录。不创建远端仓库、CI 或 Ticket Board。
 
 实例 metadata 写入 `.yss-harness-design.json`，并记录 40 位 `templateCommit` 与 `profileId`。CLI 运行时不拉取模板仓库。
 

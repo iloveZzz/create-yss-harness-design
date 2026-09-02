@@ -102,6 +102,8 @@ test("init generates a strategic design project-instance", () => {
   );
   assert.equal(snapshot.profileId, "harness.business-ddd-strategy-handoff");
   assert.match(snapshot.templateCommit, /^[0-9a-f]{40}$/);
+  assert.equal(snapshot.templateRepository, "https://github.com/iloveZzz/yss-harness-design-agent.git");
+  assert.equal(snapshot.requestedRef, snapshot.templateCommit);
   assert.equal(snapshot.snapshotHash, treeHash(path.join(repoRoot, "template")));
   assert.equal(shouldDistribute("docs/templates/openapi-spec-template.yaml", manifest), false);
   assert.equal(shouldDistribute("docs/process/harness-profile.yaml", manifest), true);
@@ -140,6 +142,13 @@ test("init generates a strategic design project-instance", () => {
   assert.equal(typeof metadata.managedFiles, "object");
 
   assert.equal(fs.existsSync(path.join(targetDir, "docs/process/harness-profile.yaml")), true);
+  assert.equal(fs.existsSync(path.join(targetDir, "DESIGN.md")), true);
+  assert.equal(fs.existsSync(path.join(targetDir, "docs/design/design.md")), true);
+  assert.equal(fs.existsSync(path.join(targetDir, "docs/design/tokens/theme.json")), true);
+  assert.equal(fs.existsSync(path.join(targetDir, "docs/design/tokens/tokens.dark.json")), true);
+  assert.equal(fs.existsSync(path.join(targetDir, "docs/design/tokens/tokens.compact.json")), true);
+  assert.equal(fs.existsSync(path.join(targetDir, "docs/design/preview.html")), true);
+  assert.equal(fs.existsSync(path.join(targetDir, "docs/design/preview-dark.html")), true);
   assert.equal(
     fs.existsSync(path.join(targetDir, "docs/templates/strategic-design-handoff-template.yaml")),
     true,

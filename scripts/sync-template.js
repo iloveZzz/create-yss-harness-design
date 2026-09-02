@@ -265,8 +265,9 @@ if (require.main === module) {
       templateName: "yss-harness-design-agent",
       profileId: manifest.profileId,
       templateSource: "github:iloveZzz/yss-harness-design-agent",
-      templateRepository: templateRepo,
-      requestedRef: templateRef,
+      // 发布元数据必须指向规范上游地址；本地 sibling checkout 仅用于开发时生成快照。
+      templateRepository: defaultRemote,
+      requestedRef: templateCommit,
       templateCommit,
       manifestHash: sha256(manifestText),
       encodedPaths,
