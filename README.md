@@ -1,6 +1,6 @@
 # create-yss-harness-design
 
-当前版本：`0.2.0`。
+当前版本：`0.2.1`。
 
 用于从 `yss-harness-design-agent` 初始化战略设计 `project-instance` 的 npm CLI。
 
