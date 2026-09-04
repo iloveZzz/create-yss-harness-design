@@ -4,6 +4,7 @@ const os = require("node:os");
 const path = require("node:path");
 const readline = require("node:readline/promises");
 const { spawnSync } = require("node:child_process");
+const { UPDATE_COMMANDS, runUpdate } = require("./self-update");
 const { treeHash } = require("./template-hash");
 const { shouldDistribute, shouldVisitDirectory } = require("./manifest");
 
@@ -478,10 +479,15 @@ function printHelp() {
   console.log(`create-yss-harness-design ${PACKAGE_MANIFEST.version}
 
 USAGE
-  $ create-yss-harness-design [OPTIONS]
+  $ create-yss-harness-design [COMMAND] [OPTIONS]
 
 本 CLI 只从 yss-harness-design-agent 生成战略设计 project-instance。
 它不是 create-yss-spec，也不进入 OpenAPI / 垂直切片实现。
+
+COMMANDS
+  (default) init                     在空目录生成战略设计 project-instance
+  update                             检查 npm 最新版本；可用时安装更新
+  upgrade                            update 的别名
 
 OPTIONS
   --project-name <name>              项目名称；不传则进入交互输入
@@ -490,8 +496,8 @@ OPTIONS
   --target-dir <dir>                 目标目录；不传则进入交互输入
   --issue-tracker local-markdown|github|gitlab
                                      默认 local-markdown
-  --dry-run                          只预览计划，不写入文件
-  --force                            允许清空非空目录后重新生成
+  --dry-run                          init 只预览；update 只查询不安装
+  --force                            init 允许清空非空目录；update 即使最新版也重新安装
   --git-init                         初始化完成后执行 git init
   -h, --help                         显示本帮助信息
   -v, --version                      显示 CLI 版本
@@ -503,6 +509,8 @@ EXAMPLES
       --business-domain "供应链协同" \\
       --target-dir "./acme-strategy" \\
       --git-init
+  $ npx create-yss-harness-design update --dry-run
+  $ npx create-yss-harness-design upgrade
 `);
 }
 
@@ -587,8 +595,15 @@ async function runCli(argv = []) {
     printVersion();
     return;
   }
-  if (["attach", "sync", "update", "upgrade"].includes(argv[0])) {
+  if (["attach", "sync"].includes(argv[0])) {
     throw new Error(`v1 不支持 ${argv[0]}，请使用空目录 init`);
+  }
+  if (UPDATE_COMMANDS.has(argv[0])) {
+    runUpdate(argv.slice(1), {
+      packageRoot: PACKAGE_ROOT,
+      currentVersion: PACKAGE_MANIFEST.version,
+    });
+    return;
   }
   await runInit(argv);
 }

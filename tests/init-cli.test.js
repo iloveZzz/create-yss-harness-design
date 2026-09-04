@@ -12,12 +12,13 @@ const cliBin = path.join(repoRoot, "bin/create-yss-harness-design.js");
 const packageVersion = JSON.parse(fs.readFileSync(path.join(repoRoot, "package.json"), "utf8")).version;
 const metadataFileName = ".yss-harness-design.json";
 
-function runCli(args, { input = "", timeout = 120000 } = {}) {
+function runCli(args, { input = "", timeout = 120000, env = process.env } = {}) {
   return spawnSync(process.execPath, [cliBin, ...args], {
     cwd: repoRoot,
     encoding: "utf8",
     input,
     timeout,
+    env,
   });
 }
 
@@ -56,6 +57,38 @@ test("v1 rejects attach and sync", () => {
   const attach = runCli(["attach", "--target-dir", "."]);
   assert.notEqual(attach.status, 0);
   assert.match(attach.stderr, /v1 不支持 attach/);
+});
+
+test("update and upgrade query npm without overwriting a source checkout", () => {
+  const binDir = fs.mkdtempSync(path.join(os.tmpdir(), "create-yss-harness-design-npm-"));
+  const npmPath = path.join(binDir, "npm");
+  fs.writeFileSync(
+    npmPath,
+    `#!/usr/bin/env node
+const args = process.argv.slice(2);
+if (args[0] === "view" && args[1] === "create-yss-harness-design" && args[2] === "version") {
+  process.stdout.write("9.9.9\\n");
+  process.exit(0);
+}
+if (args[0] === "prefix" && args[1] === "-g") {
+  process.stdout.write("/tmp/npm-prefix\\n");
+  process.exit(0);
+}
+process.stderr.write("unexpected " + args.join(" ") + "\\n");
+process.exit(1);
+`,
+  );
+  fs.chmodSync(npmPath, 0o755);
+  const env = { ...process.env, PATH: `${binDir}${path.delimiter}${process.env.PATH}` };
+
+  for (const command of ["update", "upgrade"]) {
+    const result = runCli([command], { env });
+    assert.equal(result.status, 0, result.stderr);
+    assert.match(result.stdout, new RegExp(`当前版本：${packageVersion}`));
+    assert.match(result.stdout, /最新版本：9\.9\.9/);
+    assert.match(result.stdout, /检测到源码目录/);
+    assert.doesNotMatch(result.stdout, /正在安装/);
+  }
 });
 
 test("dry-run does not create the target directory", () => {
