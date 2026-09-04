@@ -10,7 +10,7 @@ const packageRoot = path.resolve(__dirname, "..");
 const targetTemplateRoot = path.join(packageRoot, "template");
 const targetManifestPath = path.join(packageRoot, "template.manifest.json");
 const targetSnapshotPath = path.join(packageRoot, "template.snapshot.json");
-const siblingHarness = path.resolve(packageRoot, "../yss-strategic-design-harness");
+const siblingHarness = path.resolve(packageRoot, "../yss-harness-design-agent");
 const defaultRemote = "https://github.com/iloveZzz/yss-harness-design-agent.git";
 const NPM_IGNORED_BASENAMES = new Set([".gitignore", ".npmignore", ".npmrc"]);
 
@@ -21,7 +21,7 @@ function isLocalRepo(value) {
 const templateRepo =
   process.env.YSS_STRATEGIC_DESIGN_TEMPLATE_REPO ||
   (isLocalRepo(siblingHarness) ? siblingHarness : defaultRemote);
-const DEFAULT_TEMPLATE_REF = "67b9f501a846f45704852072fe4e6a7f7781d3d8";
+const DEFAULT_TEMPLATE_REF = "c93911622e1ada4a42ec5b0781f6cd06b504977c";
 const templateRef =
   process.env.YSS_STRATEGIC_DESIGN_TEMPLATE_REF ||
   (isLocalRepo(templateRepo) ? "HEAD" : DEFAULT_TEMPLATE_REF);

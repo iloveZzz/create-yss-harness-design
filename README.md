@@ -29,7 +29,7 @@ CLI 协议 v1 只支持空目录 `init`。`--dry-run` 预览，`--force` 覆盖�
 ## 开发
 
 ```bash
-YSS_STRATEGIC_DESIGN_TEMPLATE_REPO=../yss-strategic-design-harness npm test
+YSS_STRATEGIC_DESIGN_TEMPLATE_REPO=../yss-harness-design-agent npm test
 ```
 
 未完成与模板仓的跨仓验证和正式独立审查前，不得 `npm publish`。
