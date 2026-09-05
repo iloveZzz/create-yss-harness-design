@@ -310,7 +310,7 @@ function renderTemplateFile(relativePath, content, variables) {
       .replace(/(\*\*业务领域：\*\*\s*)\[填写\]/g, `$1${variables.businessDomain}`)
       .replace(/(\*\*团队规模：\*\*\s*)\[填写\]/g, `$1${variables.teamSize}`);
     if (relativePath === "README.md") {
-      rendered = rendered.replace(/^# YSS Strategic Design Harness/m, `# ${variables.projectName}`);
+      rendered = rendered.replace(/^# YSS (?:Strategic Design|业务方案设计) Harness/m, `# ${variables.projectName}`);
     }
     return rendered;
   }
@@ -582,7 +582,7 @@ async function runInit(argv = []) {
   console.log("下一步建议：");
   console.log(`1. cd ${targetDir}`);
   console.log("2. 读取 AGENTS.md 与 CONTEXT.md");
-  console.log("3. 用 yss-strategic-design 做入口分诊；本地终点是 Strategic Design Handoff");
+  console.log("3. 用 yss-strategic-design 做入口分诊；本地终点是业务方案交接");
   console.log("4. 数字人运行时绑定仍按 docs/templates/digital-human-runtime-profile-template.md 手工 duplicate");
 }
 

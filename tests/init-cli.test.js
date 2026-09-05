@@ -12,6 +12,19 @@ const cliBin = path.join(repoRoot, "bin/create-yss-harness-design.js");
 const packageVersion = JSON.parse(fs.readFileSync(path.join(repoRoot, "package.json"), "utf8")).version;
 const metadataFileName = ".yss-harness-design.json";
 
+function contextContractFiles(rootPath) {
+  const found = [];
+  function visit(currentPath, relative = "") {
+    for (const entry of fs.readdirSync(currentPath, { withFileTypes: true })) {
+      const nextRelative = relative ? `${relative}/${entry.name}` : entry.name;
+      if (entry.isDirectory()) visit(path.join(currentPath, entry.name), nextRelative);
+      else if (["CONTEXT.md", "CONTEXT-MAP.md", "context.md"].includes(entry.name)) found.push(nextRelative);
+    }
+  }
+  visit(rootPath);
+  return found;
+}
+
 function runCli(args, { input = "", timeout = 120000, env = process.env } = {}) {
   return spawnSync(process.execPath, [cliBin, ...args], {
     cwd: repoRoot,
@@ -158,7 +171,7 @@ test("init generates a strategic design project-instance", () => {
   );
   assert.equal(result.status, 0, `${result.stderr}\n${result.stdout}`);
   assert.match(result.stdout, /初始化完成/);
-  assert.match(result.stdout, /Strategic Design Handoff/);
+  assert.match(result.stdout, /业务方案交接/);
 
   assert.equal(
     fs.readFileSync(path.join(targetDir, "yss-project.yaml"), "utf8").includes(
@@ -175,6 +188,11 @@ test("init generates a strategic design project-instance", () => {
   assert.equal(typeof metadata.managedFiles, "object");
 
   assert.equal(fs.existsSync(path.join(targetDir, "docs/process/harness-profile.yaml")), true);
+  assert.deepEqual(contextContractFiles(targetDir), ["CONTEXT.md"]);
+  assert.equal(fs.existsSync(path.join(targetDir, "scripts/verify-context-contract")), true);
+  assert.equal(fs.existsSync(path.join(targetDir, "scripts/verify-context-reconciliation")), true);
+  assert.equal(fs.existsSync(path.join(targetDir, "scripts/verify-strategic-design-handoff")), true);
+  assert.equal(fs.existsSync(path.join(targetDir, "docs/process/schemas/context-reconciliation.schema.json")), true);
   assert.equal(fs.existsSync(path.join(targetDir, "DESIGN.md")), true);
   assert.equal(fs.existsSync(path.join(targetDir, "docs/design/design.md")), true);
   assert.equal(fs.existsSync(path.join(targetDir, "docs/design/tokens/theme.json")), true);

@@ -1,10 +1,10 @@
 # create-yss-harness-design
 
-当前版本：`0.2.2`。
+当前版本：`0.2.3`。
 
 用于从 `yss-harness-design-agent` 初始化战略设计 `project-instance` 的 npm CLI。
 
-本工具不是 [`create-yss-spec`](https://github.com/iloveZzz/create-yss-spec)。`create-yss-spec` 面向全生命周期模板 `yss-spec-project-template`。本 CLI 只生成 `harness.business-ddd-strategy-handoff` 项目实例，本地终点是 Strategic Design Handoff。
+本工具不是 [`create-yss-spec`](https://github.com/iloveZzz/create-yss-spec)。`create-yss-spec` 面向全生命周期模板 `yss-spec-project-template`。本 CLI 只生成 `harness.business-ddd-strategy-handoff` 项目实例，本地终点是业务方案交接。
 
 ## 用法
 
