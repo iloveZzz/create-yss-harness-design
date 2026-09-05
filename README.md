@@ -1,6 +1,6 @@
 # create-yss-harness-design
 
-当前版本：`0.2.3`。
+当前版本：`0.3.0`，模板固定到 `dd1ec2dbaf3ce6da528607519ef2d0888b78dbb4`。该版本新增视觉基线 schema、模板和验证合同，并加强原型证据与战略设计交接约束。
 
 用于从 `yss-harness-design-agent` 初始化战略设计 `project-instance` 的 npm CLI。
 
