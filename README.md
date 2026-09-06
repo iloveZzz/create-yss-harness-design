@@ -1,6 +1,6 @@
 # create-yss-harness-design
 
-当前版本：`0.4.0`，模板固定到 `31189d2b4b78821ea8bef202d8516ac85b7a3c79`。该版本新增战略交接快照包导出与核验，包含完整资产快照、稳定规则与场景索引、差异和离线交付证据。
+当前版本：`0.4.1`，模板固定到 `f41c4a4af3afe6c26d299d6f4f16b6c6d4dc2e5e`。该版本新增战略交接快照包导出与核验，包含完整资产快照、稳定规则与场景索引、差异和离线交付证据。
 
 用于从 `yss-harness-design-agent` 初始化战略设计 `project-instance` 的 npm CLI。
 
@@ -38,3 +38,11 @@ YSS_STRATEGIC_DESIGN_TEMPLATE_REPO=../yss-harness-design-agent npm test
 ```
 
 未完成与模板仓的跨仓验证和正式独立审查前，不得 `npm publish`。
+
+## 本次身份保护升级
+
+本版本同步前后端 Harness 拆分后的共享交接资产，保持当前模板家族。init、attach 和 sync 的适用入口在生成计划前检查五种模板身份及已有 profile；异族、多重身份、损坏或矛盾声明均拒绝，`--force` 不能绕过，`--dry-run` 同样返回非零。历史 metadata 继续兼容，`legacy-attach` 仅在旧 schema 路径接受。
+
+`update` / `upgrade` 只更新 CLI 程序，不同步实例资产。专职后端和前端新项目分别检出 `yss-harness-backend-agent`、`yss-harness-frontend-agent` 的固定提交，在各自模板目录运行 `node scripts/instantiate-harness --target <新目录>`；这两个入口不提供原地 sync 或跨 profile 迁移。
+
+本 CLI 仍不支持 attach、sync；已有战略实例不因更新 CLI 而自动升级，也不要使用 init --force 代替实例升级。

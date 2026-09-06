@@ -1,4 +1,6 @@
 const crypto = require("node:crypto");
+const { createFamilyGuard } = require("./family-identity");
+let checkTargetFamily;
 const fs = require("node:fs");
 const os = require("node:os");
 const path = require("node:path");
@@ -76,6 +78,7 @@ function readTemplateSnapshot() {
   if (snapshot.snapshotHash !== treeHash(BUNDLED_TEMPLATE_ROOT)) {
     throw new Error("模板快照内容 hash 不匹配，请重新构建 CLI 包");
   }
+  checkTargetFamily(BUNDLED_TEMPLATE_ROOT, { snapshot });
   return snapshot;
 }
 
@@ -433,6 +436,7 @@ function buildMetadata(variables, operations, targetDir, snapshot, manifestText)
 }
 
 function verifyGeneratedInstance(targetDir, manifest) {
+  checkTargetFamily(targetDir);
   for (const relativePath of [
     ...(manifest.instanceForbiddenPaths || []),
     ".yss-template.json",
@@ -489,6 +493,11 @@ COMMANDS
   update                             检查 npm 最新版本；可用时安装更新
   upgrade                            update 的别名
 
+IDENTITY
+  仅操作本 CLI 对应的模板家族；异族、混合或矛盾身份不可用 --force 绕过。
+  update / upgrade 只升级 CLI 程序；模板资产同步与程序升级分开执行。
+  前后端专职新项目使用各自模板的 scripts/instantiate-harness，仅支持新目录。
+
 OPTIONS
   --project-name <name>              项目名称；不传则进入交互输入
   --business-domain <domain>         业务领域；不传则进入交互输入
@@ -525,12 +534,14 @@ async function runInit(argv = []) {
     return;
   }
   const promptedOptions = await promptForMissingOptions(options);
+  checkTargetFamily = await createFamilyGuard(PACKAGE_ROOT, PACKAGE_MANIFEST.name);
   assertRequiredOptions(promptedOptions);
   const snapshot = readTemplateSnapshot();
   const manifestText = fs.readFileSync(BUNDLED_MANIFEST_PATH, "utf8");
   const manifest = JSON.parse(manifestText);
   const targetDir = normalizeTargetDir(promptedOptions.targetDir);
   const targetState = inspectTargetDir(targetDir, promptedOptions.force);
+  checkTargetFamily(targetDir);
   const operations = buildCopyPlan(
     BUNDLED_TEMPLATE_ROOT,
     targetDir,
