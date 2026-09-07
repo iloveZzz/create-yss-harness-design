@@ -7,8 +7,8 @@ const FAMILIES = [
   { name: "create-yss-spec", metadata: ".yss-template.json", template: "yss-spec-project-template", profile: null },
   { name: "create-yss-harness-design", metadata: ".yss-harness-design.json", template: "yss-harness-design-agent", profile: "harness.business-ddd-strategy-handoff" },
   { name: "create-yss-harness-dev", metadata: ".yss-harness-dev.json", template: "yss-harness-dev-agent", profile: "harness.dev-agent-slice" },
-  { name: "repository-local backend", metadata: ".yss-harness-backend.json", template: "yss-harness-backend-agent", profile: "harness.backend-delivery" },
-  { name: "repository-local frontend", metadata: ".yss-harness-frontend.json", template: "yss-harness-frontend-agent", profile: "harness.frontend-delivery" },
+  { name: "create-yss-harness-backend", metadata: ".yss-harness-backend.json", template: "yss-harness-backend-agent", profile: "harness.backend-delivery" },
+  { name: "create-yss-harness-frontend", metadata: ".yss-harness-frontend.json", template: "yss-harness-frontend-agent", profile: "harness.frontend-delivery" },
 ];
 const PROFILE_PATH = "docs/process/harness-profile.yaml";
 

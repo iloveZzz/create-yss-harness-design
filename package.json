@@ -1,6 +1,6 @@
 {
   "name": "create-yss-harness-design",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "Initialize a YSS strategic design harness project instance",
   "repository": {
     "type": "git",
@@ -23,7 +23,7 @@
   "scripts": {
     "sync-template": "node scripts/sync-template.js",
     "pretest": "npm run sync-template",
-    "test": "node --test tests/*.test.js",
+    "test": "node --test --test-concurrency=1 tests/*.test.js",
     "prepack": "npm run sync-template"
   },
   "engines": {
