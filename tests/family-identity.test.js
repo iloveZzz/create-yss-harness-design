@@ -13,7 +13,7 @@ function run(args) {
 }
 function argsFor(target, command = name === "create-yss-harness-design" ? "init" : "attach") {
   return [...(command === "init" ? [] : [command]), "--target-dir", target,
-    "--project-name", "Identity probe", "--business-domain", "CLI verification", "--dry-run", "--force"];
+    "--project-name", "Identity probe", "--business-domain", "CLI verification", "--dry-run", ...(command === "sync" ? [] : ["--force"])];
 }
 
 test("frontend identity prevents another CLI from planning takeover, even with force", () => {
@@ -51,7 +51,7 @@ const families = [
   ["frontend", ".yss-harness-frontend.json", "harness.frontend-delivery"],
 ];
 const own = families.find(([family]) => family === name);
-const commands = name === "create-yss-harness-design" ? ["init"] : ["init", "attach", "sync"];
+const commands = name === "create-yss-harness-design" ? ["init", "sync"] : ["init", "attach", "sync"];
 function tree(root) {
   return fs.readdirSync(root).sort().flatMap(entry => {
     const file = path.join(root, entry), stat = fs.lstatSync(file);
@@ -69,7 +69,7 @@ function rejectedUnchanged(target, command, apply = false) {
   let args = argsFor(target, command);
   if (apply) {
     args = args.filter(arg => arg !== "--dry-run");
-    if (command === "attach") args.push("--apply");
+    if (["attach", "sync"].includes(command)) args.push("--apply");
   }
   const result = run(args);
   assert.notEqual(result.status, null, "CLI must exit normally");

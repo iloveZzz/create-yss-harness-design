@@ -66,7 +66,7 @@ test("help and version do not write files", () => {
   assert.match(version.stdout, new RegExp(`create-yss-harness-design ${packageVersion}`));
 });
 
-test("v1 rejects attach and sync", () => {
+test("attach remains unsupported", () => {
   const attach = runCli(["attach", "--target-dir", "."]);
   assert.notEqual(attach.status, 0);
   assert.match(attach.stderr, /v1 不支持 attach/);

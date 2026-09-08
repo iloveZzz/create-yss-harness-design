@@ -1,6 +1,6 @@
 # create-yss-harness-design
 
-源码候选版本：`0.4.4`。模板固定到 `2f6b2fa5ba356bb184b98be1e5a2feebae2996fb`；最终快照身份与摘要见 `template.snapshot.json`。本次更新设计模板技能边界，保留 25 个共享技能与必要原型能力。
+源码候选版本：`0.5.0`。模板固定到 `8a67e0f5a56aa5085d18c2b42bb540c8f36c2fab`；最终快照身份与摘要见 `template.snapshot.json`。本次支持通用技术设计交接协议、保留旧 DDD 交接兼容，并新增已有战略实例的受管同步。
 
 ## 已发布安装与候选版本
 
@@ -29,7 +29,7 @@ npx create-yss-harness-design@latest --project-name "设备借用" --business-do
 
 ## 已有战略实例
 
-本 CLI 只有初始化，没有 attach/sync。不要用 init --force 代替实例升级。需要更新时先生成同族新目录、对比受管资产，形成迁移计划并重验批准输入，保留旧目录回滚。
+`sync --target-dir ./project` 默认预览；`sync --target-dir ./project --apply` 更新未被本地修改的受管治理文件。业务文件、根 CONTEXT.md、README 与批准记录保留。受管冲突整次停止，人工合并后重试；不支持 `--force` 覆盖冲突，也不支持 attach。已有批准状态不自动迁移。
 
 ## 更新 CLI 程序
 
@@ -52,7 +52,7 @@ npm pack --ignore-scripts
 `--ignore-scripts` 仅在上一步已成功产生并核对固定快照后使用，以免 prepack 改写输入。检查 tgz 中 template.snapshot.json 的模板 SHA 和 package.json 版本，然后使用实际包路径初始化：
 
 ```bash
-npx --yes --package /absolute/path/create-yss-harness-design-0.4.4.tgz create-yss-harness-design --project-name "设备借用" --business-domain "内部设备管理" --target-dir ./equipment-candidate
+npx --yes --package /absolute/path/create-yss-harness-design-0.5.0.tgz create-yss-harness-design --project-name "设备借用" --business-domain "内部设备管理" --target-dir ./equipment-candidate
 ```
 
 这是安装本地已构建包的示例，不是 npm 发布操作。候选验证需覆盖新建实例的本地文档链接、身份、Skill 检查与适用交接链路；不要把历史验证日志当当前发布证据。

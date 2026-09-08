@@ -74,7 +74,7 @@ async function createFamilyGuard(packageRoot, expectedName) {
       }
       const legacy = value.metadataSchemaVersion === undefined || (expectedName === "create-yss-spec" && value.metadataSchemaVersion === 1);
       checkFields(value, {
-        templateName: expectedName,
+        templateName: expected.template,
         templateSource: legacy && value.templateSource === "legacy-attach" ? "legacy-attach" : source,
         template_source: source,
         profileId: expected.profile,

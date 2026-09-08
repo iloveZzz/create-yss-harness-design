@@ -490,6 +490,7 @@ USAGE
 
 COMMANDS
   (default) init                     在空目录生成战略设计 project-instance
+  sync                               预览已有战略实例的受管资产更新；--apply 执行
   update                             检查 npm 最新版本；可用时安装更新
   upgrade                            update 的别名
 
@@ -505,7 +506,8 @@ OPTIONS
   --target-dir <dir>                 目标目录；不传则进入交互输入
   --issue-tracker local-markdown|github|gitlab
                                      默认 local-markdown
-  --dry-run                          init 只预览；update 只查询不安装
+  --apply                            sync 写入未被用户修改的治理资产
+  --dry-run                          init/sync 只预览；update 只查询不安装
   --force                            init 允许清空非空目录；update 即使最新版也重新安装
   --git-init                         初始化完成后执行 git init
   -h, --help                         显示本帮助信息
@@ -597,6 +599,30 @@ async function runInit(argv = []) {
   console.log("4. 数字人运行时绑定仍按 docs/templates/digital-human-runtime-profile-template.md 手工 duplicate");
 }
 
+async function runSync(argv) {
+  const apply = argv.includes('--apply');
+  if (apply && argv.includes('--dry-run')) throw new Error('--apply 与 --dry-run 不能同时使用');
+  if (argv.includes('--force')) throw new Error('sync 不覆盖本地修改；请先预览并人工合并冲突');
+  const options = parseArgs(argv.filter(x => x !== '--apply'));
+  const targetDir = normalizeTargetDir(options.targetDir || process.cwd());
+  if (isInsideTemplateRoot(targetDir)) throw new Error('不能同步 CLI 模板快照目录');
+  const violation = gitlinkWriteViolation(targetDir, { force: false });
+  if (violation) throw new Error(violation);
+  checkTargetFamily = await createFamilyGuard(PACKAGE_ROOT, PACKAGE_MANIFEST.name);
+  const snapshot = readTemplateSnapshot();
+  checkTargetFamily(targetDir, { snapshot });
+  const old = JSON.parse(fs.readFileSync(targetPath(targetDir, TEMPLATE_METADATA_FILENAME), 'utf8'));
+  const manifestText = fs.readFileSync(BUNDLED_MANIFEST_PATH, 'utf8');
+  const staging = fs.mkdtempSync(path.join(os.tmpdir(), 'yss-design-sync-'));
+  try {
+    const operations = buildCopyPlan(BUNDLED_TEMPLATE_ROOT, staging, snapshot, JSON.parse(manifestText));
+    executePlan(operations, old.variables);
+    const { syncManaged } = require('./sync');
+    const result = syncManaged({ target: targetDir, staged: staging, operations, snapshot, cliVersion: PACKAGE_MANIFEST.version, manifestText, apply });
+    console.log(JSON.stringify(result, null, 2));
+  } finally { fs.rmSync(staging, { recursive: true, force: true }); }
+}
+
 async function runCli(argv = []) {
   if (HELP_FLAGS.has(argv[0]) || argvIncludesFlag(argv, HELP_FLAGS)) {
     printHelp();
@@ -606,7 +632,11 @@ async function runCli(argv = []) {
     printVersion();
     return;
   }
-  if (["attach", "sync"].includes(argv[0])) {
+  if (argv[0] === "sync") {
+    await runSync(argv.slice(1));
+    return;
+  }
+  if (argv[0] === "attach") {
     throw new Error(`v1 不支持 ${argv[0]}，请使用空目录 init`);
   }
   if (UPDATE_COMMANDS.has(argv[0])) {
