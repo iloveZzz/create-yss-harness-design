@@ -1,10 +1,10 @@
 # create-yss-harness-design
 
-源码候选版本：`0.4.2`。模板固定到 `5baa45c8a8929843664ab14dcd150b4c2a12fa05`；最终快照身份与摘要见 `template.snapshot.json`。本次更新用户手册、五家族导航和设备借用教学案例，命令行为沿用既有身份保护。
+源码候选版本：`0.4.4`。模板固定到 `2f6b2fa5ba356bb184b98be1e5a2feebae2996fb`；最终快照身份与摘要见 `template.snapshot.json`。本次更新设计模板技能边界，保留 25 个共享技能与必要原型能力。
 
 ## 已发布安装与候选版本
 
-截至本轮核验，npm latest 为 `0.4.0`；源码候选尚未发布 npm。后续请自行查询实际发布状态：
+本轮更新 GitHub 源码，未发布 npm；实际发布版本请查询 registry：
 
 ```bash
 npm view create-yss-harness-design version
@@ -25,7 +25,7 @@ npx create-yss-harness-design@latest --project-name "设备借用" --business-do
 
 五家族分别使用 .yss-template.json、.yss-harness-design.json、.yss-harness-dev.json、.yss-harness-backend.json、.yss-harness-frontend.json。已有 profile 同样参与判定。
 
-异族、多重身份、损坏 metadata、未知/矛盾 profile 在写入前拒绝。`--force` 不能绕过，`--dry-run` 使用同一检查。不要删除 metadata 或用另一家族 CLI 覆盖。后端/前端专职只提供仓内 `node scripts/instantiate-harness --target <新目录>`，没有专用 npm 包、attach/sync 或原地迁移。
+异族、多重身份、损坏 metadata、未知/矛盾 profile 在写入前拒绝。`--force` 不能绕过，`--dry-run` 使用同一检查。不要删除 metadata 或用另一家族 CLI 覆盖。后端/前端专职 CLI 源码分别位于 `create-yss-harness-backend` 和 `create-yss-harness-frontend`，支持本家族 init / attach / sync；npm 可用版本以 registry 为准。
 
 ## 已有战略实例
 
@@ -52,7 +52,7 @@ npm pack --ignore-scripts
 `--ignore-scripts` 仅在上一步已成功产生并核对固定快照后使用，以免 prepack 改写输入。检查 tgz 中 template.snapshot.json 的模板 SHA 和 package.json 版本，然后使用实际包路径初始化：
 
 ```bash
-npx --yes --package /absolute/path/create-yss-harness-design-0.4.2.tgz create-yss-harness-design --project-name "设备借用" --business-domain "内部设备管理" --target-dir ./equipment-candidate
+npx --yes --package /absolute/path/create-yss-harness-design-0.4.4.tgz create-yss-harness-design --project-name "设备借用" --business-domain "内部设备管理" --target-dir ./equipment-candidate
 ```
 
 这是安装本地已构建包的示例，不是 npm 发布操作。候选验证需覆盖新建实例的本地文档链接、身份、Skill 检查与适用交接链路；不要把历史验证日志当当前发布证据。
