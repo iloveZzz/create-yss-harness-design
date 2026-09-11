@@ -21,7 +21,7 @@ function isLocalRepo(value) {
 const templateRepo =
   process.env.YSS_STRATEGIC_DESIGN_TEMPLATE_REPO ||
   (isLocalRepo(siblingHarness) ? siblingHarness : defaultRemote);
-const DEFAULT_TEMPLATE_REF = "3a358684c5684ada433dca4fd97ee187050ca6d8";
+const DEFAULT_TEMPLATE_REF = "e24465921a8a51d8690a1732842274a35b935c9e";
 const templateRef =
   process.env.YSS_STRATEGIC_DESIGN_TEMPLATE_REF ||
   (isLocalRepo(templateRepo) ? "HEAD" : DEFAULT_TEMPLATE_REF);
@@ -259,6 +259,7 @@ if (require.main === module) {
       throw new Error("模板快照无法解析 templateCommit 提交时间");
     }
     const generatedAt = parsedCommitTime.toISOString();
+    const sourceState = source.sourceRoot === checkoutRoot ? "committed" : "working-tree";
     const snapshotMetadata = {
       schemaVersion: 1,
       templateName: "yss-harness-design-agent",
@@ -266,8 +267,9 @@ if (require.main === module) {
       templateSource: "github:iloveZzz/yss-harness-design-agent",
       // 发布元数据必须指向规范上游地址；本地 sibling checkout 仅用于开发时生成快照。
       templateRepository: defaultRemote,
-      requestedRef: templateCommit,
+      requestedRef: sourceState === "working-tree" ? "working-tree" : templateCommit,
       templateCommit,
+      sourceState,
       manifestHash: sha256(manifestText),
       encodedPaths,
       snapshotHash: treeHash(stagingRoot),
@@ -275,7 +277,9 @@ if (require.main === module) {
     };
     replaceTemplateRoot(stagingRoot, snapshotMetadata, manifestText);
     console.log(
-      `已从 ${templateRepo}#${templateCommit} 同步战略设计 Harness 快照`,
+      sourceState === "working-tree"
+        ? `已从本地工作树 ${source.sourceRoot} 同步战略设计 Harness 快照（HEAD ${templateCommit}）`
+        : `已从 ${templateRepo}#${templateCommit} 同步战略设计 Harness 快照`,
     );
   } finally {
     if (source) source.cleanup();

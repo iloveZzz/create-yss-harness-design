@@ -84,7 +84,7 @@ async function createFamilyGuard(packageRoot, expectedName) {
     const text = readIdentityFile(targetDir, PROFILE_PATH);
     if (text !== null) {
       const profile = object(text, PROFILE_PATH);
-      if (profile.schema_version !== 1 || !FAMILIES.some(family => family.profile !== null && family.profile === profile.profile_id)) {
+      if (![1, 2].includes(profile.schema_version) || !FAMILIES.some(family => family.profile !== null && family.profile === profile.profile_id)) {
         throw new Error(`未知或非法 profile：${PROFILE_PATH}`);
       }
       if (expected.profile === null || profile.profile_id !== expected.profile) {

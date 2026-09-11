@@ -149,7 +149,11 @@ test("init generates a strategic design project-instance", () => {
   assert.equal(snapshot.profileId, "harness.business-ddd-strategy-handoff");
   assert.match(snapshot.templateCommit, /^[0-9a-f]{40}$/);
   assert.equal(snapshot.templateRepository, "https://github.com/iloveZzz/yss-harness-design-agent.git");
-  assert.equal(snapshot.requestedRef, snapshot.templateCommit);
+  assert.ok(["committed", "working-tree"].includes(snapshot.sourceState));
+  assert.equal(
+    snapshot.requestedRef,
+    snapshot.sourceState === "working-tree" ? "working-tree" : snapshot.templateCommit,
+  );
   assert.equal(snapshot.snapshotHash, treeHash(path.join(repoRoot, "template")));
   assert.equal(shouldDistribute("docs/templates/openapi-spec-template.yaml", manifest), false);
   assert.equal(shouldDistribute("docs/process/harness-profile.yaml", manifest), true);
@@ -185,6 +189,8 @@ test("init generates a strategic design project-instance", () => {
   assert.equal(metadata.profileId, "harness.business-ddd-strategy-handoff");
   assert.equal(metadata.cliVersion, packageVersion);
   assert.match(metadata.templateCommit, /^[0-9a-f]{40}$/);
+  assert.equal(metadata.templateSourceState, snapshot.sourceState);
+  assert.equal(metadata.snapshotHash, snapshot.snapshotHash);
   assert.equal(typeof metadata.managedFiles, "object");
 
   assert.equal(fs.existsSync(path.join(targetDir, "docs/process/harness-profile.yaml")), true);

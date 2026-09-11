@@ -1,6 +1,6 @@
 {
   "name": "create-yss-harness-design",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "Initialize a YSS strategic design harness project instance",
   "repository": {
     "type": "git",
