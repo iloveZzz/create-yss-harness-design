@@ -1,0 +1,112 @@
+schema_version: 3
+handoff_id: strategic-design-handoff.<feature>
+handoff_version: v3
+status: draft
+
+source:
+  domain_strategy_ref:
+    id: domain-strategy.<feature>
+    version: v1
+    digest: <domain-strategy-digest>
+    status: approved
+    persisted_ref: docs/.scratch/<feature>/domain/domain-strategy.yaml
+  stage_decision_package_ref:
+    id: stage-decision.<feature>
+    version: v1
+    digest: <stage-decision-digest>
+    status: approved
+    persisted_ref: docs/.scratch/<feature>/decisions/stage-decision-package.yaml
+  spec_ref:
+    id: spec.<feature>
+    version: v1
+    digest: <spec-digest>
+    status: approved
+    persisted_ref: docs/.scratch/<feature>/requirements/spec.md
+  prototype_ref:
+    id: prototype.<feature>
+    version: v1
+    digest: <prototype-digest>
+    status: approved
+    persisted_ref: docs/.scratch/<feature>/design/prototype.html
+  visual_baseline_ref:
+    baseline_id: visual-baseline.<feature>
+    version: v1
+    digest: <visual-baseline-digest>
+    status: approved
+    persisted_ref: docs/.scratch/<feature>/handoff/visual-baseline-v1
+    manifest_ref: visual-baseline.yaml
+    case_ids: [primary-desktop, primary-narrow]
+  business_ticket_set_ref:
+    id: business-ticket-set.<feature>
+    version: v1
+    digest: <business-ticket-set-digest>
+    status: approved
+    persisted_ref: docs/.scratch/<feature>/tickets/business-ticket-set.yaml
+
+source_context_snapshot:
+  context_ref: CONTEXT.md
+  context_schema_version: 1
+  document_digest: sha256:<source-context-document-digest>
+  referenced_terms_digest: sha256:<source-referenced-terms-digest>
+  term_refs: []
+
+context_delta:
+  added:
+    - term_ref: <ContextId>/<EnglishIdentifier>
+      term: <中文术语>
+      meaning: <稳定业务含义>
+      english_identifier: <PascalCaseEnglishIdentifier>
+      context_id: <Global-or-approved-ContextId>
+      forbidden_aliases: []
+  updated: []
+  deprecated: []
+
+target_context_reconciliation:
+  target_context_ref: CONTEXT.md
+  reconciliation_schema_ref: docs/process/schemas/context-reconciliation.schema.json
+  required_before_skill: yss-technical-design
+  status: pending
+
+target:
+  team: downstream-rd-team
+  skill: yss-technical-design
+  output: technical-design-contract
+
+problem_and_business_outcomes:
+  - <业务问题、目标和可观测结果>
+
+bounded_context_and_subdomain_map:
+  - <业务责任区、业务板块分类、职责边界和非职责>
+
+context_map_and_translation_responsibility:
+  - <协作与交接关系、规则提供方和使用方、业务决策权、信息方向和口径转换负责人>
+
+ubiquitous_language_and_concept_candidates:
+  - <责任区内统一业务词汇及待确认的关键业务对象；不得直接指定技术模型>
+
+scenarios_and_business_invariants:
+  - <关键业务故事、已发生的业务事实和不可违反的业务规则>
+
+tactical_design_questions:
+  - <交给下游研发团队裁决的状态、一致性、系统边界、接口或数据存储问题>
+
+deferred_decisions_and_ownership:
+  - decision: <尚未决策事项>
+    owner: <责任角色或团队>
+    next_action: <下一动作>
+    target_version: <目标版本或发布日期>
+
+evidence_and_version_digests:
+  - <可读取的业务边界与规则设计、方案决策、评审和验证证据引用>
+
+acceptance:
+  - domain-strategy-status-is-approved
+  - stage-decision-package-status-is-approved
+  - source-digests-are-current
+  - source-context-snapshot-and-context-delta-are-current
+  - target-context-reconciliation-is-required-before-tactical-design
+  - every-deferred-item-has-owner-next-action-and-target-version
+  - no-aggregate-entity-repository-or-api-is-prescribed
+
+# 需要便携导出时按 docs/process/strategic-handoff-package.md 补 package_export。
+# 正式导出必须具备规则稳定 ID、当前批准绑定和离线预览证据；禁止导出占位模板。

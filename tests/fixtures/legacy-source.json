@@ -1,0 +1,8 @@
+{
+  "templateName": "yss-harness-design-agent",
+  "templateSource": "github:iloveZzz/yss-harness-design-agent",
+  "profileId": "harness.business-ddd-strategy-handoff",
+  "templateCommit": "e24465921a8a51d8690a1732842274a35b935c9e",
+  "sourceState": "working-tree",
+  "snapshotHash": "9827a58bc016cef0c9f82473b99d6254282cc2c5bf4d18788286c81af4a77aea"
+}

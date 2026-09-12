@@ -1,7 +1,5 @@
 node_modules/
-template/
-template.manifest.json
-template.snapshot.json
+*.tgz
 .template-staging-*
 .template-backup-*
 .DS_Store

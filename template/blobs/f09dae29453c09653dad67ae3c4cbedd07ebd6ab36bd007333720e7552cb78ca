@@ -1,0 +1,77 @@
+#!/usr/bin/env node
+import { validateNextRoute } from './lib/lifecycle-transition.mjs';
+import assert from 'node:assert/strict';
+import { mkdtempSync, writeFileSync, rmSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import path from 'node:path';
+import { spawnSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
+import { assertApprovalUserDecision } from './lib/user-decision-reuse.mjs';
+import { loadDigitalHumanRoles } from './lib/digital-human-roles.mjs';
+import { decisionDigest } from './lib/user-decision.mjs';
+import { validateApprovalRecord, assertCheckpointUserDecisions, assertCheckpointApprovals } from './lib/approval-record.mjs';
+import { buildDecisionFixture } from './fixtures/user-decision/build-fixture.mjs';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const temp=mkdtempSync(path.join(tmpdir(),'strategic-decisions-'));
+const base={schema_version:1,gate_id:'gate.spec-baseline-approved',decision:'approved',actor_kind:'digital-human',role_id:'role.product-manager',runtime_id:'runtime.generic',principal_ref:'test-only:product'};
+try {
+  assert.throws(()=>validateApprovalRecord(base,{requireApproved:true}), /user-decision/);
+  const file=path.join(temp,'approval.json');writeFileSync(file,JSON.stringify(base));
+  for(const args of [[],['--require-approved']]) {
+    const r=spawnSync(process.execPath,[path.join(root,'scripts/verify-approval-record'),...args,file],{encoding:'utf8'});
+    assert.equal(r.status,1);assert.match(r.stderr,/user-decision/);
+  }
+  const f=buildDecisionFixture(path.join(temp,'valid'));
+  const record={...base,subject_ref:f.requirement.subject_ref,approval_scope:f.requirement.scope,user_decision_ref:f.ref};
+  validateApprovalRecord(record,{requireApproved:true});
+  const cli = args => spawnSync(process.execPath,[path.join(root,'scripts/verify-approval-record'),...args,file],{encoding:'utf8'});
+  assert.equal(cli(['--history']).status,0);
+  assert.match(cli(['--history']).stdout,/不构成当前放行/);
+  assert.equal(cli(['--history','--require-approved']).status,1);
+  for (const [name,mutate] of [
+    ['缺回复', f => {f.record.responses=[];}],
+    ['数字人代答', f => {f.record.responses=[];f.respond({actor:'digital-human'});}],
+    ['负责人错误', f => {f.record.responses=[];f.respond({principal:'person.other'});}],
+    ['撤销', f => f.respond({decision:'revoked',text:'撤回同意',time:'2026-09-05T01:04:00Z'})],
+    ['原文拒绝', f => {f.record.responses=[];f.respond({text:'不同意'});}],
+    ['范围错误', f => {f.requirement.scope=['not-approved'];}],
+    ['依据变化', f => writeFileSync(f.requirement.subject_ref,'changed')],
+  ]) {
+    const f=buildDecisionFixture(path.join(temp,name));mutate(f);f.save();
+    assert.throws(()=>validateApprovalRecord({...base,subject_ref:f.requirement.subject_ref,approval_scope:f.requirement.scope,user_decision_ref:f.ref},{requireApproved:true}),/user-decision/,name);
+  }
+  f.write('unrelated.md','无关变更');validateApprovalRecord(record,{requireApproved:true});
+  const roles=loadDigitalHumanRoles();
+  const manifest={schema_version:1,kind:'strategic-delivery-scope',assets:[{...f.record.request.items[0].subject,boundary:base.gate_id,scope:f.requirement.scope}],risks:[],conditions:[]};
+  const scopeRef=f.write('scope.json',manifest);
+  const reuse={schema_version:1,kind:'strategic-decision-reuse-v1',target_gate:'gate.strategic-design-handoff-approved',scope_ref:scopeRef,scope:f.requirement.scope,requirements:[f.requirement]};
+  const reuseRef=f.write('reuse.json',reuse);
+  const handoff={...base,gate_id:reuse.target_gate,role_id:'role.requirements-manager',subject_ref:scopeRef,approval_scope:reuse.scope,decision_reuse_ref:reuseRef};
+  validateApprovalRecord(handoff,{requireApproved:true});
+  const routeState={profile_id:'harness.business-ddd-strategy-handoff',user_decisions:[{boundary:handoff.gate_id,subject_ref:scopeRef,scope:reuse.scope,decision_reuse_ref:reuseRef}]};
+  assert.equal(validateNextRoute('work-unit.strategic-design-handoff',null,routeState).result,'allowed');
+  assert.equal(validateNextRoute('work-unit.prototype-design','work-unit.business-ticket-formalization',{profile_id:routeState.profile_id}).result,'blocked');
+  for(const change of [m=>m.risks.push('未接受风险'),m=>m.conditions.push('发布生产'),m=>m.assets[0].boundary='gate.user-confirmation',m=>m.assets[0].version='v2']) {
+    const m=structuredClone(manifest);change(m);f.write('scope.json',m);
+    assert.throws(()=>validateApprovalRecord(handoff,{requireApproved:true}),/user-decision/);
+  }
+  f.write('scope.json',manifest);
+  assert.throws(()=>assertApprovalUserDecision(handoff,{...roles,user_decision_policy:{...roles.user_decision_policy,required_capabilities:['unknown']} }),/不支持/);
+  const checkpoint={repository_mode:'project-instance',mode:'resume',status:'routing',stage:'stage.product-design',next_work_unit:'work-unit.prototype-design',gates:{},artifacts:{}};
+  assert.throws(()=>assertCheckpointUserDecisions(checkpoint),/user-decision-response-required/);
+  assertCheckpointUserDecisions({...checkpoint,status:'blocked'});
+  assertCheckpointUserDecisions({...checkpoint,status:'paused-human-gate'});
+  writeFileSync(file,JSON.stringify(record));
+  checkpoint.gates[base.gate_id]={status:'approved',approval_ref:file,subject_ref:record.subject_ref,approval_scope:record.approval_scope};
+  assertCheckpointUserDecisions(checkpoint);
+  checkpoint.artifacts['artifact.spec']={ref:'other.md',status:'approved'};
+  assert.throws(()=>assertCheckpointApprovals(checkpoint),/user-decision-subject-mismatch/);
+  checkpoint.artifacts={};
+  checkpoint.gates[base.gate_id].subject_ref='other.md';
+  assert.throws(()=>assertCheckpointApprovals(checkpoint),/user-decision-subject-mismatch/);
+  checkpoint.gates[base.gate_id].subject_ref=record.subject_ref;
+  checkpoint.stage='stage.ticket-formalization';checkpoint.next_work_unit=null;
+  checkpoint.artifacts={'artifact.high-fidelity-html-prototype':{status:'approved',ref:'prototype.html'}};
+  assert.throws(()=>assertCheckpointUserDecisions(checkpoint),/gate.user-confirmation/);
+  console.log('战略用户决定场景通过：当前批准、历史读取、原始回复反例与交接复用');
+} finally {rmSync(temp,{recursive:true,force:true});}

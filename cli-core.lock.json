@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "sourceRepository": "https://github.com/iloveZzz/yss-spec-project-template.git",
+  "sourceRevision": "d8fec9aa6e46d5768400af94a029d80787f1d346",
+  "sourceState": "committed",
+  "sourcePath": ".template-source/cli-core",
+  "coreVersion": "0.2.0",
+  "protocolVersion": 1,
+  "files": {
+    "build.mjs": {
+      "digest": "4626e14277d48ce3de50a064e2d9b0aedc87bfed587f6856a4600d053eafbdbc",
+      "mode": 420
+    },
+    "bundle.mjs": {
+      "digest": "3bea9237a94539a5429d87d640c2cff490946e9bb902ba9640722e421a66cc09",
+      "mode": 420
+    },
+    "cli.mjs": {
+      "digest": "2791874963c88c955907732e8eda149b5e861015bd0b418d4c63582a8c4e2406",
+      "mode": 420
+    },
+    "command-runner.mjs": {
+      "digest": "4fb7f3c9ca26dff3f955ddb1c6ad545519d3e55af179f834ff67b1c0bf20bffd",
+      "mode": 420
+    },
+    "engine.mjs": {
+      "digest": "10f176afa5a947204153a7398aa84af366dc964bc0736c223d77624ebe73066a",
+      "mode": 420
+    },
+    "family.mjs": {
+      "digest": "5d00df4e98cad8f6b920cc4f95bb86eb559ae11a8fed1db9c02ae6a366ff5563",
+      "mode": 420
+    },
+    "gitignore.mjs": {
+      "digest": "dc781dffad8bcff81fd3967546fa8e824641b80d38d47a06eb0909e3401b2940",
+      "mode": 420
+    },
+    "identity.mjs": {
+      "digest": "9a04457fea66fc5f3dbfdbaa0ac89cb79c3c686579b28d23e50c177991fcac6a",
+      "mode": 420
+    },
+    "io.mjs": {
+      "digest": "c78fa87f83f0a9f9753c6c63e8e55a4da40349ac348c997978db2477d1111673",
+      "mode": 420
+    },
+    "legacy.mjs": {
+      "digest": "7d49cdfd286ce19731bfe816106c181414c444a9bb0cf7f31d87d725a9dd1abd",
+      "mode": 420
+    },
+    "package.json": {
+      "digest": "68d3dfd6451f7a433ff2eb821daa83d59e0c03f19b73d3a2cf5582ee6ce23332",
+      "mode": 420
+    },
+    "scaffold.mjs": {
+      "digest": "6d23a5e7f9fded64fd6df73e08c8e3ecc0eb108f5ff83c7d139d1f9bb88ac03b",
+      "mode": 420
+    },
+    "tests/build.test.mjs": {
+      "digest": "0ae7a1e454c77539ac6a30561c5c6109ebe9dd9cc719a0e6b012dd7998620653",
+      "mode": 420
+    },
+    "tests/cli.test.mjs": {
+      "digest": "bab715b0ef080b21cfd7323c32025b79e82a09ed13b91993f73c3824545fface",
+      "mode": 420
+    },
+    "tests/package-contract.mjs": {
+      "digest": "24f44ac835640d7a4efd570c24ea90f62db5664223826d7eec5de0f585e8bedf",
+      "mode": 420
+    },
+    "transaction.mjs": {
+      "digest": "f2fbc4642e953ce00cece2e9f9fe61b7b50f42fabed41e64d5a1902d0ae660a8",
+      "mode": 420
+    },
+    "update.mjs": {
+      "digest": "10a68ac1a709ab3748f9c7e615bc9eeaae82cab9d35077349c13d2ecccd7a111",
+      "mode": 420
+    },
+    "vendor/NOTICES.md": {
+      "digest": "7eba5e5f046d1c0b1c7c02ff036925d2580682c67e09b5521c8fc4f284f3b216",
+      "mode": 420
+    },
+    "vendor/yaml.LICENSE": {
+      "digest": "5bba27375d93e9119f76c1015f7672cf9ad5f70952296e0842fb2243d6376869",
+      "mode": 420
+    },
+    "vendor/yaml.mjs": {
+      "digest": "58c510627769ef4e75e90bcf410d63ba33e64b46bc9cfc53149839d5ccb1709b",
+      "mode": 420
+    },
+    "verification.mjs": {
+      "digest": "ce98ac490502f03abf7e9425d2b7ab5795c103f82d8d7b5c6338f96b55b04960",
+      "mode": 420
+    }
+  },
+  "digest": "3a7460961c7919cab0d1b19356b7be189ce346c9ff9e80a0c9da1f8d46be2815"
+}

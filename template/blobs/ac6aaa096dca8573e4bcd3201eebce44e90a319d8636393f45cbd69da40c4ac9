@@ -1,0 +1,80 @@
+#!/usr/bin/env node
+import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
+import path from "node:path";
+import { loadRegistry, renderLifecycleStructure, renderWorkUnits, semanticDigest, validateRegistry } from "./lib/lifecycle-registry.mjs";
+
+const ROOT = path.resolve(import.meta.dirname, "..");
+const PUBLIC_FILES = [
+  "README.md",
+  "CONTEXT.md",
+  "docs/user-guide/战略设计子项目用户手册.md",
+  "docs/user-guide/用户手册索引.md",
+  "docs/process/harness-profile.yaml",
+  "docs/process/harness-executive-blueprint.md",
+  "docs/agents/digital-human-roles.md",
+  "docs/design/README.md",
+  "docs/design/design.md",
+  "docs/templates/spec-template.md",
+  "docs/design/templates/product-overview-design-template.md",
+  "docs/templates/strategic-design-handoff-template.yaml",
+  ".agents/skills/yss-stage-decision/SKILL.md",
+];
+const JARGON = ["DDD", "子域", "限界上下文", "Context Map", "统一语言", "不变量", "Strategic Design", "Tactical Design"];
+
+function read(relativePath) {
+  return readFileSync(path.join(ROOT, relativePath), "utf8");
+}
+
+for (const relativePath of PUBLIC_FILES) {
+  const source = read(relativePath);
+  for (const term of JARGON) {
+    assert.equal(source.includes(term), false, `${relativePath} 不应向业务角色展示术语: ${term}`);
+  }
+}
+
+const guide = read("docs/user-guide/战略设计子项目用户手册.md");
+for (const role of ["产品经理", "需求分析师", "商务协作者"]) assert.match(guide, new RegExp(role));
+for (const question of [
+  "谁遇到了什么问题",
+  "事情通常怎样一步步发生",
+  "每一步由谁负责",
+  "有哪些规则、例外",
+  "哪一小段可以独立交付",
+  "用哪些例子和证据证明结果正确",
+]) assert.match(guide, new RegExp(question));
+for (const section of ["机会与目标", "业务故事", "业务责任区与协作", "规则与例子", "Spec", "页面验证", "业务级 Ticket", "业务方案交接"]) {
+  assert.match(guide, new RegExp(section));
+}
+assert.match(guide, /只是导航视图/);
+assert.match(guide, /不成为新的事实来源/);
+
+const profile = read("docs/process/harness-profile.yaml");
+assert.match(profile, /profile_id: harness\.business-ddd-strategy-handoff/);
+assert.match(profile, /name: 产品需求商务业务方案交付模式/);
+
+const registry = read("docs/process/lifecycle-registry.yaml");
+for (const stableId of ["work-unit.domain-strategy-design", "artifact.domain-strategy", "gate.domain-strategy-approved"]) {
+  assert.match(registry, new RegExp(`id: ${stableId.replaceAll(".", "\\.")}`));
+}
+for (const displayName of ["业务边界与协作梳理", "业务边界与规则设计", "业务边界与规则确认", "业务方案交接包"]) {
+  assert.match(registry, new RegExp(displayName));
+}
+
+const registryContract = loadRegistry();
+const withoutPublicPresentation = structuredClone(registryContract);
+for (const collection of ["stages", "gates", "artifacts", "work_units", "evidence"]) {
+  for (const record of withoutPublicPresentation[collection]) {
+    for (const key of Object.keys(record).filter((key) => key.startsWith("public_"))) delete record[key];
+  }
+}
+assert.equal(semanticDigest(registryContract), semanticDigest(withoutPublicPresentation), "public_* 展示字段不得改变稳定 ID 语义摘要");
+const rendered = `${renderLifecycleStructure(registryContract)}${renderWorkUnits(registryContract)}`;
+for (const displayName of ["业务边界与协作梳理", "业务边界与规则设计", "业务边界与规则确认", "业务方案交接包"]) {
+  assert.match(rendered, new RegExp(displayName));
+}
+const invalidPresentation = structuredClone(registryContract);
+invalidPresentation.artifacts[0].public_name = "";
+assert.throws(() => validateRegistry(invalidPresentation, { baseline: null }), /public_name 必须是非空字符串/);
+
+process.stdout.write("业务角色通俗语言场景验证通过\n");

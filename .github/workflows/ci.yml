@@ -1,0 +1,24 @@
+name: CLI
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [22, 24, 26]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.15.0
+      - run: pnpm test
+      - run: pnpm verify-bundle
+      - run: npm pack
+      - run: |
+          mkdir -p /tmp/cli-consumer
+          npm install --prefix /tmp/cli-consumer --ignore-scripts ./$(npm pkg get name | tr -d '"')-$(npm pkg get version | tr -d '"').tgz
+          /tmp/cli-consumer/node_modules/.bin/create-yss-harness-design init --target-dir /tmp/harness-instance --project-name ci --business-domain ci --json
+          /tmp/cli-consumer/node_modules/.bin/create-yss-harness-design sync --target-dir /tmp/harness-instance --json

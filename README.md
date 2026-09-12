@@ -1,64 +1,52 @@
 # create-yss-harness-design
 
-源码候选版本：`0.5.2`。模板固定到 `e24465921a8a51d8690a1732842274a35b935c9e`；最终快照身份与摘要见 `template.snapshot.json`。本次同步战略职责边界、领域与阶段决策 v3、Handoff v4 及用户决定复用校验。
+候选版本 **0.6.0**，共享内核 **0.2.0**。创建、接入和同步本家族治理资产，模板与内核均随包分发，实例操作离线运行。来源 commit、摘要及 `committed` / `working-tree` 状态分别记录在模板快照和内核锁中；开发候选不表示已发布 npm。
 
-## 已发布安装与候选版本
+## 命令
 
-本轮更新 GitHub 源码，未发布 npm；实际发布版本请查询 registry：
-
-```bash
-npm view create-yss-harness-design version
-npm create yss-harness-design@latest
+```sh
+create-yss-harness-design init --target-dir ./new-project --project-name 我的项目 --business-domain 业务领域
+create-yss-harness-design attach --target-dir ./existing-project
+create-yss-harness-design attach --target-dir ./existing-project --apply
+create-yss-harness-design doctor --target-dir ./new-project --json
+create-yss-harness-design diff --target-dir ./new-project --json
+create-yss-harness-design sync --target-dir ./new-project --plan --prune
+create-yss-harness-design sync --target-dir ./new-project --apply --prune
+create-yss-harness-design recover --target-dir ./new-project
+create-yss-harness-design recover --target-dir ./new-project --apply
+create-yss-harness-design update --dry-run
 ```
 
-`@latest` 获取已发布包，不保证包含 GitHub 最新手册。每次初始化使用包内固定模板，不会在运行时拉取模板仓。
+init 只接受不存在或空目录；已有项目使用 attach。attach/sync 默认预览，`--apply` 才写入。diff、doctor 和 recover 默认只读，不生成 metadata、技能锁、Git 或状态目录。recover 仅恢复未完成事务，不提供成功事务的历史 rollback。update/upgrade 仅更新程序，不同步实例；源码、npx 和未知安装方式输出指引，不自动降级。
 
-## 首次初始化
+`--plan` 适用于 attach/sync；`--prune` 仅适用于 sync。`--plan`、`--dry-run` 与 `--apply` 互斥。`--json` 只控制格式，stdout 为一个 schemaVersion 1 JSON 对象，日志走 stderr。普通差异与警告退出码 0；冲突、非法参数、身份错误、校验失败及无法恢复退出码 1。错误返回 code/message，计划含 changes、conflicts、summary、prunable、pruned、retainedRemoved。doctor 返回逐项 checks 和处理建议。
 
-```bash
-npx create-yss-harness-design@latest --project-name "设备借用" --business-domain "内部设备管理" --target-dir ./equipment-project
+初始化参数包括 `--project-name`、`--business-domain`、`--team-size`、`--issue-tracker local-markdown|github|gitlab`、`--git-init` 和示例文档开关。init 缺少必需参数时仅在 TTY 进入交互；JSON 或非交互环境缺参直接报错。sync 不接受重新设置项目变量的参数。
+
+## 文件与恢复
+
+已有 README、`CONTEXT.md` 与战略设计业务资产保留。README 不持续受管；`.gitignore` 仅更新家族专属区块并保留区块外字节，区块排除 `.yss-harness-state/`。不完整或重复标记阻断同步。
+
+普通 sync 保留退出分发文件及基线。`--prune --apply` 仅删除旧所有权可信、当前内容和 mode 与基线一致的可清理文件；本地修改、用户文件及证据不足的文件保留并报告。force 不放宽删除条件。项目新增技能必须显式登记，不自动接管未知技能。
+
+文件、生成技能锁和 metadata 属于同一事务。Context、profile、技能锁和投影校验通过才提交；失败恢复原文件。备份保留在 `.yss-harness-state/design/transactions/<id>/`。发现中断事务先运行 recover；兼容的 sync --apply 也会先恢复并返回，需要重新预览再同步。恢复遇到后续修改或损坏备份时保留恢复清单，不覆盖修改。
+
+战略 CLI 支持已有 metadata v1 实例：预览只报告迁移，首次 `sync --apply` 在事务内转换为 v2；批准记录和业务方案不迁移、不覆盖。缺少旧 mode 或所有权证据的退出分发文件保留。战略治理冲突须人工合并，不能 force 覆盖。历史 metadata 登记的 `scripts/instantiate-harness` 保留原文件并退出管理，doctor 给出人工清理提示；新实例不分发该脚本。
+
+三家族之间以及本体/旧 dev 身份之间禁止自动转换。业务源码、构建文件、批准证据、Git、gitlink、嵌套仓库和越界路径均受保护。生成治理资产不会创建远程仓、Tracker 或业务运行时代码。
+
+模板内的[战略设计用户手册](https://github.com/iloveZzz/yss-harness-design-agent/blob/main/docs/user-guide/战略设计子项目用户手册.md)说明本仓操作主线；[CLI 使用说明](https://github.com/iloveZzz/yss-harness-design-agent/blob/main/docs/user-guide/CLI使用说明.md)说明实例侧命令和恢复语义。
+
+## 维护与安装验收
+
+```sh
+pnpm sync-core <本体仓库> <完整提交或WORKTREE>
+pnpm sync-template <本家族模板仓库> <完整提交或WORKTREE>
+pnpm test
+pnpm verify-bundle
+npm pack
 ```
 
-生成后进入实例，核对 yss-project.yaml 为 project-instance、家族 metadata 的 templateCommit，然后阅读 docs/user-guide/用户手册索引.md。先让 Agent 只读检查身份、根 CONTEXT.md、profile 和当前上游，再按本仓流程推进。CLI 不创建远程仓、CI、Tracker 或运行时代码工程。
+同步脚本必须显式指定来源。WORKTREE 仅用于开发验收；固定交付使用完整 40 位提交。`--check` 只验证分发来源是否一致。普通测试不重建仓库模板，prepack 仅检查已准备快照；构建回归在临时副本执行。不要手改 vendor、模板 blobs 或来源锁。
 
-## 家族与覆盖边界
-
-五家族分别使用 .yss-template.json、.yss-harness-design.json、.yss-harness-dev.json、.yss-harness-backend.json、.yss-harness-frontend.json。已有 profile 同样参与判定。
-
-异族、多重身份、损坏 metadata、未知/矛盾 profile 在写入前拒绝。`--force` 不能绕过，`--dry-run` 使用同一检查。不要删除 metadata 或用另一家族 CLI 覆盖。后端/前端专职 CLI 源码分别位于 `create-yss-harness-backend` 和 `create-yss-harness-frontend`，支持本家族 init / attach / sync；npm 可用版本以 registry 为准。
-
-## 已有战略实例
-
-`sync --target-dir ./project` 默认预览；`sync --target-dir ./project --apply` 更新未被本地修改的受管治理文件。业务文件、根 CONTEXT.md、README 与批准记录保留。受管冲突整次停止，人工合并后重试；不支持 `--force` 覆盖冲突，也不支持 attach。已有批准状态不自动迁移。
-
-## 更新 CLI 程序
-
-```bash
-npx create-yss-harness-design update --dry-run
-npx create-yss-harness-design upgrade
-```
-
-update/upgrade 只处理 CLI 程序，不同步实例资产；源码目录和 npx 环境按工具给出的安全提示操作，全局/项目安装按安装位置升级。
-
-## 使用尚未发布的候选手册
-
-从本 CLI 仓库检出需要的固定提交。先读取 scripts/sync-template.js 的 DEFAULT_TEMPLATE_REF，将下列 `<模板完整SHA>` 替换为该值；在 CLI 仓库根运行。模板源地址须保持本家族。
-
-```bash
-YSS_STRATEGIC_DESIGN_TEMPLATE_REPO=https://github.com/iloveZzz/yss-harness-design-agent.git YSS_STRATEGIC_DESIGN_TEMPLATE_REF=<模板完整SHA> pnpm run sync-template
-npm pack --ignore-scripts
-```
-
-`--ignore-scripts` 仅在上一步已成功产生并核对固定快照后使用，以免 prepack 改写输入。检查 tgz 中 template.snapshot.json 的模板 SHA 和 package.json 版本，然后使用实际包路径初始化：
-
-```bash
-npx --yes --package /absolute/path/create-yss-harness-design-0.5.2.tgz create-yss-harness-design --project-name "设备借用" --business-domain "内部设备管理" --target-dir ./equipment-candidate
-```
-
-这是安装本地已构建包的示例，不是 npm 发布操作。候选验证需覆盖新建实例的本地文档链接、身份、Skill 检查与适用交接链路；不要把历史验证日志当当前发布证据。
-
-## 详细手册与维护
-
-[模板使用指南](https://github.com/iloveZzz/yss-harness-design-agent/blob/main/docs/user-guide/用户手册索引.md)介绍职责、提示词、确认和案例。问题涉及参数/同步/包分发时在本 CLI 跟踪；涉及模板内容或生命周期时在模板源跟踪。
-
-开发验证优先 `pnpm exec node --test tests/*.test.js`；需要重建快照时显式运行上面的固定输入 sync-template。模板先验证并提交，再绑定其 SHA、测试实际 tgz，最后交付 CLI 和父仓 gitlink。npm 发布须另外获得授权。
+测试通过后在干净目录安装生成 tgz，再执行 init、attach、doctor、diff、sync、prune 与 recover 验收。Git 提交/推送、固定版本发布验证和 npm publish 分别授权。

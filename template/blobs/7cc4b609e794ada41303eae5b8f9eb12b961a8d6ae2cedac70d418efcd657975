@@ -1,0 +1,46 @@
+#!/usr/bin/env node
+import assert from 'node:assert/strict';
+import { mkdtempSync, readFileSync, writeFileSync, rmSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { spawnSync } from 'node:child_process';
+import { assertStrategicCheckpointScope } from './lib/harness-profile.mjs';
+import { parseDocument } from './vendor/yaml.mjs';
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const temp = mkdtempSync(path.join(tmpdir(), 'strategic-checkpoint-'));
+const template = parseDocument(readFileSync(path.join(root, 'docs/process/templates/lifecycle-checkpoint-template.yaml'), 'utf8')).toJS();
+let count = 0;
+function check(name, mutate, error) {
+  const value = structuredClone(template); mutate(value);
+  const ref = path.join(temp, 'checkpoint.json'); writeFileSync(ref, JSON.stringify(value));
+  const result = spawnSync(process.execPath, [path.join(root, 'scripts/verify-lifecycle-checkpoint'), ref], { encoding: 'utf8' });
+  assert.equal(result.status, error ? 1 : 0, `${name}: ${result.stdout}${result.stderr}`);
+  if (error) assert.match(result.stderr, error, name);
+  count++;
+}
+try {
+  check('初始空引用合法', v => { v.ticket_sync = {status:'pending',refs:[]}; });
+  check('战略禁止技术切片', v => { v.next_work_unit = 'work-unit.slice-implementation'; }, /strategic-profile/);
+  check('战略禁止父 Ticket', v => { v.artifacts['artifact.parent-ticket']={status:'draft',ref:'parent.md',evidence_refs:[]}; }, /strategic-profile/);
+  check('当前工作单元不得越界', v => { v.stage_trace.current_work_unit='work-unit.technical-analysis'; }, /strategic-profile/);
+  check('业务任务不得 ready-for-agent', v => { v.ticket_sync.status='ready-for-agent'; }, /strategic-profile/);
+  check('战略终点不得继续路由', v => { v.stage_trace.completed_work_unit='work-unit.strategic-design-handoff'; }, /strategic-profile/);
+  check('模板维护不套用实例禁令', v => { v.repository_mode='template-source'; v.context_reconciliation.status='not-applicable'; v.next_work_unit='work-unit.slice-implementation'; });
+  for (const stage of ['stage.plan','stage.spec-architecture','stage.product-design','stage.ticket-formalization']) assertStrategicCheckpointScope({...structuredClone(template),stage});
+  const current=path.join(temp,'checkpoint.json');
+  const state={...structuredClone(template),ticket_sync:{status:'pending',refs:['map.md','ticket.md']}};
+  writeFileSync(path.join(temp,'map.md'),'---\ncheckpoint_ref: checkpoint.json\n---\n展示状态可以过期');
+  writeFileSync(path.join(temp,'ticket.md'),'Status: ready-for-human\n');
+  const verify=()=>assertStrategicCheckpointScope(state,{root:temp,checkpointPath:current});
+  verify();
+  state.ticket_sync.parent_ticket='map.md';verify();
+  writeFileSync(path.join(temp,'map.md'),'---\ncheckpoint_ref: other.json\n---\n');assert.throws(verify,/冲突/);
+  writeFileSync(path.join(temp,'map.md'),'---\ncheckpoint_ref: checkpoint.json\nindex_refs: [map.md]\n---\n');assert.throws(verify,/循环/);
+  writeFileSync(path.join(temp,'map.md'),'---\ncheckpoint_ref: checkpoint.json\n---\n');
+  state.ticket_sync.refs.push('../outside.md');assert.throws(verify,/越界/);state.ticket_sync.refs.pop();
+  state.ticket_sync.refs.push('missing.md');assert.throws(verify,/不可读/);state.ticket_sync.refs.pop();
+  writeFileSync(path.join(temp,'ticket.md'),'Status: ready-for-agent\n');assert.throws(verify,/ticket-status/);
+  count+=7;
+  process.stdout.write(`战略 checkpoint 场景通过: ${count}\n`);
+} finally { rmSync(temp, { recursive:true, force:true }); }

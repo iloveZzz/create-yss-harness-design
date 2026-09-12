@@ -1,10 +1,4 @@
 #!/usr/bin/env node
-
-const { runCli } = require("../src/cli");
-
-(async () => {
-  await runCli(process.argv.slice(2));
-})().catch((error) => {
-  console.error(error.message);
-  process.exitCode = 1;
-});
+import {fileURLToPath} from 'node:url';
+import {main} from '../vendor/cli-core/cli.mjs';
+await main(fileURLToPath(new URL('..',import.meta.url)));

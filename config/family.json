@@ -1,0 +1,8 @@
+{
+  "side": "design",
+  "packageName": "create-yss-harness-design",
+  "profileId": "harness.business-ddd-strategy-handoff",
+  "metadataFile": ".yss-harness-design.json",
+  "templateName": "yss-harness-design-agent",
+  "templateSource": "github:iloveZzz/yss-harness-design-agent"
+}
