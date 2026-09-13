@@ -3,12 +3,9 @@
   "generatedBy": "scripts/update-skill-lock",
   "canonicalRoot": ".agents/skills",
   "projectionRoots": [
-    ".claude/skills",
     ".codex/skills",
     ".cursor/skills",
-    ".pi/skills",
-    ".qoder/skills",
-    ".trae/skills"
+    ".pi/skills"
   ],
   "sources": {
     "mattpocock/skills": {
@@ -30,12 +27,9 @@
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "code-review": {
@@ -48,12 +42,9 @@
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "competitive-intelligence": {
@@ -63,12 +54,9 @@
         "effectiveHash": "df1473dfd96b1a3ba63ef929917973b613988edf62193b5b82d734de2e8418cd",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "diagnosing-bugs": {
@@ -78,12 +66,9 @@
         "effectiveHash": "15b8e2836976665738db7057678cb3a9ff63a8ab8d82274594bd8b068a523915",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "domain-modeling": {
@@ -96,12 +81,9 @@
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "grill-me": {
@@ -114,12 +96,9 @@
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "grill-with-docs": {
@@ -132,12 +111,9 @@
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "grilling": {
@@ -150,12 +126,9 @@
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "handoff": {
@@ -168,12 +141,9 @@
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "i-have-adhd": {
@@ -185,12 +155,9 @@
         "upstreamHash": "4c88635cbcb4765b63528d608d27589596840708e89607fda9c9fa5726c11f7e",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "llm-wiki": {
@@ -200,12 +167,9 @@
         "effectiveHash": "39fbba419001c5701dc11b6c535f47916da1471cb808412e09f6ddb0485eb3e9",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "maintaining-skills": {
@@ -215,12 +179,9 @@
         "effectiveHash": "8389e34653e247ebcf4b1a7fb0a40fa3a72c46faecc81b4d6dff4c42c76a59bf",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "prototype-review": {
@@ -230,12 +191,9 @@
         "effectiveHash": "9206df8b6c555c1af1351e425c5ec99ec2a40263c6861607f1418b9c520873ab",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "resolving-merge-conflicts": {
@@ -245,12 +203,9 @@
         "effectiveHash": "b1fd57782c4699ca4b19dd4322e45c84c3e9d210d3b73d65f53230fe56ee779c",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "to-spec": {
@@ -263,12 +218,9 @@
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "to-tickets": {
@@ -281,12 +233,9 @@
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "triage": {
@@ -299,12 +248,9 @@
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "wayfinder": {
@@ -317,12 +263,9 @@
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "writing-for-agents": {
@@ -335,12 +278,9 @@
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "yss-antd-design": {
@@ -350,12 +290,9 @@
         "effectiveHash": "08ce99d45586d5ea19e25fdd9e9a6ede16e66f18992b70b87e0cd23f92343b16",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "yss-antdv-next-design": {
@@ -365,12 +302,9 @@
         "effectiveHash": "2942ed52dd58a38e51f09eb11254809334aeaed08f21cd081f09f35e6647a68c",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "yss-design-system": {
@@ -380,12 +314,9 @@
         "effectiveHash": "90aaf06b2514353152464a4d032076fa9d5ef56272d8ad526f5544f3c22a2b00",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "yss-prototype-stage": {
@@ -395,12 +326,9 @@
         "effectiveHash": "4bb0ba6cdbbbd1a3b89e97d94a7b0829c9282e21c8ce9e4bfda6e69a8714bc6d",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "yss-research": {
@@ -413,12 +341,9 @@
         "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "yss-stage-decision": {
@@ -428,12 +353,9 @@
         "effectiveHash": "8752a1ed6903bd20c33e21b521d52bd4f7a0662b1d25e00152b60ba38333c93b",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       },
       "yss-strategic-design": {
@@ -443,12 +365,9 @@
         "effectiveHash": "3801b020b4e3832db90c8c38e45d7b7e705ee54d9884b1395a75377c1f202c9c",
         "targets": [
           ".agents/skills",
-          ".claude/skills",
           ".codex/skills",
           ".cursor/skills",
-          ".pi/skills",
-          ".qoder/skills",
-          ".trae/skills"
+          ".pi/skills"
         ]
       }
     },

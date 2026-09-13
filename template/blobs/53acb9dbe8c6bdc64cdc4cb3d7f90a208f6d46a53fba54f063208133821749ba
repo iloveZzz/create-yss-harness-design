@@ -278,12 +278,9 @@ invocation_contract:
       exclusion_conditions: [ task:downstream-implementation ]
       primary_output: artifact.strategic-design-handoff
 agent_runtime_roots:
-  claude: .claude/skills
   codex: .codex/skills
   cursor: .cursor/skills
   pi: .pi/skills
-  qoder: .qoder/skills
-  trae: .trae/skills
 
 skills:
   - {

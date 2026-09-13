@@ -8,12 +8,9 @@ description: >-
 
 allow_root_entries:
   - .agents
-  - .claude
   - .codex
   - .cursor
   - .pi
-  - .qoder
-  - .trae
   - docs
   - scripts
 
@@ -59,7 +56,6 @@ exclude_root_files:
 
 exclude_paths:
   - docs/discovery
-  - .claude/settings.local.json
   - .codex/hooks.json
   - .codex/settings.local.json
   - .cursor/environment.json

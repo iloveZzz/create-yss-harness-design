@@ -2,12 +2,9 @@
   "profileId": "harness.business-ddd-strategy-handoff",
   "allowRootEntries": [
     ".agents",
-    ".claude",
     ".codex",
     ".cursor",
     ".pi",
-    ".qoder",
-    ".trae",
     "docs",
     "scripts"
   ],
@@ -53,7 +50,6 @@
   ],
   "excludePaths": [
     "docs/discovery",
-    ".claude/settings.local.json",
     ".codex/hooks.json",
     ".codex/settings.local.json",
     ".cursor/environment.json",
