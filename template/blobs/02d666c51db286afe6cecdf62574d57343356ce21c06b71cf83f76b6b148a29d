@@ -59,8 +59,8 @@ lifecycle:
 handoff:
   package_template: docs/templates/strategic-design-handoff-template.yaml
   package_schema: docs/process/schemas/strategic-design-handoff.schema.json
-  accepted_schema_versions: [3, 4]
-  current_schema_version: 4
+  accepted_schema_versions: [5]
+  current_schema_version: 5
   consumer_capabilities:
     - backend-technical-design
     - frontend-engineering-design
@@ -91,6 +91,7 @@ handoff:
     - source-digests-are-current
     - every-deferred-item-has-owner-next-action-and-target-version
     - no-aggregate-entity-repository-or-api-is-prescribed
+    - immutable-delivery-directory-is-packaged-and-verified
 
 skill_scope:
   policy: local-workflow-only

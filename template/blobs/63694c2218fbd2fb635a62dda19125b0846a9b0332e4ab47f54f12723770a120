@@ -1,5 +1,6 @@
 import { existsSync, readFileSync, realpathSync } from "node:fs";
 import path from "node:path";
+import { spawnSync } from "node:child_process";
 import { parseDocument } from "../vendor/yaml.mjs";
 import { loadDigitalHumanRoles } from "./digital-human-roles.mjs";
 import { loadRegistry, ROOT } from "./lifecycle-registry.mjs";
@@ -48,6 +49,39 @@ function requireExistingRelative(filePath, field) {
   if (path.isAbsolute(filePath) || !existsSync(path.resolve(ROOT, filePath))) fail(`${field} 不可读: ${filePath}`);
 }
 
+function resolveProjectRef(root, ref, field) {
+  requireString(ref, field);
+  const file=path.resolve(root,ref),relative=path.relative(root,file);
+  if(relative.startsWith('..')||path.isAbsolute(relative)||!existsSync(file))fail(`${field} 不可读或越界: ${ref}`);
+  if(realpathSync(file)!==path.resolve(realpathSync(root),relative))fail(`${field} 不能是 symlink: ${ref}`);
+  return file;
+}
+
+function assertStrategicDelivery(value, root) {
+  const terminal=value.status==='completed'||value.stage_trace?.completed_work_unit==='work-unit.strategic-design-handoff';
+  if(!terminal)return;
+  const artifact=value.artifacts?.['artifact.strategic-design-handoff'];
+  if(!artifact||artifact.status!=='approved')fail('strategic-delivery: artifact.strategic-design-handoff 必须 approved');
+  const handoffRef=artifact.ref,handoff=parseYaml(resolveProjectRef(root,handoffRef,'strategic-delivery handoff'),'Strategic Handoff');
+  if(handoff.schema_version!==5||handoff.status!=='approved')fail('strategic-delivery: 完成只接受已批准的 Handoff v5');
+  const evidenceRefs=artifact.evidence_refs||[];
+  const deliveryRef=evidenceRefs.find(ref=>ref.endsWith('/delivery-record.json'));
+  const verificationRef=evidenceRefs.find(ref=>ref.endsWith('/verification.json'));
+  if(!deliveryRef||!verificationRef)fail('strategic-delivery: evidence_refs 必须包含 delivery-record.json 和 verification.json');
+  const deliveryFile=resolveProjectRef(root,deliveryRef,'strategic-delivery record');
+  const verificationFile=resolveProjectRef(root,verificationRef,'strategic-delivery verification');
+  const record=JSON.parse(readFileSync(deliveryFile,'utf8')),verification=JSON.parse(readFileSync(verificationFile,'utf8'));
+  if(record.kind!=='strategic-handoff-delivery-v1'||record.status!=='packaged'||record.handoff?.schema_version!==5||record.handoff?.ref!==handoffRef)fail('strategic-delivery: delivery record 未绑定当前 Handoff v5');
+  if(path.dirname(deliveryFile)!==path.dirname(verificationFile)||record.verification_ref!=='verification.json')fail('strategic-delivery: delivery record 与 verification 不在同一不可变交付目录');
+  if(verification.kind!=='strategic-delivery-verification-v1'||verification.result!=='verified'||verification.exit_code!==0||verification.bundle_digest!==record.bundle_digest)fail('strategic-delivery: verification 未通过或摘要不一致');
+  const checkpoint=value.verification?.strategic_delivery;
+  if(!checkpoint||typeof checkpoint.command!=='string'||!checkpoint.command.trim()||checkpoint.exit_code!==0||checkpoint.result!=='verified'||checkpoint.bundle_digest!==record.bundle_digest)fail('strategic-delivery: checkpoint.verification.strategic_delivery 缺失或与交付不一致');
+  const checked=spawnSync(process.execPath,[path.join(ROOT,'scripts/strategic-handoff'),'verify','--bundle',path.dirname(deliveryFile)],{cwd:root,encoding:'utf8'});
+  if(checked.status!==0)fail(`strategic-delivery: 整包 verify 失败: ${(checked.stderr||checked.stdout).trim()}`);
+  const result=JSON.parse(checked.stdout);
+  if(result.result!=='verified'||result.bundle_digest!==record.bundle_digest)fail('strategic-delivery: 整包 verify 结果与 checkpoint 不一致');
+}
+
 export function loadHarnessProfile(filePath = DEFAULT_PROFILE) {
   return parseYaml(filePath, "Harness profile");
 }
@@ -90,7 +124,7 @@ export function validateHarnessProfile(profile = loadHarnessProfile(), {
   const transition = lifecycleTransitionContract.profile_next_routes?.[profile.profile_id];
   if (!transition || JSON.stringify(transition[profile.lifecycle.terminal_work_unit]) !== "[]") fail("profile 终止工作单元必须没有下一路由");
 
-  if (!equalArray(profile.handoff.accepted_schema_versions, [3, 4]) || profile.handoff.current_schema_version !== 4) fail("handoff 必须兼容 v3 并以 Handoff v4 为当前版本");
+  if (!equalArray(profile.handoff.accepted_schema_versions, [5]) || profile.handoff.current_schema_version !== 5) fail("新战略交付只接受 Handoff v5；v3/v4 仅由历史 verify/import 兼容");
   if (!equalArray(profile.handoff.consumer_capabilities, CONSUMER_CAPABILITIES)) fail("handoff.consumer_capabilities 必须覆盖后端、前端与协调路由");
   requireExistingRelative(profile.handoff.package_template, "handoff.package_template");
   requireExistingRelative(profile.handoff.package_schema, "handoff.package_schema");
@@ -100,7 +134,7 @@ export function validateHarnessProfile(profile = loadHarnessProfile(), {
   if (!Array.isArray(profile.handoff.required_sections) || profile.handoff.required_sections.length < 6) fail("handoff.required_sections 不完整");
   for (const section of ["source-context-snapshot", "context-delta", "consumer-routes"]) if (!profile.handoff.required_sections.includes(section)) fail(`handoff.required_sections 缺少 ${section}`);
   if (!Array.isArray(profile.handoff.acceptance) || profile.handoff.acceptance.length < 4) fail("handoff.acceptance 不完整");
-  for (const condition of ["source-context-snapshot-and-context-delta-are-current", "active-consumer-routes-require-target-context-reconciliation"]) if (!profile.handoff.acceptance.includes(condition)) fail(`handoff.acceptance 缺少 ${condition}`);
+  for (const condition of ["source-context-snapshot-and-context-delta-are-current", "active-consumer-routes-require-target-context-reconciliation", "immutable-delivery-directory-is-packaged-and-verified"]) if (!profile.handoff.acceptance.includes(condition)) fail(`handoff.acceptance 缺少 ${condition}`);
   return {
     profile_id: profile.profile_id,
     target_user_roles: [...profile.audience.target_user_roles],
@@ -140,6 +174,7 @@ export function assertStrategicCheckpointScope(value, { profile = loadHarnessPro
   for (const unit of [value.next_work_unit, value.stage_trace?.current_work_unit, value.stage_trace?.completed_work_unit]) {
     if (unit != null && !allowed.has(unit)) fail(`strategic-profile-work-unit: ${unit}`);
   }
+  assertStrategicDelivery(value,root);
   const active = new Set();
   const visited = new Set();
   const refs = [...(value.ticket_sync?.refs || [])];

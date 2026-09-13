@@ -444,11 +444,11 @@ work_units:
     scope: project-instance
     input: 批准的 DDD 战略设计、阶段决策包、Spec、页面原型和业务级 Ticket 集。
     output: 面向下游研发团队的战略设计交付包。
-    completion: 来源资产版本当前，交付包 Schema 通过，战略设计交付门禁批准，下游消费者和恢复条件明确。
+    completion: Handoff v5 已批准且来源资产当前；自动生成不可变交付目录，整包 verify 通过，并将 delivery record 与 verification 写入 checkpoint。任一失败保持 blocked；下游接收回执不阻断本工作单元完成。
     public_name: 业务方案交接
     public_input: 批准的业务边界与规则设计、方案决策包、Spec、页面原型和业务级 Ticket 集。
     public_output: 面向下游研发团队的业务方案交接包。
-    public_completion: 来源资产版本当前，交接包 Schema 通过，业务方案交接门禁批准，下游消费者和恢复条件明确。
+    public_completion: Handoff v5 与来源资产已获当前批准；不可变交付目录自动成包并整包验证通过，交付记录已写入 checkpoint。研发接收可异步进行，不阻断本工作单元完成。
   - id: work-unit.slice-implementation
     name: 垂直切片实现
     scope: project-instance

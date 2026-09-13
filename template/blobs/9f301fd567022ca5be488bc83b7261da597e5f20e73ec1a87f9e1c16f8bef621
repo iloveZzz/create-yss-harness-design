@@ -1,7 +1,8 @@
-schema_version: 3
+schema_version: 5
 handoff_id: strategic-design-handoff.<feature>
-handoff_version: v3
+handoff_version: v1
 status: draft
+ui_baseline_kind: prototype
 
 source:
   domain_strategy_ref:
@@ -61,16 +62,40 @@ context_delta:
   updated: []
   deprecated: []
 
-target_context_reconciliation:
-  target_context_ref: CONTEXT.md
-  reconciliation_schema_ref: docs/process/schemas/context-reconciliation.schema.json
-  required_before_skill: yss-technical-design
-  status: pending
-
-target:
-  team: downstream-rd-team
-  skill: yss-technical-design
-  output: technical-design-contract
+consumer_routes:
+  - route_id: route.backend
+    capability: backend-technical-design
+    activation: required
+    impact_refs: [impact_assessment.backend, impact_assessment.api, impact_assessment.data]
+    entry_work_unit: work-unit.technical-design
+    expected_outputs: [technical-design-contract, backend-delivery]
+    dependencies: []
+    context_reconciliation:
+      required: true
+      target_context_ref: CONTEXT.md
+      schema_ref: docs/process/schemas/context-reconciliation.schema.json
+  - route_id: route.frontend
+    capability: frontend-engineering-design
+    activation: required
+    impact_refs: [impact_assessment.frontend, impact_assessment.ui]
+    entry_work_unit: work-unit.frontend-engineering-design
+    expected_outputs: [frontend-strategic-preflight, frontend-engineering-design, frontend-delivery-acceptance]
+    dependencies: [route.backend]
+    context_reconciliation:
+      required: true
+      target_context_ref: CONTEXT.md
+      schema_ref: docs/process/schemas/context-reconciliation.schema.json
+  - route_id: route.coordination
+    capability: delivery-coordination
+    activation: required
+    impact_refs: [impact_assessment.backend, impact_assessment.frontend, impact_assessment.api, impact_assessment.data, impact_assessment.ui]
+    entry_work_unit: work-unit.delivery-coordination
+    expected_outputs: [consumer-status-index, business-acceptance]
+    dependencies: [route.backend, route.frontend]
+    context_reconciliation:
+      required: true
+      target_context_ref: CONTEXT.md
+      schema_ref: docs/process/schemas/context-reconciliation.schema.json
 
 problem_and_business_outcomes:
   - <业务问题、目标和可观测结果>
@@ -108,5 +133,28 @@ acceptance:
   - every-deferred-item-has-owner-next-action-and-target-version
   - no-aggregate-entity-repository-or-api-is-prescribed
 
-# 需要便携导出时按 docs/process/strategic-handoff-package.md 补 package_export。
-# 正式导出必须具备规则稳定 ID、当前批准绑定和离线预览证据；禁止导出占位模板。
+package_export:
+  schema_version: 2
+  ui_baseline_kind: prototype
+  approvals:
+    domain_strategy_ref: {record_ref: <approval-record>, gate_id: <gate-id>, digest_kind: canonical-json}
+    stage_decision_package_ref: {record_ref: <approval-record>, gate_id: <gate-id>, digest_kind: canonical-json}
+    spec_ref: {record_ref: <approval-record>, gate_id: <gate-id>, digest_kind: sha256-bytes}
+    prototype_ref: {record_ref: <approval-record>, gate_id: <gate-id>, digest_kind: sha256-bytes}
+    visual_baseline_ref: {record_ref: <approval-record>, gate_id: <gate-id>, digest_kind: visual-baseline}
+    business_ticket_set_ref: {record_ref: <approval-record>, gate_id: <gate-id>, digest_kind: canonical-json}
+    handoff: {record_ref: <handoff-approval-record>, gate_id: gate.strategic-design-handoff-approved, digest_kind: sha256-bytes}
+  additional_files: []
+  reference_map: {}
+  prototype:
+    profile: H2
+    preview_root: <offline-preview-root>
+    entry_ref: <offline-preview-entry>
+    verification_ref: <offline-verification-record>
+    verification_digest: sha256:<verification-bytes-digest>
+    source_root: <prototype-source-root>
+    lock_ref: <prototype-lock-ref>
+    source_digest: sha256:<prototype-source-tree-digest>
+
+# 批准后由生命周期自动运行 strategic-handoff finalize；输出固定到
+# docs/deliveries/strategic/<handoff-id>/<version>/，不得填写 --output 或覆盖旧版本。

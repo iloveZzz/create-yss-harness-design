@@ -1,6 +1,6 @@
 # 战略设计子项目用户手册
 
-本手册面向产品经理、需求分析师和商务协作者。当前 profile 是 `harness.business-ddd-strategy-handoff`：把用户问题收敛为批准的业务边界、Spec、页面依据、业务级 Ticket 和 Strategic Design Handoff；不设计工程 API，不生成前后端工程，不实施代码。
+本手册面向产品经理、需求分析师和商务协作者。当前 profile 是 `harness.business-ddd-strategy-handoff`：把用户问题收敛为批准的业务边界、Spec、页面依据、业务级 Ticket 和业务方案交接包；不设计工程 API，不生成前后端工程，不实施代码。
 
 ## 创建或接管项目
 
@@ -23,6 +23,19 @@ init 只接受不存在或空目录。attach 和 sync 默认预览，必须带 `
 
 Agent 应区分业务决定、可查证事实和待验证假设。业务语言先登记到根 `CONTEXT.md`；每个工作单元流转前完成当前 `context_reconciliation`。文件存在、聊天同意或历史批准都不能证明当前版本已获批准。
 
+## 业务方案总览
+
+总览只是导航视图，引用下列权威资产的当前状态、未决项和下一步，不复制正文，也不成为新的事实来源：
+
+- 机会与目标：谁遇到了什么问题。
+- 业务故事：事情通常怎样一步步发生。
+- 业务责任区与协作：每一步由谁负责。
+- 规则与例子：有哪些规则、例外。
+- Spec：确认的范围、行为和验收。
+- 页面验证：用哪些例子和证据证明结果正确。
+- 业务级 Ticket：哪一小段可以独立交付；本仓只形成业务级范围，不创建技术切片。
+- 业务方案交接：将已批准资产和待决问题交给研发团队。
+
 ## 本仓操作主线
 
 `机会与目标 → 业务故事与责任边界 → 规则与反例 → Spec → UI 依据 → 业务级 Ticket → 批准交接`
@@ -39,7 +52,7 @@ Agent 应区分业务决定、可查证事实和待验证假设。业务语言�
 
 ```sh
 node scripts/preflight-delivery --input <战略预检输入.json> --stage export --json
-node scripts/strategic-handoff export --source-root . --handoff <交接描述相对路径> --output <新包目录> --preflight-input <战略预检输入.json> --zip
+node scripts/strategic-handoff finalize --source-root . --handoff <Handoff-v5相对路径> --preflight-input <战略预检输入.json> --zip
 node scripts/strategic-handoff verify --bundle <包目录或ZIP>
 ```
 
@@ -51,7 +64,7 @@ node scripts/strategic-handoff verify --bundle <包目录或ZIP>
 
 本仓完成时应同时满足：
 
-- Strategic Design Handoff 已由当前批准资产生成并通过本轮验证。
+- 业务方案交接包已由当前批准资产生成并通过本轮验证。
 - 交接包含根词汇快照、规则/场景、UI 依据、业务 Ticket 和下游待决项。
 - 没有越界生成 OpenAPI、技术 Ticket、Slice Contract 或运行时代码。
 - 结论只写“战略可交接”，不写“产品完成”或“可发布”。

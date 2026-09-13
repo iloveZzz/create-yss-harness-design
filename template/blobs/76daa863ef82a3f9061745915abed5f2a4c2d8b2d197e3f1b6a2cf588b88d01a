@@ -62,8 +62,9 @@ const snapshot = JSON.parse(snapshotResult.stdout).context_snapshot;
 const supplier = { term_ref: "Global/Supplier", term: "供应商", meaning: "提供产品或服务的主体", english_identifier: "Supplier", context_id: "Global", forbidden_aliases: [] };
 const decision = { term_ref: "ComplianceReview/AdmissionDecision", term: "准入结论", meaning: "合规审查的准入结果", english_identifier: "AdmissionDecision", context_id: "ComplianceReview", forbidden_aliases: [] };
 const sourceRef = (id, file) => ({ id, version: "v2", digest: `sha256:${id}`, status: "approved", persisted_ref: `docs/assets/${file}` });
+const route = (route_id, capability, entry_work_unit, expected_outputs, dependencies = []) => ({ route_id, capability, activation: "required", impact_refs: ["impact_assessment.ui"], entry_work_unit, expected_outputs, dependencies, context_reconciliation: { required: true, target_context_ref: "CONTEXT.md", schema_ref: "docs/process/schemas/context-reconciliation.schema.json" } });
 const valid = {
-  schema_version: 3, handoff_id: "strategic-design-handoff.supplier", handoff_version: "v3", status: "approved",
+  schema_version: 5, handoff_id: "strategic-design-handoff.supplier", handoff_version: "v1", status: "approved", ui_baseline_kind: "prototype",
   source: {
     domain_strategy_ref: sourceRef("domain", "domain.yaml"), stage_decision_package_ref: sourceRef("stage", "stage.yaml"),
     spec_ref: sourceRef("spec", "spec.md"), prototype_ref: sourceRef("prototype", "prototype.html"),
@@ -72,8 +73,11 @@ const valid = {
   },
   source_context_snapshot: snapshot,
   context_delta: { added: [supplier, decision], updated: [], deprecated: [] },
-  target_context_reconciliation: { target_context_ref: "CONTEXT.md", reconciliation_schema_ref: "docs/process/schemas/context-reconciliation.schema.json", required_before_skill: "yss-tactical-design", status: "pending" },
-  target: { team: "downstream-rd-team", skill: "yss-tactical-design", output: "tactical-design-contract" },
+  consumer_routes: [
+    route("route.backend", "backend-technical-design", "work-unit.technical-design", ["technical-design-contract", "backend-delivery"]),
+    route("route.frontend", "frontend-engineering-design", "work-unit.frontend-engineering-design", ["frontend-strategic-preflight"], ["route.backend"]),
+    route("route.coordination", "delivery-coordination", "work-unit.delivery-coordination", ["consumer-status-index"], ["route.backend", "route.frontend"])
+  ],
   problem_and_business_outcomes: ["供应商准入可审查"], bounded_context_and_subdomain_map: ["ComplianceReview"], context_map_and_translation_responsibility: ["合规上下文拥有准入规则"],
   ubiquitous_language_and_concept_candidates: ["Global/Supplier"], scenarios_and_business_invariants: ["未通过审查不得准入"], tactical_design_questions: ["准入状态的一致性边界"],
   deferred_decisions_and_ownership: [], evidence_and_version_digests: ["docs/assets/evidence.md"], acceptance: ["target-context-reconciliation-is-required-before-tactical-design"]
@@ -85,9 +89,9 @@ function verify(name, value, expected, pattern) {
   if (result.status !== expected || (pattern && !pattern.test(`${result.stdout}${result.stderr}`))) throw new Error(`${name} unexpected\n${result.stdout}${result.stderr}`);
 }
 verify("valid", valid, 0);
-verify("v2", { ...valid, schema_version: 2 }, 1, /migration-required/);
+verify("v4", { ...valid, schema_version: 4 }, 1, /migration-required/);
 verify("stale", { ...valid, source_context_snapshot: { ...snapshot, document_digest: "sha256:stale" } }, 1, /document_digest|pattern/);
 verify("unknown-delta", { ...valid, context_delta: { added: [{ ...decision, term_ref: "ComplianceReview/Unknown", english_identifier: "Unknown" }], updated: [], deprecated: [] } }, 1, /无法解析/);
 verify("changed-meaning", { ...valid, context_delta: { added: [{ ...supplier, meaning: "错误含义" }], updated: [], deprecated: [] } }, 1, /不一致/);
-verify("target-bypass", { ...valid, target_context_reconciliation: { ...valid.target_context_reconciliation, status: "completed" } }, 1, /pending/);
-process.stdout.write("Strategic Design Handoff v3 scenarios passed\n");
+verify("target-bypass", { ...valid, consumer_routes: valid.consumer_routes.map((item,index)=>index===0?{...item,context_reconciliation:{...item.context_reconciliation,required:false}}:item) }, 1, /True|true/);
+process.stdout.write("Strategic Design Handoff v5 scenarios passed\n");

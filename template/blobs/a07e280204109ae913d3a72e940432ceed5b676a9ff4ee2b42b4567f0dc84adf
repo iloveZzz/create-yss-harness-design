@@ -35,8 +35,8 @@ try {
   if (positionals.length !== 1) throw new TypeError("用法: scripts/verify-strategic-design-handoff [--root <repo>] <handoff.yaml|json>");
   const root = path.resolve(values.root);
   const value = parseFile(path.resolve(positionals[0]));
-  if ([1, 2].includes(value.schema_version)) {
-    const error = new TypeError(`migration-required: Strategic Design Handoff v${value.schema_version} 是只读历史资产；在途 UI 交接必须补齐 Visual Baseline 后升级 v3`);
+  if ([1, 2, 3, 4].includes(value.schema_version)) {
+    const error = new TypeError(`migration-required: Strategic Design Handoff v${value.schema_version} 是只读历史资产；修改或重新交付必须迁移到 Handoff v5 并重新批准`);
     error.code = "migration-required";
     throw error;
   }
@@ -74,7 +74,7 @@ try {
     if (!evidence.startsWith(`${root}${path.sep}`) || !existsSync(evidence)) throw new TypeError(`交接证据不可读或越界: ${ref}`);
   }
   if (value.package_export) await inspectSource(root, path.relative(root, path.resolve(positionals[0])).split(path.sep).join("/"));
-  process.stdout.write("Strategic Design Handoff v3 验证通过\n");
+  process.stdout.write("Strategic Design Handoff v5 验证通过\n");
 } catch (error) {
   process.stderr.write(`Strategic Design Handoff 验证失败: ${error.message}\n`);
   process.exitCode = 1;

@@ -44,7 +44,7 @@ profile_registry:
   downstream_skill: yss-technical-design
   handoff_template: docs/templates/strategic-design-handoff-template.yaml
   handoff_schema: docs/process/schemas/strategic-design-handoff.schema.json
-  handoff_schema_version: 2
+  handoff_schema_version: 5
   handoff_context_contract: {source_snapshot: required, context_delta: required, target_reconciliation_before_tactical_design: required}
   allowed_local_work_units: [work-unit.plan-opportunity, work-unit.plan-requirements, work-unit.domain-strategy-design, work-unit.stage-decision, work-unit.spec-synthesis, work-unit.prototype-design, work-unit.business-ticket-formalization, work-unit.strategic-design-handoff]
   forbidden_local_work_units: [work-unit.technical-analysis, work-unit.ticket-decomposition, work-unit.slice-implementation, work-unit.frontend-implementation-verification, work-unit.code-review, work-unit.release-and-retrospective]
@@ -127,7 +127,7 @@ workflow_execution_result:
     work-unit.business-ticket-formalization:
       completed_requires: [business_ticket_set_ref]
     work-unit.strategic-design-handoff:
-      completed_requires: [strategic_design_handoff_ref]
+      completed_requires: [strategic_design_handoff_ref, strategic_delivery_record_ref, strategic_delivery_verification_ref]
       handoff_validator: scripts/verify-strategic-design-handoff
       handoff_schema_version: 2
 
@@ -268,6 +268,14 @@ work_unit_routes:
     supporting_skills: []
     skills: [yss-strategic-design]
     human_gate: strategic-design-handoff-approved
+    post_approval_action:
+      command: scripts/strategic-handoff finalize --source-root <project-root> --handoff <approved-v5-ref>
+      output_root: docs/deliveries/strategic/<handoff-id>/<version>
+      checkpoint_artifact: artifact.strategic-design-handoff
+      checkpoint_evidence: [delivery-record.json, verification.json]
+      checkpoint_verification: verification.strategic_delivery
+      failure_status: blocked
+      receiver_receipt_required: false
     applies_when: strategic_inputs_ready_for_downstream
     not_applicable_reason: strategic_inputs_incomplete
   work-unit.technical-analysis:

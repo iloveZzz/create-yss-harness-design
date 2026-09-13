@@ -68,6 +68,8 @@ function validateInvocationBoundary(data) {
   const stageDecisionResearch = routes?.["work-unit.stage-decision"]?.research_contract;
   ensure(routes?.["work-unit.stage-decision"]?.skills?.includes("yss-research") && stageDecisionResearch?.profile === "strategy-evidence" && stageDecisionResearch.mode_before_gate === "evidence-audited" && stageDecisionResearch.artifact_owner === "yss-research" && stageDecisionResearch.downstream_owner === "yss-stage-decision", "阶段决策工作单元缺少 evidence-audited 战略研究合同");
   ensure(routes?.["work-unit.business-ticket-formalization"]?.native?.skill === "yss-strategic-design" && routes?.["work-unit.business-ticket-formalization"]?.compatibility?.skill === "to-tickets", "业务 Ticket 正式化未绑定战略编排与兼容入口");
+  const finalize=routes?.["work-unit.strategic-design-handoff"]?.post_approval_action;
+  ensure(finalize?.command?.startsWith('scripts/strategic-handoff finalize ')&&finalize?.output_root==='docs/deliveries/strategic/<handoff-id>/<version>'&&finalize?.checkpoint_artifact==='artifact.strategic-design-handoff'&&includesAll(finalize?.checkpoint_evidence,['delivery-record.json','verification.json'])&&finalize?.checkpoint_verification==='verification.strategic_delivery'&&finalize?.failure_status==='blocked'&&finalize?.receiver_receipt_required===false,'战略交接批准后自动成包与 checkpoint 闭环缺失');
   ensure(routes?.["work-unit.slice-implementation"]?.downstream === true && routes?.["work-unit.technical-analysis"]?.downstream === true, "下游技术工作单元未明确标记为 downstream");
   for (const id of ["work-unit.spec-synthesis", "work-unit.prototype-design", "work-unit.business-ticket-formalization"]) {
     ensure(routes?.[id]?.native?.source === "yss-strategic-design", `${id} 未绑定战略编排器`);
@@ -267,7 +269,7 @@ export function runScenario(name) {
       business_ticket_set_ref: "docs/.scratch/demo/issues",
     };
     validateWorkflowExecutionResult(validBusinessTicketResult, data.workflow_execution_result, data.work_unit_routes, { root: planFixture.root });
-    const validHandoffResult = { ...validBusinessTicketResult, work_unit: "work-unit.strategic-design-handoff", next_route: null, strategic_design_handoff_ref: "docs/templates/strategic-design-handoff-template.yaml" };
+    const validHandoffResult = { ...validBusinessTicketResult, work_unit: "work-unit.strategic-design-handoff", next_route: null, strategic_design_handoff_ref: "docs/templates/strategic-design-handoff-template.yaml", strategic_delivery_record_ref: "docs/process/schemas/strategic-handoff-delivery.schema.json", strategic_delivery_verification_ref: "docs/process/schemas/strategic-handoff-delivery-verification.schema.json" };
     validateWorkflowExecutionResult(validHandoffResult, data.workflow_execution_result, data.work_unit_routes, { root: planFixture.root });
     const unavailableResult = structuredClone(validResult);
     unavailableResult.result = "blocked";
