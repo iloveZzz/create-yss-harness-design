@@ -1,6 +1,6 @@
 ---
 name: image-to-code
-description: "Render a selected visual target as an H1/H2 review prototype under yss-prototype-stage; production frontend implementation belongs to the downstream development project."
+description: "Implement a selected image, screenshot or mockup as a responsive frontend after confirming the design brief."
 ---
 
 # Image to Code

@@ -38,6 +38,8 @@ README、用户指南和 `CLAUDE.md` 只解释或指向上述事实，不定义�
 
 ## 4. `template-source` 维护
 
+在用户已授权的模板维护范围内，继续完成受影响 Skill、投影、锁文件和分发快照的同步与适用验证；按当前影响面读取文档。首次编辑完成不等于交付完成。只有新增决定、缺失必要输入或命中既有审批边界时才暂停；提交、推送、发布仍按本仓授权规则执行。
+
 - 创建、修改或退役 skill 时使用 `maintaining-skills`，维护强度和证据以裁剪文档为准；日常停在 `implementation-ready`，发布前执行完整门禁。
 - `.agents/skills` 是共享技能权威内容；`.codex/skills`、`.cursor/skills`、`.pi/skills` 是生成投影，不得分别手改。
 - 依次使用 `scripts/verify-template-fast`、显式候选时的 `scripts/verify-template-candidate` 和发布前不可裁剪的 `scripts/verify-template`。未完成 `create-yss-harness-design` 快照同步及生成实例验证，不得宣称可发布；不得绑定 `create-yss-spec`。
