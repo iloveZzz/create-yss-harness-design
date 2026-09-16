@@ -6,7 +6,7 @@
   "metadataFile": ".yss-harness-design.json",
   "templateName": "yss-harness-design-agent",
   "templateSource": "github:iloveZzz/yss-harness-design-agent",
-  "templateCommit": "fd7561bdf6c19540621f7a29a0a5f153998eedde",
+  "templateCommit": "fa294bf74b9a5225861b9b92288797b28f8ad1ac",
   "sourceState": "committed",
   "manifestHash": "525107ebb51bfdef74f8d61c9cbe7c04d645d01d49b48bc00912cafffa27921a",
   "files": {
@@ -30,9 +30,9 @@
     },
     ".agents/skills/code-review/SKILL.md": {
       "type": "file",
-      "digest": "c610959a98f6a2bccbcadf3482bbc15ecbe1847ac028505eb648a7fe6e76bd62",
+      "digest": "42c727d746969be1bccaaf6ae4ee9ab4606b8553105536e1b5d86ba9c6ac6f93",
       "mode": 420,
-      "blob": "blobs/c610959a98f6a2bccbcadf3482bbc15ecbe1847ac028505eb648a7fe6e76bd62"
+      "blob": "blobs/42c727d746969be1bccaaf6ae4ee9ab4606b8553105536e1b5d86ba9c6ac6f93"
     },
     ".agents/skills/code-review/agents/openai.yaml": {
       "type": "file",
@@ -834,9 +834,9 @@
     },
     ".codex/skills/code-review/SKILL.md": {
       "type": "file",
-      "digest": "c610959a98f6a2bccbcadf3482bbc15ecbe1847ac028505eb648a7fe6e76bd62",
+      "digest": "42c727d746969be1bccaaf6ae4ee9ab4606b8553105536e1b5d86ba9c6ac6f93",
       "mode": 420,
-      "blob": "blobs/c610959a98f6a2bccbcadf3482bbc15ecbe1847ac028505eb648a7fe6e76bd62"
+      "blob": "blobs/42c727d746969be1bccaaf6ae4ee9ab4606b8553105536e1b5d86ba9c6ac6f93"
     },
     ".codex/skills/code-review/agents/openai.yaml": {
       "type": "file",
@@ -1968,9 +1968,9 @@
     },
     ".cursor/skills/code-review/SKILL.md": {
       "type": "file",
-      "digest": "c610959a98f6a2bccbcadf3482bbc15ecbe1847ac028505eb648a7fe6e76bd62",
+      "digest": "42c727d746969be1bccaaf6ae4ee9ab4606b8553105536e1b5d86ba9c6ac6f93",
       "mode": 420,
-      "blob": "blobs/c610959a98f6a2bccbcadf3482bbc15ecbe1847ac028505eb648a7fe6e76bd62"
+      "blob": "blobs/42c727d746969be1bccaaf6ae4ee9ab4606b8553105536e1b5d86ba9c6ac6f93"
     },
     ".cursor/skills/code-review/agents/openai.yaml": {
       "type": "file",
@@ -2784,9 +2784,9 @@
     },
     ".pi/skills/code-review/SKILL.md": {
       "type": "file",
-      "digest": "c610959a98f6a2bccbcadf3482bbc15ecbe1847ac028505eb648a7fe6e76bd62",
+      "digest": "42c727d746969be1bccaaf6ae4ee9ab4606b8553105536e1b5d86ba9c6ac6f93",
       "mode": 420,
-      "blob": "blobs/c610959a98f6a2bccbcadf3482bbc15ecbe1847ac028505eb648a7fe6e76bd62"
+      "blob": "blobs/42c727d746969be1bccaaf6ae4ee9ab4606b8553105536e1b5d86ba9c6ac6f93"
     },
     ".pi/skills/code-review/agents/openai.yaml": {
       "type": "file",
@@ -3598,6 +3598,12 @@
       "mode": 420,
       "blob": "blobs/57efc8350791c404f23405a383a82726ab78fc1174251b1906e3e85449514fd9"
     },
+    "docs/agents/backend-architecture-profiles.md": {
+      "type": "file",
+      "digest": "707332bdad6213e6e9889745e7a3f811c20c2a5324354280578eac11a100dff9",
+      "mode": 420,
+      "blob": "blobs/707332bdad6213e6e9889745e7a3f811c20c2a5324354280578eac11a100dff9"
+    },
     "docs/agents/digital-human-roles.md": {
       "type": "file",
       "digest": "bfcb94735a7490a7005499d0956561eb84edca944fe70085f6c33d9c1b04cfff",
@@ -3808,6 +3814,18 @@
       "mode": 420,
       "blob": "blobs/38132db701cd1e9793b6320baba20645a2cf577edc75b25aadb211f65bf05767"
     },
+    "docs/engineering/backend-platforms.json": {
+      "type": "file",
+      "digest": "8079bbbaa4cd7bfbcd8d42d60002a4527d2dbda8c8a6a781466a9313e6e38325",
+      "mode": 420,
+      "blob": "blobs/8079bbbaa4cd7bfbcd8d42d60002a4527d2dbda8c8a6a781466a9313e6e38325"
+    },
+    "docs/engineering/backend-platforms.md": {
+      "type": "file",
+      "digest": "c0f8b803a083ad8dfd8904db36e17cab2edcf011f52709879cd6b013ff30e025",
+      "mode": 420,
+      "blob": "blobs/c0f8b803a083ad8dfd8904db36e17cab2edcf011f52709879cd6b013ff30e025"
+    },
     "docs/plan/IDEATION.md": {
       "type": "file",
       "digest": "4c1398703b7d5ebd693a8570567ac2c07064880fe54e6ef45b7b4338fa23bfb0",
@@ -3954,9 +3972,9 @@
     },
     "docs/process/schemas/backend-architecture-identity.schema.json": {
       "type": "file",
-      "digest": "76920050da031a76f7cf97db9bb0b916fa818d40c78bbdfa397f41b06249a950",
+      "digest": "befc5ecc83d983a774ff66f89ffc8b3e1e2f956f600b51c09ce26c7181b90c00",
       "mode": 420,
-      "blob": "blobs/76920050da031a76f7cf97db9bb0b916fa818d40c78bbdfa397f41b06249a950"
+      "blob": "blobs/befc5ecc83d983a774ff66f89ffc8b3e1e2f956f600b51c09ce26c7181b90c00"
     },
     "docs/process/schemas/backend-delivery-verification.schema.json": {
       "type": "file",
@@ -4032,15 +4050,33 @@
     },
     "docs/process/schemas/lifecycle-checkpoint.schema.json": {
       "type": "file",
-      "digest": "f5df1728017fec2353f1547b07f536a746144b7fe07a0df1f7c03644efba008b",
+      "digest": "f6882ed25b679c918b8f5e0a1ea07546f0d068ac04f8a08e9a2851b40c74fe72",
       "mode": 420,
-      "blob": "blobs/f5df1728017fec2353f1547b07f536a746144b7fe07a0df1f7c03644efba008b"
+      "blob": "blobs/f6882ed25b679c918b8f5e0a1ea07546f0d068ac04f8a08e9a2851b40c74fe72"
     },
     "docs/process/schemas/lifecycle-registry.schema.json": {
       "type": "file",
       "digest": "871190914f9dff7d0f672e0f724b255174b24a03438cdd57fd02ade6123a24dc",
       "mode": 420,
       "blob": "blobs/871190914f9dff7d0f672e0f724b255174b24a03438cdd57fd02ade6123a24dc"
+    },
+    "docs/process/schemas/project-scaffold-contract.schema.json": {
+      "type": "file",
+      "digest": "5295d6d428306db2d64161071789f4977f7ce9c7f9524ba0f5ce595284c98163",
+      "mode": 420,
+      "blob": "blobs/5295d6d428306db2d64161071789f4977f7ce9c7f9524ba0f5ce595284c98163"
+    },
+    "docs/process/schemas/scaffold-architecture-decisions.schema.json": {
+      "type": "file",
+      "digest": "094b14170e142da038b2d963fe9d8af4ccf1aebdde862666f3185850afa0c39b",
+      "mode": 420,
+      "blob": "blobs/094b14170e142da038b2d963fe9d8af4ccf1aebdde862666f3185850afa0c39b"
+    },
+    "docs/process/schemas/slice-implementation-contract-v3.schema.json": {
+      "type": "file",
+      "digest": "9b82763d7a5a05a73829a829d10870651a899ae26482dc003ffed81fd1743343",
+      "mode": 420,
+      "blob": "blobs/9b82763d7a5a05a73829a829d10870651a899ae26482dc003ffed81fd1743343"
     },
     "docs/process/schemas/strategic-consumer-feedback.schema.json": {
       "type": "file",
@@ -4330,6 +4366,12 @@
       "mode": 493,
       "blob": "blobs/c1da64e120f6b8327d136d1bdd7c74fd033a1a4b817f0da36ecc37449dd949bc"
     },
+    "scripts/backend-platforms": {
+      "type": "file",
+      "digest": "2ec7281f0fab72216812713939aea324dd27fbec9027ba09ba6b5707f5e9c444",
+      "mode": 493,
+      "blob": "blobs/2ec7281f0fab72216812713939aea324dd27fbec9027ba09ba6b5707f5e9c444"
+    },
     "scripts/export-yss-skills": {
       "type": "file",
       "digest": "2a0ed7e29d31a463826e0ee4d93d9fb27d34cc7ae60259d8de72a350fb80d820",
@@ -4341,6 +4383,18 @@
       "digest": "7ab170812bf68927fb88e10b193feffcaa3123a685504b89b69652cbc7ef2469",
       "mode": 420,
       "blob": "blobs/7ab170812bf68927fb88e10b193feffcaa3123a685504b89b69652cbc7ef2469"
+    },
+    "scripts/fixtures/backend-scaffold/design-prerequisites.mjs": {
+      "type": "file",
+      "digest": "38e783e7bd8a85709d671436bb6f0d0184790cb35c2fb6b2df001a71d4f88685",
+      "mode": 420,
+      "blob": "blobs/38e783e7bd8a85709d671436bb6f0d0184790cb35c2fb6b2df001a71d4f88685"
+    },
+    "scripts/fixtures/backend-scaffold/platform-fixture.mjs": {
+      "type": "file",
+      "digest": "0a7c73480e6af80c015011b619c2a2d4f55e074d9dbe1695340b64a1485e43c1",
+      "mode": 420,
+      "blob": "blobs/0a7c73480e6af80c015011b619c2a2d4f55e074d9dbe1695340b64a1485e43c1"
     },
     "scripts/fixtures/delivery-preflight/approved-execution-fixture.mjs": {
       "type": "file",
@@ -4428,21 +4482,39 @@
     },
     "scripts/lib/approved-execution-context.mjs": {
       "type": "file",
-      "digest": "22f325c9cd704b24b5b7c633283291e08e510fa63232005c80581faf4e97ed59",
+      "digest": "dbbf64a893091e582f815c3951c32a34b78db4394f4fb949f7f49af7bf70fc56",
       "mode": 420,
-      "blob": "blobs/22f325c9cd704b24b5b7c633283291e08e510fa63232005c80581faf4e97ed59"
+      "blob": "blobs/dbbf64a893091e582f815c3951c32a34b78db4394f4fb949f7f49af7bf70fc56"
     },
     "scripts/lib/backend-architecture.mjs": {
       "type": "file",
-      "digest": "c7dac2b3596458eea599cfdd6e6cfae4a009eaf61ba6bc41d35359c52da35073",
+      "digest": "ea9903fd7e05946ffd4c6fef2173ff778d47d5ea1bb746e0a3e80b37365ae5e8",
       "mode": 420,
-      "blob": "blobs/c7dac2b3596458eea599cfdd6e6cfae4a009eaf61ba6bc41d35359c52da35073"
+      "blob": "blobs/ea9903fd7e05946ffd4c6fef2173ff778d47d5ea1bb746e0a3e80b37365ae5e8"
     },
     "scripts/lib/backend-delivery.mjs": {
       "type": "file",
       "digest": "aa19ae7200a44adb2f7ff8aab33cc6de721a4cd5f3e4f4440a63f9caa2f78c8f",
       "mode": 420,
       "blob": "blobs/aa19ae7200a44adb2f7ff8aab33cc6de721a4cd5f3e4f4440a63f9caa2f78c8f"
+    },
+    "scripts/lib/backend-platform-provenance.mjs": {
+      "type": "file",
+      "digest": "b75b6fb52f88ebff1db78460ec1347c6a30173a41580c6af407a2511984c2386",
+      "mode": 420,
+      "blob": "blobs/b75b6fb52f88ebff1db78460ec1347c6a30173a41580c6af407a2511984c2386"
+    },
+    "scripts/lib/backend-platform-verification.mjs": {
+      "type": "file",
+      "digest": "c09407e61e15a02b7f7b110e4bfcc1dbad42591ef2fe24d987cdbc8a0b88f609",
+      "mode": 420,
+      "blob": "blobs/c09407e61e15a02b7f7b110e4bfcc1dbad42591ef2fe24d987cdbc8a0b88f609"
+    },
+    "scripts/lib/backend-platform.mjs": {
+      "type": "file",
+      "digest": "32f23a5d48a79877a325cfdb8c751afbbd5584b94b1ee717db14b33f4a606aad",
+      "mode": 420,
+      "blob": "blobs/32f23a5d48a79877a325cfdb8c751afbbd5584b94b1ee717db14b33f4a606aad"
     },
     "scripts/lib/command-runner.mjs": {
       "type": "file",
@@ -4462,11 +4534,17 @@
       "mode": 420,
       "blob": "blobs/0a212410b3bfe7a0c881ad05bfa64629fa36bf6c2d2fa6fd3d844f1f22770997"
     },
+    "scripts/lib/decision-continuation.mjs": {
+      "type": "file",
+      "digest": "fbd544e0468ef7df19e6e69e33fd39d9fd419fc785ef606ec82f45edca9b70c1",
+      "mode": 420,
+      "blob": "blobs/fbd544e0468ef7df19e6e69e33fd39d9fd419fc785ef606ec82f45edca9b70c1"
+    },
     "scripts/lib/delivery-preflight.mjs": {
       "type": "file",
-      "digest": "92c6c7358299742097b9af29c875e2e0b0971f02795634fe5c64caae09ab7e75",
+      "digest": "421cb007073b1734edd16ebe5051a0341274cc64b57feb4e0d6a08a31698bf63",
       "mode": 420,
-      "blob": "blobs/92c6c7358299742097b9af29c875e2e0b0971f02795634fe5c64caae09ab7e75"
+      "blob": "blobs/421cb007073b1734edd16ebe5051a0341274cc64b57feb4e0d6a08a31698bf63"
     },
     "scripts/lib/digital-human-roles.mjs": {
       "type": "file",
@@ -4500,9 +4578,9 @@
     },
     "scripts/lib/frontend-delivery-boundary.mjs": {
       "type": "file",
-      "digest": "436fc1286c6ce62d5559631b08892130b48e853dc2476c66f8827ae6e9f65527",
+      "digest": "270e947d16ea3f19a3e1afe2aecd50e9bf2eea2104c0f11caf7a01d3e2d8c060",
       "mode": 420,
-      "blob": "blobs/436fc1286c6ce62d5559631b08892130b48e853dc2476c66f8827ae6e9f65527"
+      "blob": "blobs/270e947d16ea3f19a3e1afe2aecd50e9bf2eea2104c0f11caf7a01d3e2d8c060"
     },
     "scripts/lib/frontend-delivery.mjs": {
       "type": "file",
@@ -4576,6 +4654,12 @@
       "mode": 420,
       "blob": "blobs/1f93c512ee318ed5e3df70cc5e24ab471136a66f66d2041b0e8313a65dcde514"
     },
+    "scripts/lib/scaffold-local-database.mjs": {
+      "type": "file",
+      "digest": "66d47c11698b36ff57e4f37577c6f83ea3a6590f4b9ab6862833bd991fde3662",
+      "mode": 420,
+      "blob": "blobs/66d47c11698b36ff57e4f37577c6f83ea3a6590f4b9ab6862833bd991fde3662"
+    },
     "scripts/lib/scenario-checks.mjs": {
       "type": "file",
       "digest": "ac9f93fe736b842f99188aecc778eb24ed62cb49960c15a3133c95d8422b12ef",
@@ -4599,6 +4683,24 @@
       "digest": "b0f965b98081c66a256945a8458374b49673e94f25b8ef9003225fe7f6176589",
       "mode": 420,
       "blob": "blobs/b0f965b98081c66a256945a8458374b49673e94f25b8ef9003225fe7f6176589"
+    },
+    "scripts/lib/slice-applicability.mjs": {
+      "type": "file",
+      "digest": "c899fd31a39e3a4237a4a21e13c5fa718b319b792b6365b23b602cf792281e1c",
+      "mode": 420,
+      "blob": "blobs/c899fd31a39e3a4237a4a21e13c5fa718b319b792b6365b23b602cf792281e1c"
+    },
+    "scripts/lib/slice-contract.mjs": {
+      "type": "file",
+      "digest": "96de1dbd8b7f7b1d80a054c20bfc50d8589f018351def5ee408a94bef206605a",
+      "mode": 420,
+      "blob": "blobs/96de1dbd8b7f7b1d80a054c20bfc50d8589f018351def5ee408a94bef206605a"
+    },
+    "scripts/lib/slice-repositories.mjs": {
+      "type": "file",
+      "digest": "af928eaf769ca7714dd47bc49b665ab43470d6b53618baac5fecd0db9fc2645c",
+      "mode": 420,
+      "blob": "blobs/af928eaf769ca7714dd47bc49b665ab43470d6b53618baac5fecd0db9fc2645c"
     },
     "scripts/lib/strategic-feedback.mjs": {
       "type": "file",
@@ -4638,9 +4740,9 @@
     },
     "scripts/lib/strategic-handoff.mjs": {
       "type": "file",
-      "digest": "731aac05b79d64860d8b41d0059f298c441c23936715cb3677c7db1e6b73c02b",
+      "digest": "db15ec4c52b660cb991c35eb868100a3e5e126d40dc4769212f9748253834591",
       "mode": 420,
-      "blob": "blobs/731aac05b79d64860d8b41d0059f298c441c23936715cb3677c7db1e6b73c02b"
+      "blob": "blobs/db15ec4c52b660cb991c35eb868100a3e5e126d40dc4769212f9748253834591"
     },
     "scripts/lib/task-package.mjs": {
       "type": "file",
@@ -4662,15 +4764,15 @@
     },
     "scripts/lib/user-decision-reuse.mjs": {
       "type": "file",
-      "digest": "13117dcaa2af7db11aa1ec094c8a5ce1369821033d62a17e6d73024c78411f34",
+      "digest": "c00e11c2caf9a727c018d4c4caa482b43ae66bd53ecbffea50b5964b55377d36",
       "mode": 420,
-      "blob": "blobs/13117dcaa2af7db11aa1ec094c8a5ce1369821033d62a17e6d73024c78411f34"
+      "blob": "blobs/c00e11c2caf9a727c018d4c4caa482b43ae66bd53ecbffea50b5964b55377d36"
     },
     "scripts/lib/user-decision.mjs": {
       "type": "file",
-      "digest": "62ff6f09cd6a70914794d6c9dfecbe8a03398523e44617157032b4436690017a",
+      "digest": "68f061fa738ed6ec7830627a3b103dbe4bf7ee768152e65733682344ac0d18bd",
       "mode": 420,
-      "blob": "blobs/62ff6f09cd6a70914794d6c9dfecbe8a03398523e44617157032b4436690017a"
+      "blob": "blobs/68f061fa738ed6ec7830627a3b103dbe4bf7ee768152e65733682344ac0d18bd"
     },
     "scripts/node-generate-lifecycle-artifacts.mjs": {
       "type": "file",
@@ -4686,9 +4788,9 @@
     },
     "scripts/preflight-delivery": {
       "type": "file",
-      "digest": "a212fea3a1bfd758d1e18b1e5a76bb48e4f954d9b07843d8761bbbcccbd87bbb",
+      "digest": "cd83fa432847207b7167cfb5434846baff7615d5f2ffc33c7e9d4779c419f68f",
       "mode": 493,
-      "blob": "blobs/a212fea3a1bfd758d1e18b1e5a76bb48e4f954d9b07843d8761bbbcccbd87bbb"
+      "blob": "blobs/cd83fa432847207b7167cfb5434846baff7615d5f2ffc33c7e9d4779c419f68f"
     },
     "scripts/query-lifecycle-context": {
       "type": "file",
@@ -4930,6 +5032,12 @@
       "mode": 420,
       "blob": "blobs/50186fa4c660dd9c2a6793ee05d88f91bc600190ff7d856b384698cff1b27a1d"
     },
+    "scripts/verify-scaffold-architecture-decisions": {
+      "type": "file",
+      "digest": "32baba252d070fd9f737ca569f78b3b529f96c78e8f2b9be9152592095543a6d",
+      "mode": 493,
+      "blob": "blobs/32baba252d070fd9f737ca569f78b3b529f96c78e8f2b9be9152592095543a6d"
+    },
     "scripts/verify-skill-governance": {
       "type": "file",
       "digest": "14e9bbb385cef043963131949a0c35210335430905f9d9038ad456053a5f0e08",
@@ -5028,9 +5136,9 @@
     },
     "skills-lock.json": {
       "type": "file",
-      "digest": "8a391ee9f31d582ea39f96332091f85e59b5d7d045046f04b515d3cdc75cd592",
+      "digest": "48e89358dbde85bccae3cbd1a69942e7d8e344c26f5dfaac38556c30d05c8b36",
       "mode": 420,
-      "blob": "blobs/8a391ee9f31d582ea39f96332091f85e59b5d7d045046f04b515d3cdc75cd592"
+      "blob": "blobs/48e89358dbde85bccae3cbd1a69942e7d8e344c26f5dfaac38556c30d05c8b36"
     },
     "yss-project.yaml": {
       "type": "file",
@@ -7223,6 +7331,11 @@
   },
   "retiredFilesHash": "b3f82d74fbd2272a86d0816e9bae0fffa0882052bf31dc98c6f70bbe15b031dc",
   "transitionBaselines": {
+    ".agents/skills/code-review/SKILL.md": {
+      "type": "file",
+      "digest": "c610959a98f6a2bccbcadf3482bbc15ecbe1847ac028505eb648a7fe6e76bd62",
+      "mode": 420
+    },
     ".agents/skills/llm-wiki/SKILL.md": {
       "type": "file",
       "digest": "159973952d2640a52da4595e08c73d20de72cab3e04fa592e9b2c3845f02a0f6",
@@ -7336,6 +7449,11 @@
     ".agents/skills/yss-strategic-design/references/orchestration.md": {
       "type": "file",
       "digest": "562f11f87985e05809eedb62c300b033e053a50fa14307cdaa70c4dcb57d46ff",
+      "mode": 420
+    },
+    ".codex/skills/code-review/SKILL.md": {
+      "type": "file",
+      "digest": "c610959a98f6a2bccbcadf3482bbc15ecbe1847ac028505eb648a7fe6e76bd62",
       "mode": 420
     },
     ".codex/skills/llm-wiki/SKILL.md": {
@@ -7498,6 +7616,11 @@
       "digest": "562f11f87985e05809eedb62c300b033e053a50fa14307cdaa70c4dcb57d46ff",
       "mode": 420
     },
+    ".cursor/skills/code-review/SKILL.md": {
+      "type": "file",
+      "digest": "c610959a98f6a2bccbcadf3482bbc15ecbe1847ac028505eb648a7fe6e76bd62",
+      "mode": 420
+    },
     ".cursor/skills/llm-wiki/SKILL.md": {
       "type": "file",
       "digest": "159973952d2640a52da4595e08c73d20de72cab3e04fa592e9b2c3845f02a0f6",
@@ -7611,6 +7734,11 @@
     ".cursor/skills/yss-strategic-design/references/orchestration.md": {
       "type": "file",
       "digest": "562f11f87985e05809eedb62c300b033e053a50fa14307cdaa70c4dcb57d46ff",
+      "mode": 420
+    },
+    ".pi/skills/code-review/SKILL.md": {
+      "type": "file",
+      "digest": "c610959a98f6a2bccbcadf3482bbc15ecbe1847ac028505eb648a7fe6e76bd62",
       "mode": 420
     },
     ".pi/skills/llm-wiki/SKILL.md": {
@@ -7853,6 +7981,11 @@
       "digest": "b8ebb18f304831ee5c86cf6e5563702b2cc0ce2f51b055036e437a385226cd99",
       "mode": 420
     },
+    "docs/engineering/backend-platforms.md": {
+      "type": "file",
+      "digest": "1ea3734444e78e323c633b98752fb4925d0c7e17b7a3f645ff9bf65c3a5e2ff3",
+      "mode": 420
+    },
     "docs/plan/templates/market-analysis-template.md": {
       "type": "file",
       "digest": "e1e21f343a8860945a5a61237d58a3747fda690182ede5ef9fab372c212a30db",
@@ -7893,9 +8026,29 @@
       "digest": "21d571def219de63ddba03ce24515946e7c5f6dea9f3dc3c88892b8244a626bf",
       "mode": 420
     },
+    "docs/process/schemas/backend-architecture-identity.schema.json": {
+      "type": "file",
+      "digest": "76920050da031a76f7cf97db9bb0b916fa818d40c78bbdfa397f41b06249a950",
+      "mode": 420
+    },
     "docs/process/schemas/lifecycle-checkpoint.schema.json": {
       "type": "file",
       "digest": "2f74ec4ce70706519a9595c9cbd83455c52591b522036eb1a0ff2f54d27856fe",
+      "mode": 420
+    },
+    "docs/process/schemas/project-scaffold-contract.schema.json": {
+      "type": "file",
+      "digest": "8be1ab6f9af5da2e4b2b15fe09d3e41b7f58899c088467eff55e0f96800f11e4",
+      "mode": 420
+    },
+    "docs/process/schemas/scaffold-architecture-decisions.schema.json": {
+      "type": "file",
+      "digest": "4d3be65fdf6d628ec10907978aeb7efbac9e5611db3636e035df92af6c7f07a4",
+      "mode": 420
+    },
+    "docs/process/schemas/slice-implementation-contract-v3.schema.json": {
+      "type": "file",
+      "digest": "f2c6b86f26c82710a7c81337c27f6f9f07cd65dce4037d0ae5d1f28dccb810f4",
       "mode": 420
     },
     "docs/process/schemas/strategic-design-handoff.schema.json": {
@@ -7948,6 +8101,16 @@
       "digest": "621b82180674c95f8a7f3625858ed44682e701088e0cc7c6c4a5fa181c1b48c4",
       "mode": 420
     },
+    "scripts/backend-platforms": {
+      "type": "file",
+      "digest": "03a78c36a7b15db50f3f09b3c36c56834ef973c22834a0b98f3860de89e9d88d",
+      "mode": 493
+    },
+    "scripts/fixtures/backend-scaffold/platform-fixture.mjs": {
+      "type": "file",
+      "digest": "18922af75254c45180d3b9b6557142b1c247d87a78ee532547453648096b9143",
+      "mode": 420
+    },
     "scripts/fixtures/strategic-handoff/fixture.mjs": {
       "type": "file",
       "digest": "f804a8d46aa79620a2135d1ee1afa3742d5219a93dd0b0e30ad5a3e9c2766be4",
@@ -7956,6 +8119,36 @@
     "scripts/fixtures/strategic-handoff/source-roles.json": {
       "type": "file",
       "digest": "9fa3119c0299087675107fde5a54ea0ed5523448bb0601bef51eebad3569b243",
+      "mode": 420
+    },
+    "scripts/lib/approved-execution-context.mjs": {
+      "type": "file",
+      "digest": "22f325c9cd704b24b5b7c633283291e08e510fa63232005c80581faf4e97ed59",
+      "mode": 420
+    },
+    "scripts/lib/backend-architecture.mjs": {
+      "type": "file",
+      "digest": "c7dac2b3596458eea599cfdd6e6cfae4a009eaf61ba6bc41d35359c52da35073",
+      "mode": 420
+    },
+    "scripts/lib/backend-platform-verification.mjs": {
+      "type": "file",
+      "digest": "ef45f74df72372f0ce59b74fa99a1f0c8231d3b03276d7f795f3bdcf1ac0805d",
+      "mode": 420
+    },
+    "scripts/lib/backend-platform.mjs": {
+      "type": "file",
+      "digest": "600f1400b431a9285d5d3aaf3e13f931d64128d44734cebd4c2e27025eafd928",
+      "mode": 420
+    },
+    "scripts/lib/delivery-preflight.mjs": {
+      "type": "file",
+      "digest": "92c6c7358299742097b9af29c875e2e0b0971f02795634fe5c64caae09ab7e75",
+      "mode": 420
+    },
+    "scripts/lib/frontend-delivery-boundary.mjs": {
+      "type": "file",
+      "digest": "436fc1286c6ce62d5559631b08892130b48e853dc2476c66f8827ae6e9f65527",
       "mode": 420
     },
     "scripts/lib/harness-profile.mjs": {
@@ -7978,6 +8171,16 @@
       "digest": "3a47b5cbb7183ca386652a8b1a4d46545294e4fc5273c0edf13784614570ad87",
       "mode": 420
     },
+    "scripts/lib/slice-applicability.mjs": {
+      "type": "file",
+      "digest": "9f731a1c80e0bba7258f0467405f14cf3077df5bd4c1c91d6611d4a75403b3d7",
+      "mode": 420
+    },
+    "scripts/lib/slice-contract.mjs": {
+      "type": "file",
+      "digest": "0fda176d6e3fb7c63e8467779a8d6fd99b9dbeac99a863a46baffe58d896e748",
+      "mode": 420
+    },
     "scripts/lib/strategic-feedback.mjs": {
       "type": "file",
       "digest": "f270ea41309fd4229e7351266a08c973016979bbcc2c554b1d2e9636f10e3441",
@@ -7998,6 +8201,21 @@
       "digest": "adfed7e9c8b746e0f3db4b1b85f00159f85cad5c349852b14cf22259182fdbb3",
       "mode": 420
     },
+    "scripts/lib/user-decision-reuse.mjs": {
+      "type": "file",
+      "digest": "13117dcaa2af7db11aa1ec094c8a5ce1369821033d62a17e6d73024c78411f34",
+      "mode": 420
+    },
+    "scripts/lib/user-decision.mjs": {
+      "type": "file",
+      "digest": "62ff6f09cd6a70914794d6c9dfecbe8a03398523e44617157032b4436690017a",
+      "mode": 420
+    },
+    "scripts/preflight-delivery": {
+      "type": "file",
+      "digest": "a212fea3a1bfd758d1e18b1e5a76bb48e4f954d9b07843d8761bbbcccbd87bbb",
+      "mode": 493
+    },
     "scripts/strategic-handoff": {
       "type": "file",
       "digest": "616c2d62da4a9a5f33fa6a638685eb82c0fce511ab1725c6b050d8d0117ca5be",
@@ -8006,6 +8224,11 @@
     "scripts/verify-instance-distribution-scenarios": {
       "type": "file",
       "digest": "0ad48f3878ca5fb84a43cfd9bf4ba690c507179d0b73fc7521257563e9fbc87b",
+      "mode": 493
+    },
+    "scripts/verify-scaffold-architecture-decisions": {
+      "type": "file",
+      "digest": "0f112b085176fed5f0db547ae6140577ee5532c27bd31edbe721f34bc40a3f0d",
       "mode": 493
     },
     "scripts/verify-strategic-checkpoint-scenarios": {
@@ -8039,8 +8262,8 @@
       "mode": 420
     }
   },
-  "transitionBaselinesHash": "46a2bd5dda632fd09212575eb751e6785e622c90aa32dd52a252d72c5f94f5fa",
-  "snapshotHash": "27c9f282e0753a4370267ec67f7713940236f57fc64931a26f0956b246f4e280",
+  "transitionBaselinesHash": "dec81d73205d7015b657e50ae0a6b9db353bd703630a5088597700af73da5c63",
+  "snapshotHash": "37652a69eb2bbf7d951428656e24c85ec4bf9e2160d5608a6f94faa0da50e2cc",
   "projectionRepresentation": "materialized-files",
   "pathEncoding": "sha256-blobs-v1"
 }

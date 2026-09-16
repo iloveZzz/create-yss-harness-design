@@ -9,7 +9,7 @@ Review of a pinned candidate against a fixed point on two core axes, plus UI fid
 - **Spec** — does the code faithfully implement the originating issue / spec?
 - **UI fidelity** (only when the change has UI impact) — does the candidate match the confirmed prototype and `yss-design-system` / `yss-ui`? Type-check or claiming "already aligned" is not a pass. Invoke those skills' verification notes; do not collapse this axis into Standards or Spec.
 
-Standards and Spec run as **parallel sub-agents** so they don't pollute each other's context, then this skill aggregates their findings. When UI is in scope, add a separate UI fidelity pass after those two reports (do not merge it into either axis).
+普通功能默认由一名与实现者独立的审查者完成 Standards、Spec 和适用的 UI fidelity 检查，分别报告结论。只有专业能力缺口、结论冲突、明确外部制度或用户指定时，才拆成多个审查者；多个无依赖审查可以并行。检查轴不等于会签人数，不能要求用户为每个轴重复确认。
 
 If `docs/agents/issue-tracker.md` is missing, tell the user to run `/setup-matt-pocock-skills`; do not invoke another user-invoked skill yourself.
 
@@ -30,7 +30,7 @@ Choose one candidate mode from the request or an upstream review contract:
   - each untracked file's content, using `git diff --no-index --no-ext-diff --binary --full-index -- /dev/null <path>` when a diff representation is useful. Exit code `1` from this command means a difference was found, not that review failed;
   - `git log <fixed-point>..HEAD --oneline` for the committed portion of the candidate.
 
-Record one **candidate manifest** before spawning reviewers:
+Record one **candidate manifest** before review:
 
 ```yaml
 review_mode: committed # or worktree
@@ -47,9 +47,9 @@ commit_list_command: <command>
 
 For a Committed candidate, resolve `HEAD` to an immutable commit and tree before review. Its manifest must include `merge_base`, `tracked_diff_command` and `commit_list_command`. For a Worktree candidate, the manifest must additionally include `untracked_inventory_command`, `untracked_diff_command` and the exact `untracked_files` inventory.
 
-For a Worktree candidate, capture the tracked binary diff and every untracked file's bytes once into an immutable snapshot, compute `candidate_digest`, and make that **captured candidate** available to both reviewers. The following is normative, not illustrative: use the `yss-worktree-candidate-v1` byte stream. Start with ASCII `YSS-WORKTREE-CANDIDATE-V1` followed by one NUL byte. Append one tracked record: byte `0x54`, unsigned 64-bit big-endian binary-diff byte length, then the exact stdout bytes from `git diff --no-ext-diff --binary --full-index <merge-base>`. Then append one untracked record for each NUL-delimited raw path from `git ls-files -z --others --exclude-standard`, sorted bytewise by the raw path: byte `0x55`, unsigned 64-bit big-endian path length, raw path bytes, unsigned 32-bit big-endian `lstat` mode, entry-kind byte (`0x52` regular or `0x4c` symlink), unsigned 64-bit big-endian content length, then raw regular-file bytes or raw symlink-target bytes. Other entry kinds block capture. This is the sole length-prefixed framing and bytewise path order for the digest. SHA-256 is calculated over exactly this stream. The immutable snapshot stores `candidate-manifest.yaml`, `tracked.diff` and the `untracked/` bytes under the digest identity; both reviewers must consume those captured bytes and must not independently reread a live worktree.
+For a Worktree candidate, capture the tracked binary diff and every untracked file's bytes once into an immutable snapshot, compute `candidate_digest`, and make that **captured candidate** available to the assigned reviewer(s). The following is normative, not illustrative: use the `yss-worktree-candidate-v1` byte stream. Start with ASCII `YSS-WORKTREE-CANDIDATE-V1` followed by one NUL byte. Append one tracked record: byte `0x54`, unsigned 64-bit big-endian binary-diff byte length, then the exact stdout bytes from `git diff --no-ext-diff --binary --full-index <merge-base>`. Then append one untracked record for each NUL-delimited raw path from `git ls-files -z --others --exclude-standard`, sorted bytewise by the raw path: byte `0x55`, unsigned 64-bit big-endian path length, raw path bytes, unsigned 32-bit big-endian `lstat` mode, entry-kind byte (`0x52` regular or `0x4c` symlink), unsigned 64-bit big-endian content length, then raw regular-file bytes or raw symlink-target bytes. Other entry kinds block capture. This is the sole length-prefixed framing and bytewise path order for the digest. SHA-256 is calculated over exactly this stream. The immutable snapshot stores `candidate-manifest.yaml`, `tracked.diff` and the `untracked/` bytes under the digest identity; both reviewers must consume those captured bytes and must not independently reread a live worktree.
 
-Before going further, confirm the fixed point and merge-base resolve. A committed candidate must have a non-empty committed diff. A Worktree candidate is non-empty when either its tracked diff or untracked inventory is non-empty. A bad ref, missing candidate part or empty candidate should fail here — not inside two parallel sub-agents. Do not silently downgrade Worktree review to `HEAD`-only review.
+Before going further, confirm the fixed point and merge-base resolve. A committed candidate must have a non-empty committed diff. A Worktree candidate is non-empty when either its tracked diff or untracked inventory is non-empty. A bad ref, missing candidate part or empty candidate should fail here — not during professional review. Do not silently downgrade Worktree review to `HEAD`-only review.
 
 ### 2. Identify the spec source
 
@@ -84,7 +84,9 @@ Each smell reads *what it is* → *how to fix*; match it against the diff:
 - **Middle Man** — a class or function that mostly just delegates onward. → cut it, call the real target direct.
 - **Refused Bequest** — a subclass or implementer that ignores or overrides most of what it inherits. → drop the inheritance, use composition.
 
-### 4. Spawn both sub-agents in parallel
+### 4. Complete each applicable review axis
+
+默认由当前独立 Reviewer 连续完成下列两份检查提纲，按轴保留结论，不派发额外 subagent。需要多专业参与时，按角色表和协作协议派发对应提纲；只增加缺少的能力，不默认启动两个额外 Agent。下面的 sub-agent prompts 同样是单 Reviewer 的检查清单。
 
 **Standards sub-agent prompt** — include:
 
@@ -104,7 +106,7 @@ If the spec is missing, skip the Spec sub-agent and note this in the final repor
 
 Present the reports under `## Standards` and `## Spec` headings, verbatim or lightly cleaned. If UI is in scope, add `## UI fidelity` from the separate pass. Do **not** merge or rerank findings — the axes are deliberately separate (see _Why separate axes_).
 
-For Worktree mode, recapture the candidate digest after both reports return. If it differs from `candidate_digest`, mark both reports as reviewing a **stale candidate** and return `blocked`; the caller may start a new review against a new capture, but this invocation must not aggregate findings from different bytes. Recheck the same digest again at the completion/checkpoint boundary.
+For Worktree mode, recapture the candidate digest after all applicable checks finish. If it differs from `candidate_digest`, mark the affected reports as reviewing a **stale candidate** and return `blocked`; the caller may start a new review against a new capture, but this invocation must not aggregate findings from different bytes. Recheck the same digest again at the completion/checkpoint boundary.
 
 State the reviewed `review_mode`, fixed point, candidate digest and coverage before the two reports. End with a one-line summary: total findings per axis, and the worst issue _within each axis_ (if any). Don't pick a single winner across axes — that's the reranking the separation exists to prevent.
 
