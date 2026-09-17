@@ -1,0 +1,65 @@
+#!/usr/bin/env node
+import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
+import { mkdtempSync, writeFileSync, rmSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import path from 'node:path';
+import { spawnSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
+import { validateApprovalRecord, assertCheckpointUserDecisions, assertCheckpointApprovals } from './lib/approval-record.mjs';
+import { buildDecisionFixture } from './fixtures/user-decision/build-fixture.mjs';
+
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const temp = mkdtempSync(path.join(tmpdir(), 'strategic-decisions-'));
+const sha256 = bytes => createHash('sha256').update(bytes).digest('hex');
+
+try {
+  for (const [gateId, actor] of [
+    ['gate.plan-approved', { actor_kind: 'digital-human', role_id: 'role.product-manager' }],
+    ['gate.spec-baseline-approved', { actor_kind: 'digital-human', role_id: 'role.product-manager' }],
+    ['gate.product-design-approved', { actor_kind: 'biological-human', role_id: 'role.biological-human' }]
+  ]) {
+    const fixture = buildDecisionFixture(path.join(temp, gateId), { boundary: gateId });
+    const record = {
+      schema_version: 1, gate_id: gateId, decision: 'approved', ...actor,
+      runtime_id: 'runtime.generic', principal_ref: fixture.record.responses[0].principal_ref,
+      subject_ref: fixture.requirement.subject_ref, approval_scope: fixture.requirement.scope,
+      user_decision_ref: fixture.ref, drafter_principal_ref: 'test-only:drafter'
+    };
+    validateApprovalRecord(record, { requireApproved: true });
+    assert.throws(() => validateApprovalRecord({ ...record, user_decision_ref: undefined }, { requireApproved: true }), /user-decision/);
+  }
+
+  const handoffSubject = path.join(temp, 'handoff-review.json');
+  const handoffReview = Buffer.from(JSON.stringify({ schema_version: 1, gate_id: 'gate.strategic-design-handoff-approved', basis: [] }));
+  writeFileSync(handoffSubject, handoffReview);
+  const handoff = {
+    schema_version: 1, gate_id: 'gate.strategic-design-handoff-approved', decision: 'approved',
+    actor_kind: 'digital-human', role_id: 'role.requirements-manager', runtime_id: 'runtime.generic',
+    principal_ref: 'test-only:requirements-reviewer', drafter_role_id: 'role.product-manager',
+    drafter_principal_ref: 'test-only:product-drafter', subject_ref: handoffSubject,
+    subject_digest: sha256(handoffReview), approval_scope: ['feature.demo']
+  };
+  assert.doesNotThrow(() => validateApprovalRecord(handoff, { requireApproved: true }), '交接由独立数字人复核，不要求新的用户回复');
+  assert.throws(() => validateApprovalRecord({ ...handoff, role_id: 'role.product-manager' }, { requireApproved: true }), /会签角色|起草者/);
+
+  const historical = { ...handoff, gate_id: 'gate.user-confirmation' };
+  const historicalFile = path.join(temp, 'historical.json');
+  writeFileSync(historicalFile, JSON.stringify(historical));
+  assert.deepEqual(validateApprovalRecord(historical), { bucket: 'historical', gate: 'gate.user-confirmation' });
+  assert.throws(() => validateApprovalRecord(historical, { requireApproved: true }), /不是会签门禁/);
+  const historyCli = spawnSync(process.execPath, [path.join(root, 'scripts/verify-approval-record'), '--history', historicalFile], { encoding: 'utf8' });
+  assert.equal(historyCli.status, 0);
+  assert.match(historyCli.stdout, /不构成当前放行/);
+  const currentCli = spawnSync(process.execPath, [path.join(root, 'scripts/verify-approval-record'), '--require-approved', historicalFile], { encoding: 'utf8' });
+  assert.equal(currentCli.status, 1);
+
+  const checkpoint = { repository_mode: 'project-instance', mode: 'resume', status: 'routing', gates: {}, artifacts: {} };
+  assertCheckpointUserDecisions(checkpoint);
+  assert.throws(() => assertCheckpointApprovals({ ...checkpoint, gates: { 'gate.user-confirmation': { status: 'approved' } } }), /未知或已退役门禁/);
+  assert.throws(() => assertCheckpointUserDecisions({ ...checkpoint, status: 'completed', gates: { 'gate.plan-approved': { status: 'approved' } } }), /交接验收|仍有阻塞/);
+
+  console.log('战略用户决定场景通过：Plan、Spec、条件性产品设计需真实回复，交接独立复核且旧批准仅历史可读');
+} finally {
+  rmSync(temp, { recursive: true, force: true });
+}
