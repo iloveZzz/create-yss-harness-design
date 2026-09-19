@@ -88,7 +88,6 @@
       "enum": [
         "yss-ddd-scaffold-generator",
         "yss-layered-mvc-scaffold-generator",
-        "yss-mvc-data-analysis-project-initializer",
         "yss-frontend-scaffold-generator"
       ]
     },
@@ -468,6 +467,7 @@
         "profile_id",
         "spring_boot_version",
         "java_version",
+        "component_platform_line",
         "parent",
         "bom",
         "compatibility_id",
@@ -493,6 +493,12 @@
             8,
             17,
             21
+          ]
+        },
+        "component_platform_line": {
+          "enum": [
+            "boot2-java8",
+            "boot3-java17"
           ]
         },
         "compatibility_id": {
@@ -607,12 +613,12 @@
     {
       "if": {
         "properties": {
-          "generator_skill": {
-            "const": "yss-mvc-data-analysis-project-initializer"
+          "architecture_profile": {
+            "const": "mvc-data-analysis-v1"
           }
         },
         "required": [
-          "generator_skill"
+          "architecture_profile"
         ]
       },
       "then": {
@@ -626,6 +632,12 @@
           },
           "architecture_family": {
             "const": "layered-mvc"
+          },
+          "generator_skill": {
+            "const": "yss-layered-mvc-scaffold-generator"
+          },
+          "init_git": {
+            "const": true
           }
         }
       }

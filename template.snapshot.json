@@ -6,7 +6,7 @@
   "metadataFile": ".yss-harness-design.json",
   "templateName": "yss-harness-design-agent",
   "templateSource": "github:iloveZzz/yss-harness-design-agent",
-  "templateCommit": "e9a28b4cb0d3003a730b0113bb4dad59665e38b5",
+  "templateCommit": "e2a4e726c7a34ddbf2658749b3ceb4c913f4530e",
   "sourceState": "committed",
   "manifestHash": "525107ebb51bfdef74f8d61c9cbe7c04d645d01d49b48bc00912cafffa27921a",
   "files": {
@@ -3600,9 +3600,9 @@
     },
     "docs/agents/backend-architecture-profiles.md": {
       "type": "file",
-      "digest": "707332bdad6213e6e9889745e7a3f811c20c2a5324354280578eac11a100dff9",
+      "digest": "009172fe0d456ad40fc82637bfde800fc3b1ece0b9b5696e215cfc528dc96eea",
       "mode": 420,
-      "blob": "blobs/707332bdad6213e6e9889745e7a3f811c20c2a5324354280578eac11a100dff9"
+      "blob": "blobs/009172fe0d456ad40fc82637bfde800fc3b1ece0b9b5696e215cfc528dc96eea"
     },
     "docs/agents/digital-human-roles.md": {
       "type": "file",
@@ -3816,15 +3816,15 @@
     },
     "docs/engineering/backend-platforms.json": {
       "type": "file",
-      "digest": "8079bbbaa4cd7bfbcd8d42d60002a4527d2dbda8c8a6a781466a9313e6e38325",
+      "digest": "b9ca61d8480050ae3ffd538cd1428471280d8c46a6d90c217ff211f78c66ec60",
       "mode": 420,
-      "blob": "blobs/8079bbbaa4cd7bfbcd8d42d60002a4527d2dbda8c8a6a781466a9313e6e38325"
+      "blob": "blobs/b9ca61d8480050ae3ffd538cd1428471280d8c46a6d90c217ff211f78c66ec60"
     },
     "docs/engineering/backend-platforms.md": {
       "type": "file",
-      "digest": "32c4b9940131648a6d52aa4d6bfaecad3c4f92db8d711d89c71c24a7b91a3a2b",
+      "digest": "e1e8f74daa030850665ac3101cc3c5bdf2637ace33d9d08139c89f4d008aa419",
       "mode": 420,
-      "blob": "blobs/32c4b9940131648a6d52aa4d6bfaecad3c4f92db8d711d89c71c24a7b91a3a2b"
+      "blob": "blobs/e1e8f74daa030850665ac3101cc3c5bdf2637ace33d9d08139c89f4d008aa419"
     },
     "docs/plan/IDEATION.md": {
       "type": "file",
@@ -3972,9 +3972,9 @@
     },
     "docs/process/schemas/backend-architecture-identity.schema.json": {
       "type": "file",
-      "digest": "befc5ecc83d983a774ff66f89ffc8b3e1e2f956f600b51c09ce26c7181b90c00",
+      "digest": "ed961052f1aa7c2decf9a9eafe506a065bde7921716a030d7401f9ba166dfcdb",
       "mode": 420,
-      "blob": "blobs/befc5ecc83d983a774ff66f89ffc8b3e1e2f956f600b51c09ce26c7181b90c00"
+      "blob": "blobs/ed961052f1aa7c2decf9a9eafe506a065bde7921716a030d7401f9ba166dfcdb"
     },
     "docs/process/schemas/backend-delivery-verification.schema.json": {
       "type": "file",
@@ -4062,9 +4062,9 @@
     },
     "docs/process/schemas/project-scaffold-contract.schema.json": {
       "type": "file",
-      "digest": "5295d6d428306db2d64161071789f4977f7ce9c7f9524ba0f5ce595284c98163",
+      "digest": "d89f323895208a406acab5be132ec314d292653ca2cfc0774a95b4841b92e5ed",
       "mode": 420,
-      "blob": "blobs/5295d6d428306db2d64161071789f4977f7ce9c7f9524ba0f5ce595284c98163"
+      "blob": "blobs/d89f323895208a406acab5be132ec314d292653ca2cfc0774a95b4841b92e5ed"
     },
     "docs/process/schemas/review-bundle.schema.json": {
       "type": "file",
@@ -4074,15 +4074,15 @@
     },
     "docs/process/schemas/scaffold-architecture-decisions.schema.json": {
       "type": "file",
-      "digest": "094b14170e142da038b2d963fe9d8af4ccf1aebdde862666f3185850afa0c39b",
+      "digest": "9fcbeb4bcadb89f589b8ee56a65f999d41637602f6d8bf2c182b54f18521bb15",
       "mode": 420,
-      "blob": "blobs/094b14170e142da038b2d963fe9d8af4ccf1aebdde862666f3185850afa0c39b"
+      "blob": "blobs/9fcbeb4bcadb89f589b8ee56a65f999d41637602f6d8bf2c182b54f18521bb15"
     },
     "docs/process/schemas/slice-implementation-contract-v3.schema.json": {
       "type": "file",
-      "digest": "9b82763d7a5a05a73829a829d10870651a899ae26482dc003ffed81fd1743343",
+      "digest": "984211f84aae4a99a905fdbde8e8f0fc2239161e8ef14da538322e8fb9feb5d6",
       "mode": 420,
-      "blob": "blobs/9b82763d7a5a05a73829a829d10870651a899ae26482dc003ffed81fd1743343"
+      "blob": "blobs/984211f84aae4a99a905fdbde8e8f0fc2239161e8ef14da538322e8fb9feb5d6"
     },
     "docs/process/schemas/strategic-consumer-feedback.schema.json": {
       "type": "file",
@@ -4212,9 +4212,9 @@
     },
     "docs/process/strategic-handoff-package.md": {
       "type": "file",
-      "digest": "6d884422f94fa623f43e9dd56cf1fd5055c3435b938610e53d1ae44d3dd59feb",
+      "digest": "17f28d231fb596363e44ce7899f5824c1809b30c137df12d976de4edb328cd6a",
       "mode": 420,
-      "blob": "blobs/6d884422f94fa623f43e9dd56cf1fd5055c3435b938610e53d1ae44d3dd59feb"
+      "blob": "blobs/17f28d231fb596363e44ce7899f5824c1809b30c137df12d976de4edb328cd6a"
     },
     "docs/process/subagent-collaboration.md": {
       "type": "file",
@@ -4392,9 +4392,9 @@
     },
     "scripts/backend-platforms": {
       "type": "file",
-      "digest": "2ec7281f0fab72216812713939aea324dd27fbec9027ba09ba6b5707f5e9c444",
+      "digest": "1a85ffb099895b2aff22fd2792817553dcc8ae1480f555ef9180d419d972b83c",
       "mode": 493,
-      "blob": "blobs/2ec7281f0fab72216812713939aea324dd27fbec9027ba09ba6b5707f5e9c444"
+      "blob": "blobs/1a85ffb099895b2aff22fd2792817553dcc8ae1480f555ef9180d419d972b83c"
     },
     "scripts/export-yss-skills": {
       "type": "file",
@@ -4416,9 +4416,9 @@
     },
     "scripts/fixtures/backend-scaffold/platform-fixture.mjs": {
       "type": "file",
-      "digest": "0a7c73480e6af80c015011b619c2a2d4f55e074d9dbe1695340b64a1485e43c1",
+      "digest": "332cf1dbb0ff20c013447a1eb6322be2b95d162f8f21bd0973d93b2d5923cac7",
       "mode": 420,
-      "blob": "blobs/0a7c73480e6af80c015011b619c2a2d4f55e074d9dbe1695340b64a1485e43c1"
+      "blob": "blobs/332cf1dbb0ff20c013447a1eb6322be2b95d162f8f21bd0973d93b2d5923cac7"
     },
     "scripts/fixtures/delivery-preflight/approved-execution-fixture.mjs": {
       "type": "file",
@@ -4440,9 +4440,9 @@
     },
     "scripts/fixtures/existing-backend/fixture.mjs": {
       "type": "file",
-      "digest": "78277406df416cda3201908f9691bd3b011b3ca6b45cde2a1b9df18d586efd4f",
+      "digest": "b1f2398fbe4b0d130af74425400cc413ee25781040954aa790d052d386aa5312",
       "mode": 420,
-      "blob": "blobs/78277406df416cda3201908f9691bd3b011b3ca6b45cde2a1b9df18d586efd4f"
+      "blob": "blobs/b1f2398fbe4b0d130af74425400cc413ee25781040954aa790d052d386aa5312"
     },
     "scripts/fixtures/existing-ui-baseline/design-source-roles.json": {
       "type": "file",
@@ -4542,9 +4542,9 @@
     },
     "scripts/lib/backend-platform.mjs": {
       "type": "file",
-      "digest": "32f23a5d48a79877a325cfdb8c751afbbd5584b94b1ee717db14b33f4a606aad",
+      "digest": "7cd641105699673460e61bde9174052e6c2316306b433e467c853ac9c1dc997a",
       "mode": 420,
-      "blob": "blobs/32f23a5d48a79877a325cfdb8c751afbbd5584b94b1ee717db14b33f4a606aad"
+      "blob": "blobs/7cd641105699673460e61bde9174052e6c2316306b433e467c853ac9c1dc997a"
     },
     "scripts/lib/command-runner.mjs": {
       "type": "file",
@@ -4590,9 +4590,9 @@
     },
     "scripts/lib/existing-backend-architecture.mjs": {
       "type": "file",
-      "digest": "97a04dd68ddf7c9aae79e1fc74222b48824c059a9c58ea96e8b536691e5454f9",
+      "digest": "9b5a265f7e2c04a0e364c20bb3840bec85018d9b8a501f3bc64389a74aa3220f",
       "mode": 420,
-      "blob": "blobs/97a04dd68ddf7c9aae79e1fc74222b48824c059a9c58ea96e8b536691e5454f9"
+      "blob": "blobs/9b5a265f7e2c04a0e364c20bb3840bec85018d9b8a501f3bc64389a74aa3220f"
     },
     "scripts/lib/existing-ui-baseline.mjs": {
       "type": "file",
@@ -8111,6 +8111,11 @@
       "digest": "daa676245f8f93d9f370438384bba9136dd362be85e2f6bdb55834342e095a2f",
       "mode": 420
     },
+    "docs/agents/backend-architecture-profiles.md": {
+      "type": "file",
+      "digest": "707332bdad6213e6e9889745e7a3f811c20c2a5324354280578eac11a100dff9",
+      "mode": 420
+    },
     "docs/agents/digital-human-roles.md": {
       "type": "file",
       "digest": "bfcb94735a7490a7005499d0956561eb84edca944fe70085f6c33d9c1b04cfff",
@@ -8224,6 +8229,11 @@
     "docs/design/tokens/variables.dark.css": {
       "type": "file",
       "digest": "b8ebb18f304831ee5c86cf6e5563702b2cc0ce2f51b055036e437a385226cd99",
+      "mode": 420
+    },
+    "docs/engineering/backend-platforms.json": {
+      "type": "file",
+      "digest": "8079bbbaa4cd7bfbcd8d42d60002a4527d2dbda8c8a6a781466a9313e6e38325",
       "mode": 420
     },
     "docs/engineering/backend-platforms.md": {
@@ -8386,6 +8396,11 @@
       "digest": "18922af75254c45180d3b9b6557142b1c247d87a78ee532547453648096b9143",
       "mode": 420
     },
+    "scripts/fixtures/existing-backend/fixture.mjs": {
+      "type": "file",
+      "digest": "78277406df416cda3201908f9691bd3b011b3ca6b45cde2a1b9df18d586efd4f",
+      "mode": 420
+    },
     "scripts/fixtures/existing-ui-baseline/design-source-roles.json": {
       "type": "file",
       "digest": "6e94d05ab7374144b670b5d6c9e5dc2e3c6051347fff6aabc79cdd6a0932bebd",
@@ -8454,6 +8469,11 @@
     "scripts/lib/digital-human-roles.mjs": {
       "type": "file",
       "digest": "00ae52a70004e9ff9c660265f8c37da559f18e68fc11c048c3937e85ea6fe2b0",
+      "mode": 420
+    },
+    "scripts/lib/existing-backend-architecture.mjs": {
+      "type": "file",
+      "digest": "97a04dd68ddf7c9aae79e1fc74222b48824c059a9c58ea96e8b536691e5454f9",
       "mode": 420
     },
     "scripts/lib/frontend-delivery-boundary.mjs": {
@@ -8617,8 +8637,8 @@
       "mode": 420
     }
   },
-  "transitionBaselinesHash": "eed88a6bda6d285d916cfd1a279dd9467db3c6e3330e0eef9cdda9836a693afd",
-  "snapshotHash": "51e0e1ac3731c8e9452c422238bc0aea527da2198786008f9b269c70cb72636b",
+  "transitionBaselinesHash": "08ba70d26999fb360feb1295050eda26dfb3dd402384fc310f97ca82ce8e04e3",
+  "snapshotHash": "ab3cf9a5ccc989ff1b2df1d5630ac8272a0b79f1c66118afbe5fe6198388f687",
   "projectionRepresentation": "materialized-files",
   "pathEncoding": "sha256-blobs-v1"
 }
