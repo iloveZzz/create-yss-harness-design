@@ -6,7 +6,7 @@
   "metadataFile": ".yss-harness-design.json",
   "templateName": "yss-harness-design-agent",
   "templateSource": "github:iloveZzz/yss-harness-design-agent",
-  "templateCommit": "e2a4e726c7a34ddbf2658749b3ceb4c913f4530e",
+  "templateCommit": "4891d8cc15a453df4bf057874c6127419c6c77d8",
   "sourceState": "committed",
   "manifestHash": "525107ebb51bfdef74f8d61c9cbe7c04d645d01d49b48bc00912cafffa27921a",
   "files": {
@@ -3654,9 +3654,9 @@
     },
     "docs/agents/yss-skill-registry.yaml": {
       "type": "file",
-      "digest": "6d8ed0208f2267ca9a2f0cb8869949c2c4c45df17917aa17ab6cce0b51677f38",
+      "digest": "5f9b6af19d92396868904e6ca3ab4d5a9be6e925ac99f527fb0cc3bb59be077e",
       "mode": 420,
-      "blob": "blobs/6d8ed0208f2267ca9a2f0cb8869949c2c4c45df17917aa17ab6cce0b51677f38"
+      "blob": "blobs/5f9b6af19d92396868904e6ca3ab4d5a9be6e925ac99f527fb0cc3bb59be077e"
     },
     "docs/architecture/.gitkeep": {
       "type": "file",
@@ -4482,9 +4482,9 @@
     },
     "scripts/fixtures/strategic-handoff/source-roles.json": {
       "type": "file",
-      "digest": "3f53ac405ebc45bef6dee1e283f62c5f2a4a5ad7ae3c7d3790897b48e74cea7a",
+      "digest": "23992ea9d2d79576d1f0e8c31a62090c6c08a7748c966543063408e054e32421",
       "mode": 420,
-      "blob": "blobs/3f53ac405ebc45bef6dee1e283f62c5f2a4a5ad7ae3c7d3790897b48e74cea7a"
+      "blob": "blobs/23992ea9d2d79576d1f0e8c31a62090c6c08a7748c966543063408e054e32421"
     },
     "scripts/fixtures/user-decision/build-fixture.mjs": {
       "type": "file",
@@ -8638,7 +8638,7 @@
     }
   },
   "transitionBaselinesHash": "08ba70d26999fb360feb1295050eda26dfb3dd402384fc310f97ca82ce8e04e3",
-  "snapshotHash": "ab3cf9a5ccc989ff1b2df1d5630ac8272a0b79f1c66118afbe5fe6198388f687",
+  "snapshotHash": "7269740c6021e09fbf6df2615721e18dcaf2d509024408f048394dbeb2f27f4b",
   "projectionRepresentation": "materialized-files",
   "pathEncoding": "sha256-blobs-v1"
 }

@@ -457,7 +457,6 @@ external_skills:
   - { id: yss-repository, source: downstream-rd-profile }
   - { id: yss-technical-design, source: downstream-rd-profile }
   - { id: yss-tactical-design, source: downstream-rd-profile }
-  - { id: yss-mvc-design, source: downstream-rd-profile }
   - { id: yss-ui, source: downstream-rd-profile }
   - { id: yss-web-controller, source: downstream-rd-profile }
 existing_project_profiles:
