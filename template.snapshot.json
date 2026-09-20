@@ -6,7 +6,7 @@
   "metadataFile": ".yss-harness-design.json",
   "templateName": "yss-harness-design-agent",
   "templateSource": "github:iloveZzz/yss-harness-design-agent",
-  "templateCommit": "77a94e9fc8087f6c46f8dcfe30e362ee84b1f86a",
+  "templateCommit": "03309804a0e48d562bef17b64ff91b316666a0d1",
   "sourceState": "committed",
   "manifestHash": "525107ebb51bfdef74f8d61c9cbe7c04d645d01d49b48bc00912cafffa27921a",
   "files": {
@@ -42,9 +42,9 @@
     },
     ".agents/skills/code-review/references/yss-review-standards.md": {
       "type": "file",
-      "digest": "f97195d2c7e2d9e1d8ccf430450646d89be1b42231b352bafe86b782711407ed",
+      "digest": "1ad296f682c2334c952aa8a35e67c474065a8a26bfddf0ba70f0c39c741772ce",
       "mode": 420,
-      "blob": "blobs/f97195d2c7e2d9e1d8ccf430450646d89be1b42231b352bafe86b782711407ed"
+      "blob": "blobs/1ad296f682c2334c952aa8a35e67c474065a8a26bfddf0ba70f0c39c741772ce"
     },
     ".agents/skills/competitive-intelligence/SKILL.md": {
       "type": "file",
@@ -852,9 +852,9 @@
     },
     ".codex/skills/code-review/references/yss-review-standards.md": {
       "type": "file",
-      "digest": "f97195d2c7e2d9e1d8ccf430450646d89be1b42231b352bafe86b782711407ed",
+      "digest": "1ad296f682c2334c952aa8a35e67c474065a8a26bfddf0ba70f0c39c741772ce",
       "mode": 420,
-      "blob": "blobs/f97195d2c7e2d9e1d8ccf430450646d89be1b42231b352bafe86b782711407ed"
+      "blob": "blobs/1ad296f682c2334c952aa8a35e67c474065a8a26bfddf0ba70f0c39c741772ce"
     },
     ".codex/skills/competitive-intelligence/SKILL.md": {
       "type": "file",
@@ -1992,9 +1992,9 @@
     },
     ".cursor/skills/code-review/references/yss-review-standards.md": {
       "type": "file",
-      "digest": "f97195d2c7e2d9e1d8ccf430450646d89be1b42231b352bafe86b782711407ed",
+      "digest": "1ad296f682c2334c952aa8a35e67c474065a8a26bfddf0ba70f0c39c741772ce",
       "mode": 420,
-      "blob": "blobs/f97195d2c7e2d9e1d8ccf430450646d89be1b42231b352bafe86b782711407ed"
+      "blob": "blobs/1ad296f682c2334c952aa8a35e67c474065a8a26bfddf0ba70f0c39c741772ce"
     },
     ".cursor/skills/competitive-intelligence/SKILL.md": {
       "type": "file",
@@ -2814,9 +2814,9 @@
     },
     ".pi/skills/code-review/references/yss-review-standards.md": {
       "type": "file",
-      "digest": "f97195d2c7e2d9e1d8ccf430450646d89be1b42231b352bafe86b782711407ed",
+      "digest": "1ad296f682c2334c952aa8a35e67c474065a8a26bfddf0ba70f0c39c741772ce",
       "mode": 420,
-      "blob": "blobs/f97195d2c7e2d9e1d8ccf430450646d89be1b42231b352bafe86b782711407ed"
+      "blob": "blobs/1ad296f682c2334c952aa8a35e67c474065a8a26bfddf0ba70f0c39c741772ce"
     },
     ".pi/skills/competitive-intelligence/SKILL.md": {
       "type": "file",
@@ -4032,9 +4032,9 @@
     },
     "docs/process/schemas/digital-human-task-package.schema.json": {
       "type": "file",
-      "digest": "bb9d4b087f9ac61f51a0b341229cc24e1c09bcb31564425d4f6d02566a1c4e0f",
+      "digest": "6158b6a10fe306211ab70bba43a272e53505f5f17f827a79766d2e46c390217b",
       "mode": 420,
-      "blob": "blobs/bb9d4b087f9ac61f51a0b341229cc24e1c09bcb31564425d4f6d02566a1c4e0f"
+      "blob": "blobs/6158b6a10fe306211ab70bba43a272e53505f5f17f827a79766d2e46c390217b"
     },
     "docs/process/schemas/existing-ui-baseline.schema.json": {
       "type": "file",
@@ -4632,9 +4632,9 @@
     },
     "scripts/lib/first-slice-artifacts.mjs": {
       "type": "file",
-      "digest": "d22de1fcf155d3768f4040fd805e81a4b9d01248d468f6957b4058ecc22057fd",
+      "digest": "956cdb07a6d3df854b6f9413ef41bcc08c7b45d66b878aad6bd064968a056092",
       "mode": 420,
-      "blob": "blobs/d22de1fcf155d3768f4040fd805e81a4b9d01248d468f6957b4058ecc22057fd"
+      "blob": "blobs/956cdb07a6d3df854b6f9413ef41bcc08c7b45d66b878aad6bd064968a056092"
     },
     "scripts/lib/first-slice-tests.mjs": {
       "type": "file",
@@ -7448,6 +7448,11 @@
       "digest": "8229ca854e11dc8e6aef2131ee03f31fb1561cf905fab9ccc325180cf3331352",
       "mode": 420
     },
+    ".agents/skills/code-review/references/yss-review-standards.md": {
+      "type": "file",
+      "digest": "f97195d2c7e2d9e1d8ccf430450646d89be1b42231b352bafe86b782711407ed",
+      "mode": 420
+    },
     ".agents/skills/llm-wiki/SKILL.md": {
       "type": "file",
       "digest": "159973952d2640a52da4595e08c73d20de72cab3e04fa592e9b2c3845f02a0f6",
@@ -7616,6 +7621,11 @@
     ".codex/skills/code-review/agents/openai.yaml": {
       "type": "file",
       "digest": "8229ca854e11dc8e6aef2131ee03f31fb1561cf905fab9ccc325180cf3331352",
+      "mode": 420
+    },
+    ".codex/skills/code-review/references/yss-review-standards.md": {
+      "type": "file",
+      "digest": "f97195d2c7e2d9e1d8ccf430450646d89be1b42231b352bafe86b782711407ed",
       "mode": 420
     },
     ".codex/skills/llm-wiki/SKILL.md": {
@@ -7833,6 +7843,11 @@
       "digest": "8229ca854e11dc8e6aef2131ee03f31fb1561cf905fab9ccc325180cf3331352",
       "mode": 420
     },
+    ".cursor/skills/code-review/references/yss-review-standards.md": {
+      "type": "file",
+      "digest": "f97195d2c7e2d9e1d8ccf430450646d89be1b42231b352bafe86b782711407ed",
+      "mode": 420
+    },
     ".cursor/skills/llm-wiki/SKILL.md": {
       "type": "file",
       "digest": "159973952d2640a52da4595e08c73d20de72cab3e04fa592e9b2c3845f02a0f6",
@@ -8001,6 +8016,11 @@
     ".pi/skills/code-review/agents/openai.yaml": {
       "type": "file",
       "digest": "8229ca854e11dc8e6aef2131ee03f31fb1561cf905fab9ccc325180cf3331352",
+      "mode": 420
+    },
+    ".pi/skills/code-review/references/yss-review-standards.md": {
+      "type": "file",
+      "digest": "f97195d2c7e2d9e1d8ccf430450646d89be1b42231b352bafe86b782711407ed",
       "mode": 420
     },
     ".pi/skills/llm-wiki/SKILL.md": {
@@ -8548,6 +8568,11 @@
       "digest": "97a04dd68ddf7c9aae79e1fc74222b48824c059a9c58ea96e8b536691e5454f9",
       "mode": 420
     },
+    "scripts/lib/first-slice-artifacts.mjs": {
+      "type": "file",
+      "digest": "d22de1fcf155d3768f4040fd805e81a4b9d01248d468f6957b4058ecc22057fd",
+      "mode": 420
+    },
     "scripts/lib/frontend-delivery-boundary.mjs": {
       "type": "file",
       "digest": "436fc1286c6ce62d5559631b08892130b48e853dc2476c66f8827ae6e9f65527",
@@ -8709,8 +8734,8 @@
       "mode": 420
     }
   },
-  "transitionBaselinesHash": "f4dc4ee3c75a5907ef491b10a9ddf09177d4b36836fb348e003deeefe97c65a7",
-  "snapshotHash": "8a26767e54ffd1ef29f212d04b87348f2a9d59df218a3468f035ccc99f46c91a",
+  "transitionBaselinesHash": "18848d0df6a05626dc457a3a443bb030ae26ced7ff299ae386f95d2b42a55993",
+  "snapshotHash": "b13b87ddf4b10f74ad3f91a4e87c5848ef091154a74697a0a86d2ce7689652e3",
   "projectionRepresentation": "materialized-files",
   "pathEncoding": "sha256-blobs-v1"
 }
