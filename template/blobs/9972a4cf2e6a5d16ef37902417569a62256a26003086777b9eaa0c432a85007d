@@ -1,6 +1,6 @@
 ---
 name: yss-design-system
-description: Use when YSS 产品设计系统与 Ant Design 企业级 UI 风格基线。涉及页面设计、原型评审、UI 实现、组件选型、主题 token、颜色排版间距、响应式验收、Ant Design/YSS UI 风格一致性、docs/design/design.md 更新或从外部设计系统引入规范时必须使用。
+description: 建立或核验 YSS 设计系统、主题 Token 与页面视觉一致性；用于设计规范变更、原型评审及按当前设计基线验收。
 ---
 
 # YSS Design System
@@ -18,7 +18,7 @@ description: Use when YSS 产品设计系统与 Ant Design 企业级 UI 风格�
 - Codex `$design-qa` 项目对照：`references/design-qa-theme.md`，不替代官方 `design-qa` 流程，也不改上游插件正文。
 - 原型阶段合同：`yss-prototype-stage`，用于统一 H1/H2 原型资产和浏览器验证证据。H1/H2 默认使用项目 Token 驱动的 HTML/CSS/JavaScript 离线原型。
 
-如果只需要快速判断，先读本文件。若要写 UI 规范、实现页面、评审设计或调整 Token，必须按 `DESIGN.md` → `docs/design/design.md` → `docs/design/tokens/*` 顺序读取；若要执行评审或实现检查，再读 `references/design-system.md`。
+如果只需要快速判断，先读本文件。若要写 UI 规范、实现页面、评审设计或调整 Token，必须按 `DESIGN.md` → `docs/design/design.md` 顺序读取，再按当前主题、密度与输出表面选择对应 Token 文件，不全量预读所有主题；若要执行评审或实现检查，再读 `references/design-system.md`。
 
 ## 使用流程
 
@@ -26,7 +26,7 @@ description: Use when YSS 产品设计系统与 Ant Design 企业级 UI 风格�
 2. 读取已有资产：先读根 `DESIGN.md`，再读 `docs/design/design.md` 和 Token 派生快照，最后按任务读取相关 Spec、交互说明、状态矩阵、OpenAPI Draft、现有页面代码。
 3. 按设计系统基线约束输出或修改产物：颜色、排版、间距、圆角、动效、组件、状态、响应式。
 4. 若是产品设计阶段，先使用 `yss-prototype-stage`；规范直出由 YSS HTML adapter 执行；存在已选视觉稿时条件使用 `product-design:index`，其他 Agent 交付等价证据。
-5. 若是前端实现阶段，配合 `yss-ui`、`yss-ui-business-page-generation`、`yss-components`、`yss-formily`，但本技能负责风格与体验一致性门禁。
+5. 前端实现与真实组件核验回交消费方前端 profile；由其主控在已批准合同内路由 `yss-ui`、`yss-ui-business-page-generation` 和 `yss-formily`。战略 profile 只交付设计依据，不调用本地未安装的实现技能。
 6. 若发现视觉 Token 或组件变体不足，先更新根 `DESIGN.md` 并重新生成投影；只有治理、流程或验收说明不足时才更新 `docs/design/design.md`。
 
 ## 核心基线
@@ -89,7 +89,7 @@ description: Use when YSS 产品设计系统与 Ant Design 企业级 UI 风格�
 | 低保真线框或流程图 | 语义草图或 HTML；设计工具按需使用 |
 | 前端页面实现 | `yss-ui` / `yss-ui-business-page-generation` |
 | 表单 schema | `yss-formily` |
-| YTable / YTree / 高度自适应 | `yss-components` / `yss-use-table-height` / `yss-use-tree-height` |
+| YTable / YTree / 高度自适应 | 消费方前端 profile 的 `ytable-usage` / `ytree-usage` / `yss-hook`（通过交接路由） |
 | 原型交接前的六轴 QA | 规范直出由 YSS adapter 按 design-contract 验收；独立视觉稿才条件使用 design-qa 比对，项目 Token 优先 |
 | 原型渲染适配 | `yss-prototype-stage/references/product-design-adapter.md`；H1/H2 统一 HTML 交付、分别验证视觉与可操作流程；不得调用 `yss-ui` |
 | API 契约 / 接入 | `yss-openapi-governance` / `yss-api-integration` |

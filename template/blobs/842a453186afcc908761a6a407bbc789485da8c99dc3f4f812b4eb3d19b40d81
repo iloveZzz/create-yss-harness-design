@@ -1,9 +1,5 @@
 # Critical Overrides
 
-## 战略设计仓职责
-
-本仓以 `docs/process/harness-profile.yaml` 为准，`image-to-code` / `url-to-code` 仅构建由 `yss-prototype-stage` 持有合同的 H1/H2 原型。生产前端、后端、工程脚手架、真实 API 集成与部署交付回交下游研发项目；不得把原型适配器当作技术实现入口。
-
 These rules override generic assistant defaults for Product Design work.
 
 ## Context
@@ -38,8 +34,7 @@ These rules override generic assistant defaults for Product Design work.
 
 ## Re-read this file
 
-- Before every second user-facing assistant message, read this file, reminding of these principles.
-- A user-facing assistant message is any message sent in `commentary` or `final`.
+- Read this file on first entering a Product Design workflow. Re-read only when context was lost, the file changed, or a new workflow/decision requires it; do not use a message-count cadence.
 
 ## Explore vs. Design vs. Build
 
@@ -49,7 +44,7 @@ These rules override generic assistant defaults for Product Design work.
 - Never invent a better first screen, landing page, hero, card style, icon set, image style, color palette, radius, spacing, or typography when cloning or matching a provided source. Match the source.
 - Check the work like a senior designer. Look for broken layouts, cropped images, bad padding, bad margins, wrong font styles, wrong font weights, incorrect borders, and incorrect border radii.
 - Screenshots are not QA by themselves. Put the reference image and the prototype screenshot together in the same comparison input, then judge the visible differences from that combined input. Use the same viewport and state, fix visible mismatches, then compare again.
-- Build the current screen's interactions. Sidebars, menus, navs, forms, inputs, buttons, tabs, dropdowns, drawers, modals, popovers, carousels, tooltips, filters, toggles, and first-screen controls must be functional and populated with realistic mock data. Do not build new pages or routes unless the user asks for them.
+- Carry the confirmed interactivity level and required states into every downstream workflow and QA. Static review requires visual/state representation only; interactive prototypes implement the agreed flows and key failure states. Do not add CRUD, real data writes, new pages or routes beyond the agreed scope.
 
 ## Browser user
 
@@ -58,5 +53,5 @@ These rules override generic assistant defaults for Product Design work.
 
 ## Working with and making assets
 
-- Never fake visible assets with ASCII, prose, text symbols, emoji, placeholder boxes, CSS art, div art, handcrafted SVGs, inline SVGs, or approximate code drawings. Use real source assets when available. Use the built-in Image Gen tool for image assets when source assets are missing. Use the closest matching icon library for icons.
+- Never fake visible assets with ASCII, prose, text symbols, emoji, placeholder boxes, CSS art, div art, handcrafted SVGs, inline SVGs, or approximate code drawings. Preserve approved source assets, including existing SVGs and code-native brand components. The prohibition concerns unapproved approximations replacing the target, not faithful reuse. Use real source assets when available. Use the built-in Image Gen tool for image assets when source assets are missing. Use the closest matching icon library for icons.
 - Work like a designer. Measure the component or section first, then create or place the asset to fit that slot. Match the needed dimensions, crop, subject, palette, and density. Do not lazily crop sprite sheets, stretch screenshots, or use images that do not fit seamlessly into the design.

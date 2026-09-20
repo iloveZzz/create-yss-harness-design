@@ -5,8 +5,6 @@ description: "Route Product Design requests for UX research, product audits, vis
 
 # Skill Purpose
 
-本地能力限定为战略设计、视觉探索和 H1/H2 原型评审；生产工程实现转交下游。`image-to-code` 是原型渲染适配器，不能放行生产前端或后端实现。
-
 Route Product Design requests to the right Product Design skill. Treat an `@Product Design` mention, direct Product Design invocation, or broad request like "design this app", "build a prototype", "audit this flow", "research this product", or "share this prototype" as intent to use this plugin.
 
 # Plugin Purpose
@@ -43,10 +41,10 @@ For new app, prototype, redesign, or UI build requests without a URL, screenshot
 
 - Run `$get-context`.
 - After the brief is approved, route to `$ideate`.
-- Show exactly three visual options and wait for the user to choose one.
+- Show the user-requested number of visual options (default three when exploration is needed) and wait for the user to choose one.
 - Do not scaffold, edit files, or start a server before a visual option is selected.
 
-`Full working version`, `no refs`, `go for it`, `make an assumption`, or a confirmed brief do not waive this.
+A confirmed selected visual source skips ideation. Otherwise retain the visual-selection step, respecting the user-requested option count; a static brief does not authorize full interaction.
 
 ## User Context
 

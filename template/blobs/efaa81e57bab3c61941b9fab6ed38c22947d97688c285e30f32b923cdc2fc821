@@ -65,4 +65,4 @@ Plan 的目标与退出条件由 `docs/process/lifecycle-registry.yaml` 持有�
 
 ## 战略交接快照包
 
-使用 `scripts/strategic-handoff export / verify / import`；源资产冻结、规则身份与批准绑定、目标术语对账和逐条承接合同以 `docs/process/strategic-handoff-package.md` 为准。来自导入包时，战术合同绑定 `strategic_handoff`；批准/流转前执行 `scripts/verify-strategic-handoff-consumption --root <target> <tactical>`，切片消费追加 `--slice <slice-id>`。存在延期时仅允许无依赖且核验通过的切片继续；未知依赖扩大阻断。
+跨仓交付或恢复时读取 [战略交接合同](references/strategic-handoff-routing.md)。只接受当前可核验包与承接结果；用户决定、版本失效和批准边界仍由主控持有。

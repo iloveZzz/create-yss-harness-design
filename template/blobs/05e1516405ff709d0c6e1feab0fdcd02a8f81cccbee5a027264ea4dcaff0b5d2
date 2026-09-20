@@ -9,6 +9,10 @@ description: 编排 YSS 产品或模块从机会调研到业务边界与协作�
 
 文档输出时按 `lifecycle-document-output` 条件调用 `i-have-adhd`，读取 `docs/process/document-writing.md`；作用域仅限当前产物，派发时传递条件及引用。
 
+## 条件读取
+
+先确认当前问题是业务边界、产品设计、方案决定还是交接恢复，只读取该工作单元的合同和必要前置。已有已确认输入先核验复用；不要为普通问答、只读 Context 或已授权的小修复重跑战略访谈。正式资产、用户决定、版本失效和交接证据仍完整遵守下文合同。
+
 ## 入口与边界
 
 Plan 入口读取 `docs/plan/README.md` 和 `docs/process/plan-migration.md`，按注册表退出条件核查战略输入。关键未决项阻断进入 Spec；非关键项须有责任人、解决时点和接收方。只使用 Plan 标识，Plan 后仍保留 Spec、原型、业务 Ticket 与交接阶段。

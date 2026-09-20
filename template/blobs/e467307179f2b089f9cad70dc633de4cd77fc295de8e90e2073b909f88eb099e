@@ -5,7 +5,7 @@ description: Use when independently reviewing low-fidelity UI, interaction specs
 
 # Prototype Review
 
-Use this skill as the independent low-fidelity review in `yss-prototype-stage`. The review is fail-closed: if the design cannot drive calibrated requirements and the active profile's downstream acceptance, send it back to product design. Only the current Harness lifecycle orchestrator records the resulting `gate.prototype-reviewed` decision.
+Use this skill as the independent low-fidelity review in `yss-prototype-stage`. The review is fail-closed: if the design cannot drive calibrated requirements and the active profile's downstream acceptance, send it back to product design. Only the current Harness lifecycle orchestrator records the resulting `check.prototype-reviewed` decision.
 
 文档输出时按 `lifecycle-document-output` 条件调用 `i-have-adhd`，读取 `docs/process/document-writing.md`；作用域仅限当前产物，派发时传递条件及引用。
 
@@ -19,7 +19,7 @@ Run this independent gate only when UI changes affect a primary user flow, navig
 - `docs/.scratch/<feature>/design/<feature>-interaction-spec.md` or prototype link.
 - State matrix, preferably based on `docs/design/templates/state-matrix-template.md`.
 - Existing OpenAPI Draft only if the review is checking alignment; do not require OpenAPI before product design.
-- `docs/.scratch/<feature>/verification/prototype-evidence.yaml` may be created as a pending Prototype Evidence schema v4 record, but档位构建、Visual Baseline schema v1 与浏览器验证属于后续 `gate.prototype-verified`。
+- `docs/.scratch/<feature>/verification/prototype-evidence.yaml` may be created as a pending Prototype Evidence schema v4 record, but档位构建、Visual Baseline schema v1 与浏览器验证属于后续 `check.prototype-verified`。
 
 ## Review Gates
 
@@ -68,7 +68,7 @@ Run this independent gate only when UI changes affect a primary user flow, navig
 - <component states, data dependencies, profile triggers, frontend acceptance notes>
 
 ### Lifecycle Evidence
-- <persistent review path; blockers; `gate.prototype-reviewed` candidate result>
+- <persistent review path; blockers; `check.prototype-reviewed` candidate result>
 
 ### Next Action
 - <yss-prototype-stage / return to product design>
