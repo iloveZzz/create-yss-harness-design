@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "sourceRepository": "https://github.com/iloveZzz/yss-spec-project-template.git",
-  "sourceRevision": "9126b41c5657b8c80ac3ff6aa7117f4b01e14e18",
+  "sourceRevision": "445172278b7a107ac42ec00ee1dd936bdd244933",
   "sourceState": "committed",
   "sourcePath": ".template-source/cli-core",
   "coreVersion": "0.2.0",
@@ -28,7 +28,7 @@
       "mode": 420
     },
     "family.mjs": {
-      "digest": "5d00df4e98cad8f6b920cc4f95bb86eb559ae11a8fed1db9c02ae6a366ff5563",
+      "digest": "54d84dc81e0969dba6aca1a49fb37186d60700388a251f961d4ac5d8fa1407d4",
       "mode": 420
     },
     "gitignore.mjs": {
@@ -60,7 +60,7 @@
       "mode": 420
     },
     "tests/cli.test.mjs": {
-      "digest": "bab715b0ef080b21cfd7323c32025b79e82a09ed13b91993f73c3824545fface",
+      "digest": "ac16f86c208e5078dc3ba46e7cb44a24dd0102d6076f1467493c13e2a4aa7bac",
       "mode": 420
     },
     "tests/package-contract.mjs": {
@@ -92,5 +92,5 @@
       "mode": 420
     }
   },
-  "digest": "7eec927ca8727cbd03256c2b7e33922cbe962e722986b22512f49b96b14ec2bc"
+  "digest": "cd86f460e5a4bc7e57c20b7b712a2f0c6b8b25b2701d5bbef3269f52679c9c17"
 }
