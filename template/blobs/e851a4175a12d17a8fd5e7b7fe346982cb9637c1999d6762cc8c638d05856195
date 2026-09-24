@@ -2,6 +2,10 @@
 
 本文记录已退役技能入口的迁移路径。退役技能不保留物理目录、投影或 lock 条目；本文件是历史名称的唯一持久兼容说明。
 
+## `grill-me` 入口退役（2026-09-24）
+
+`grill-me` 仅转发到 `grilling`，现已硬退役。新请求直接使用 `grilling`；旧 ID 返回 `skill-retired`，不保留兼容目录、投影、Registry 或 lock 条目。历史候选与冻结证据只读保留。
+
 ## high-fidelity-html-prototype
 
 `high-fidelity-html-prototype` 已退役，不再作为 Router alias、默认发现入口或独立物理技能存在。

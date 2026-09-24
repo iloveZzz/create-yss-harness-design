@@ -32,7 +32,7 @@
 └── scripts/                 ← 模板轻量校验脚本
 ```
 
-项目需要生成度量或其他临时产物时再按需创建对应目录。`docs/api/`、`docs/implementation/`、`docs/testing/` 等目录保留为下游研发模板兼容资产，不是本 profile 的本地主链。
+项目需要生成度量或其他临时产物时再按需创建对应目录。`docs/api/`、`docs/implementation/`、`docs/testing/` 等下游研发目录不是本 profile 的本地主链，由接收项目按需创建。
 
 ## Quickstart
 
@@ -94,6 +94,8 @@ scripts/verify-template
 
 ## 关键文档
 
+业务方可从[战略设计子项目用户手册](./docs/user-guide/战略设计子项目用户手册.md)了解工作入口；阶段、条件门禁和完成证据以生命周期注册表及流程裁剪规则为准。
+
 | 文档 | 内容 |
 |------|------|
 | [AGENTS.md](./AGENTS.md) | 仓库身份路由、业务方案确认点与禁止事项 |
@@ -102,10 +104,8 @@ scripts/verify-template
 | [docs/user-guide/用户手册索引.md](./docs/user-guide/用户手册索引.md) | 模板使用说明 |
 | [docs/process/lifecycle-registry.yaml](./docs/process/lifecycle-registry.yaml) | 生命周期结构事实源 |
 | [docs/process/harness-process-tailoring.md](./docs/process/harness-process-tailoring.md) | 流程裁剪指南 |
-| [docs/process/harness-executive-blueprint.md](./docs/process/harness-executive-blueprint.md) | 面向业务方和管理者的 Harness 一页式蓝图 |
 | [docs/agents/README.md](./docs/agents/README.md) | Agent 协作文档目录说明 |
 | [docs/agents/skills-maintenance.md](./docs/agents/skills-maintenance.md) | Agent skills 安装与维护 |
-| [docs/plan/IDEATION.md](./docs/plan/IDEATION.md) | 机会构想方法 |
 
 ## 核心模板
 
@@ -113,7 +113,6 @@ scripts/verify-template
 |------|------|
 | [docs/templates/spec-template.md](./docs/templates/spec-template.md) | Spec，包含测试决策、AI / 人工审查点 |
 | [docs/templates/strategic-design-handoff-template.yaml](./docs/templates/strategic-design-handoff-template.yaml) | 业务方案交接包 |
-| [docs/templates/agent-brief-template.md](./docs/templates/agent-brief-template.md) | `triage` 产出的 Agent Brief |
 | [docs/architecture/templates/business-architecture-template.md](./docs/architecture/templates/business-architecture-template.md) | 业务架构 |
 | [docs/architecture/templates/functional-architecture-template.md](./docs/architecture/templates/functional-architecture-template.md) | 功能架构 |
 

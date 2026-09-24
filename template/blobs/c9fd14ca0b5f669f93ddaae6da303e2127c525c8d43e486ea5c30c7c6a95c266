@@ -296,14 +296,6 @@ skills:
       impacts: [ discovery ]
     }
   - {
-      id: grill-me,
-      layer: compatibility,
-      maturity: supported,
-      instance_default_discoverable: false,
-      aliases: [],
-      impacts: [ discovery ]
-    }
-  - {
       id: grill-with-docs,
       layer: compatibility,
       maturity: supported,

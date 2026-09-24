@@ -98,7 +98,6 @@ entry_routing:
     skills:
       [
         ask-matt,
-        grill-me,
         grill-with-docs,
         to-spec,
         to-tickets,
@@ -281,7 +280,6 @@ matt_invocation_boundary:
   user_invoked_skills:
     [
       ask-matt,
-      grill-me,
       grill-with-docs,
       handoff,
       to-spec,
@@ -292,7 +290,6 @@ matt_invocation_boundary:
   lifecycle_managed_user_entries:
     [
       ask-matt,
-      grill-me,
       grill-with-docs,
       to-spec,
       to-tickets,
@@ -329,6 +326,7 @@ skill_source_contract:
   retired_shared_skills:
     [
       batch-grill-me,
+      grill-me,
       product-design-prototype,
       yss-dictionary,
       yss-jdbc,

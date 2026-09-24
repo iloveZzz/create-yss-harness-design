@@ -86,21 +86,6 @@
           ".pi/skills"
         ]
       },
-      "grill-me": {
-        "source": "mattpocock/skills",
-        "sourceType": "github",
-        "skillPath": "skills/productivity/grill-me/SKILL.md",
-        "effectiveHash": "916cf7ff0d81cf47fe578bd86695e09a53fbe8a4b371586e19dde6573549e88d",
-        "sourceRevision": "0ab1b63a410a03d3627979a109c8695de27af954",
-        "upstreamHash": "5a13e157f85835632b132390a162d234822658b6a544f31cc2578280062bd044",
-        "adaptationRef": "docs/process/MATT-POCOCK-ENGINEERING-SKILLS.md",
-        "targets": [
-          ".agents/skills",
-          ".codex/skills",
-          ".cursor/skills",
-          ".pi/skills"
-        ]
-      },
       "grill-with-docs": {
         "source": "mattpocock/skills",
         "sourceType": "github",
@@ -350,7 +335,7 @@
         "source": "project",
         "sourceType": "local",
         "skillPath": ".agents/skills/yss-strategic-design/SKILL.md",
-        "effectiveHash": "2a9c6664c262d092616100c2cd61c0a3842efd42e79a97e0d7500f977a513f4d",
+        "effectiveHash": "1c926dd2d8d6f075e3a57a7325b1ad2946d004a108050941cd1572ea8082a92f",
         "targets": [
           ".agents/skills",
           ".codex/skills",

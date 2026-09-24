@@ -32,7 +32,7 @@ Plan 入口读取 `docs/plan/README.md` 和 `docs/process/plan-migration.md`，�
 
 业务方案交接包必须同时引用已批准且版本当前的 `artifact.domain-strategy`、`artifact.stage-decision-package`、Spec、已批准 UI 依据和业务级 Ticket 集，并以 Handoff v5 交给下游研发团队。新设计保留原型与视觉包要求；确无 UI 改动的既有页面使用 `existing-ui-baseline` v1，按 `docs/process/existing-ui-baseline.md` 核验固定源码、真实动作/API/截图和当前产品确认，不能把截图自行升格为已批准原型。它必须携带当前根 `CONTEXT.md` 的 `source_context_snapshot`、结构化 `context_delta`，并声明目标仓在进入技术设计前完成本地 `context_reconciliation`。v3/v4 与既有裸 v5 包只读兼容 `verify/import`；修改或重新交付必须迁移到 v5 并重新批准，不得从自由文本猜测术语映射。下游团队的下一工作单元由内部技能 `yss-technical-design` 接管；本 profile 不生成 OpenAPI、技术设计合同、Slice Implementation Contract、代码或发布资产。需要继续推进时，必须新建或切换到下游研发团队的 project profile，不能在本 profile 中越过 `work-unit.strategic-design-handoff`。
 
-Matt 的 `ask-matt`、`grill-me`、`grill-with-docs`、`to-spec`、`to-tickets`、`triage` 和 `wayfinder` 保留为显式兼容入口；`implement` 已从本分支移除。默认路径是本 skill 持有的原生工作单元，由本编排器创建正式资产、维护状态并在会签门禁暂停。兼容入口不得自动调用它们或代替其创建正式资产；Matt 只导航，不得写生命周期资产或改变门禁/Ticket 状态；任何写入前回交本编排器。
+Matt 的 `ask-matt`、`grill-with-docs`、`to-spec`、`to-tickets`、`triage` 和 `wayfinder` 保留为显式兼容入口；`implement` 已从本分支移除。默认路径是本 skill 持有的原生工作单元，由本编排器创建正式资产、维护状态并在会签门禁暂停。兼容入口不得自动调用它们或代替其创建正式资产；Matt 只导航，不得写生命周期资产或改变门禁/Ticket 状态；任何写入前回交本编排器。
 
 ## 不可裁剪的主链
 

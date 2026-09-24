@@ -11,7 +11,6 @@ const PUBLIC_FILES = [
   "docs/user-guide/战略设计子项目用户手册.md",
   "docs/user-guide/用户手册索引.md",
   "docs/process/harness-profile.yaml",
-  "docs/process/harness-executive-blueprint.md",
   "docs/agents/digital-human-roles.md",
   "docs/design/README.md",
   "docs/design/design.md",
@@ -32,6 +31,12 @@ for (const relativePath of PUBLIC_FILES) {
     assert.equal(source.includes(term), false, `${relativePath} 不应向业务角色展示术语: ${term}`);
   }
 }
+
+
+const businessEntry = read("README.md").split("\n").find((line) => line.startsWith("业务方可从"));
+assert.ok(businessEntry, "README.md 应保留业务入口");
+assert.match(businessEntry, /生命周期注册表/);
+for (const term of JARGON) assert.equal(businessEntry.includes(term), false, `README.md 业务入口不应展示术语: ${term}`);
 
 const guide = read("docs/user-guide/战略设计子项目用户手册.md");
 for (const role of ["产品经理", "需求分析师", "商务协作者"]) assert.match(guide, new RegExp(role));

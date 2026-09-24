@@ -49,7 +49,7 @@ README、用户指南和 `CLAUDE.md` 只解释或指向上述事实，不定义�
 先读 `docs/process/harness-profile.yaml`，再按影响面和最近可信阶段裁剪；注册表可保留下游兼容 ID，本地只执行 profile 的 `allowed_work_units`。
 
 - 主链：入口分诊 → 机会与目标 → 业务故事 → 业务边界与规则 → 阶段决策 → Spec → 页面验证 → 业务级 Ticket → Strategic Design Handoff。
-- 新功能或较大变更进入 `yss-strategic-design`；`ask-matt`、`grill-me`、`grill-with-docs`、`to-spec`、`to-tickets`、`triage`、`wayfinder` 仅为显式兼容入口，完成后回交编排器验收。
+- 新功能或较大变更进入 `yss-strategic-design`；`ask-matt`、`grill-with-docs`、`to-spec`、`to-tickets`、`triage`、`wayfinder` 仅为显式兼容入口，完成后回交编排器验收。
 - 命中的条件门禁必须完成；未命中只记录有理由的 `not-applicable`，不生成空文档。`seam-deferred` 必须记录风险、责任人、后续 Ticket、验证计划和目标版本或日期。
 - 本地不生成 Tactical Design、OpenAPI、父 / 垂直切片 Ticket、Slice Implementation Contract 或运行时代码；`implement` 必须 `blocked` 并转交下游研发 profile。
 - 完成 `work-unit.strategic-design-handoff` 后 `next_route` 必须为 `null`，本仓不继续推进下游生命周期。

@@ -21,7 +21,7 @@ function validateMattContract(data) {
   const direct = data.entry_routing?.direct_matt_entry;
   ensure(direct?.skill === "ask-matt" && direct?.delegate_to === "yss-strategic-design" && direct?.requires_valid_manifest === true && direct?.action === "navigate-only" && direct?.lifecycle_state_mutation === "forbidden" && direct?.lifecycle_artifact_write === "forbidden" && direct?.return_to_orchestrator === "required", "ask-matt 导航入口尚未形成验明身份、只导航、禁止生命周期写入并强制回交主控的完整契约");
   const formal = data.entry_routing?.formal_user_entry;
-  ensure(JSON.stringify(formal?.skills) === JSON.stringify(["ask-matt", "grill-me", "grill-with-docs", "to-spec", "to-tickets", "triage", "wayfinder"]) && formal?.action === "lifecycle-validate-and-accept" && formal?.lifecycle_artifact_write === "conditional-explicit-user-entry" && formal?.return_to_orchestrator === "required", "正式用户入口未区分于 ask-matt 导航入口");
+  ensure(JSON.stringify(formal?.skills) === JSON.stringify(["ask-matt", "grill-with-docs", "to-spec", "to-tickets", "triage", "wayfinder"]) && formal?.action === "lifecycle-validate-and-accept" && formal?.lifecycle_artifact_write === "conditional-explicit-user-entry" && formal?.return_to_orchestrator === "required", "正式用户入口未区分于 ask-matt 导航入口");
   const setup = data.setup_readiness;
   ensure(setup?.missing_action === "needs-human" && setup?.requested_skill === "setup-matt-pocock-skills" && setup?.resume_route === "setup-readiness" && setup?.lifecycle_may_invoke_setup === false, "setup 缺失时未限制为显式用户入口暂停");
   ensure(includesAll(setup?.preserves, ["lifecycle.status", "gate.status", "ticket.role"]) && setup?.legacy_artifacts_detected?.action === "migration-check" && setup.legacy_artifacts_detected.setup === "forbidden" && setup.legacy_artifacts_detected.write === "paused", "setup 暂停或旧资产迁移暂停契约不完整");
@@ -42,11 +42,11 @@ function validateMattContract(data) {
 
 function validateInvocationBoundary(data) {
   const boundary = data.matt_invocation_boundary;
-  const expectedUserInvoked = ["ask-matt", "grill-me", "grill-with-docs", "handoff", "to-spec", "to-tickets", "triage", "wayfinder"];
+  const expectedUserInvoked = ["ask-matt", "grill-with-docs", "handoff", "to-spec", "to-tickets", "triage", "wayfinder"];
   const expectedModelInvoked = ["code-review", "competitive-intelligence", "domain-modeling", "grilling", "prototype-review", "writing-for-agents", "yss-research"];
   const expectedLifecycleModelInvoked = ["competitive-intelligence", "domain-modeling", "grilling", "prototype-review", "yss-research"];
   ensure(JSON.stringify(boundary?.user_invoked_skills) === JSON.stringify(expectedUserInvoked), "Matt user-invoked skills 清单不完整或已漂移");
-  ensure(JSON.stringify(boundary?.lifecycle_managed_user_entries) === JSON.stringify(["ask-matt", "grill-me", "grill-with-docs", "to-spec", "to-tickets", "triage", "wayfinder"]), "生命周期管理的显式用户入口清单不完整");
+  ensure(JSON.stringify(boundary?.lifecycle_managed_user_entries) === JSON.stringify(["ask-matt", "grill-with-docs", "to-spec", "to-tickets", "triage", "wayfinder"]), "生命周期管理的显式用户入口清单不完整");
   ensure(boundary?.lifecycle_may_invoke_user_invoked === false && boundary?.formal_artifact_owner === "explicit-user-entry", "生命周期仍可能自动调用 user-invoked skill 或产出其正式资产");
   ensure(JSON.stringify(boundary?.model_invoked_skills) === JSON.stringify(expectedModelInvoked) && JSON.stringify(boundary?.lifecycle_allowed_model_invoked_skills) === JSON.stringify(expectedLifecycleModelInvoked) && boundary?.continuous_orchestration === "compatibility-prepare-and-validate-only", "Matt invocation inventory 或生命周期 model-invoked 白名单不完整");
   ensure(JSON.stringify(data.skill_source_contract?.source_revisions_required) === JSON.stringify(["mattpocock/skills"]) && data.skill_source_contract?.adaptation_ref_required_when_effective_diff === true && data.skill_source_contract?.retired_shared_skills?.includes("batch-grill-me"), "上游来源或退役 skill 供应链契约不完整");
