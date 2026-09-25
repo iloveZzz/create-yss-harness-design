@@ -12,12 +12,16 @@ create-yss-harness-design doctor --target-dir ./new-project --json
 create-yss-harness-design diff --target-dir ./new-project --json
 create-yss-harness-design sync --target-dir ./new-project --plan --prune
 create-yss-harness-design sync --target-dir ./new-project --apply --prune
+create-yss-harness-design sync --target-dir ./existing-project --migrate-layout --plan
+create-yss-harness-design sync --target-dir ./existing-project --migrate-layout --apply
 create-yss-harness-design recover --target-dir ./new-project
 create-yss-harness-design recover --target-dir ./new-project --apply
 create-yss-harness-design update --dry-run
 ```
 
 init 只接受不存在或空目录；已有项目使用 attach。attach/sync 默认预览，`--apply` 才写入。diff、doctor 和 recover 默认只读，不生成 metadata、技能锁、Git 或状态目录。recover 仅恢复未完成事务，不提供成功事务的历史 rollback。update/upgrade 仅更新程序，不同步实例；源码、npx 和未知安装方式输出指引，不自动降级。
+
+`--migrate-layout` 仅适用于 attach/sync；旧 `docs/` 治理文件必须显式迁移。迁移要求可信旧基线，保留项目 tracker 原文；已修改或冲突的静态文件阻断，`--force` 不绕过。新实例的治理资产位于 `.template-spec/`，`docs/` 供项目规格产物使用。
 
 `--plan` 适用于 attach/sync；`--prune` 仅适用于 sync。`--plan`、`--dry-run` 与 `--apply` 互斥。`--json` 只控制格式，stdout 为一个 schemaVersion 1 JSON 对象，日志走 stderr。普通差异与警告退出码 0；冲突、非法参数、身份错误、校验失败及无法恢复退出码 1。错误返回 code/message，计划含 changes、conflicts、summary、prunable、pruned、retainedRemoved。doctor 返回逐项 checks 和处理建议。
 
@@ -35,7 +39,7 @@ init 只接受不存在或空目录；已有项目使用 attach。attach/sync �
 
 三家族之间以及本体/旧 dev 身份之间禁止自动转换。业务源码、构建文件、批准证据、Git、gitlink、嵌套仓库和越界路径均受保护。生成治理资产不会创建远程仓、Tracker 或业务运行时代码。
 
-模板内的[战略设计用户手册](https://github.com/iloveZzz/yss-harness-design-agent/blob/main/docs/user-guide/战略设计子项目用户手册.md)说明本仓操作主线；[CLI 使用说明](https://github.com/iloveZzz/yss-harness-design-agent/blob/main/docs/user-guide/CLI使用说明.md)说明实例侧命令和恢复语义。
+模板内的[战略设计用户手册](https://github.com/iloveZzz/yss-harness-design-agent/blob/main/.template-spec/user-guide/战略设计子项目用户手册.md)说明本仓操作主线；[CLI 使用说明](https://github.com/iloveZzz/yss-harness-design-agent/blob/main/.template-spec/user-guide/CLI使用说明.md)说明实例侧命令和恢复语义。
 
 ## 维护与安装验收
 

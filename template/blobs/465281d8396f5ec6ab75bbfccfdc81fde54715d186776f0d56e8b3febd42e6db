@@ -1,0 +1,83 @@
+# 战略设计子项目用户手册
+
+本手册面向产品经理、需求分析师和商务协作者。当前 profile 是 `harness.business-ddd-strategy-handoff`：把用户问题收敛为批准的业务边界、Spec、页面依据、业务级 Ticket 和业务方案交接包；不设计工程 API，不生成前后端工程，不实施代码。
+
+## 创建或接管项目
+
+```sh
+npm view create-yss-harness-design version
+npx create-yss-harness-design@latest init --target-dir ./design-project --project-name 设备借用 --business-domain 内部设备管理
+npx create-yss-harness-design@latest attach --target-dir ./existing-project
+npx create-yss-harness-design@latest attach --target-dir ./existing-project --apply
+```
+
+init 只接受不存在或空目录。attach 和 sync 默认预览，必须带 `--apply` 才写入。生成后核对 `yss-project.yaml`、`.yss-harness-design.json`、根 `CONTEXT.md` 和 `.template-spec/process/harness-profile.yaml`；CLI 详情见[CLI 使用说明](CLI使用说明.md)。
+
+## 第一次让 Agent 工作
+
+```text
+请先只读检查本仓身份、根 CONTEXT.md、harness-profile.yaml 和现有业务资产。
+说明当前可信阶段、已确认决定、待确认问题、缺失证据和下一步。
+按依赖逐轮澄清，不进入技术设计、API、脚手架或代码实现。
+```
+
+Agent 应区分业务决定、可查证事实和待验证假设。业务语言先登记到根 `CONTEXT.md`；每个工作单元流转前完成当前 `context_reconciliation`。文件存在、聊天同意或历史批准都不能证明当前版本已获批准。
+
+## 业务方案总览
+
+总览只是导航视图，引用下列权威资产的当前状态、未决项和下一步，不复制正文，也不成为新的事实来源：
+
+- 机会与目标：谁遇到了什么问题。
+- 业务故事：事情通常怎样一步步发生。
+- 业务责任区与协作：每一步由谁负责。
+- 规则与例子：有哪些规则、例外。
+- Spec：确认的范围、行为和验收。
+- 页面验证：用哪些例子和证据证明结果正确。
+- 业务级 Ticket：哪一小段可以独立交付；本仓只形成业务级范围，不创建技术切片。
+- 业务方案交接：将已批准资产和待决问题交给研发团队。
+
+## 本仓操作主线
+
+`机会与目标 → 业务故事与责任边界 → 规则与反例 → Spec → UI 依据 → 业务级 Ticket → 批准交接`
+
+1. 确认用户、问题、目标、限制、范围和明确非目标。
+2. 用可观察行为说明正常、拒绝、边界和恢复场景；规则含糊时继续向有权用户提问。
+3. 形成 Spec。存在 UI 变化时准备并批准原型；确认无 UI 变化的既有工程使用 `existing-ui-baseline`，绑定源码、构建、浏览器捕获、截图和 API 记录。
+4. 由有权用户确认业务方案、页面依据和交接范围。业务级 Ticket 保持 `ready-for-human`，本仓不创建父 Ticket、垂直切片或 `ready-for-agent`。
+5. 形成 Handoff v5 交接描述，绑定根词汇、规则、场景、批准和 UI 基线；把技术待决项明确交给下游。
+
+## 导出前预检与交接
+
+`scripts/preflight-delivery` 只读取当前原始资产，不执行清单中的命令，不生成批准或收据。导出前准备 `delivery_kind: strategic-handoff` 的输入清单，并运行：
+
+```sh
+node scripts/preflight-delivery --input <战略预检输入.json> --stage export --json
+node scripts/strategic-handoff finalize --source-root . --handoff <Handoff-v5相对路径> --preflight-input <战略预检输入.json> --zip
+node scripts/strategic-handoff verify --bundle <包目录或ZIP>
+```
+
+预检和验包通过只证明所读资产的身份与完整性。它们不批准下游技术设计、Slice Contract 或发布。输出包交给下游后保留版本和摘要，不手改包内文件。
+
+## 用户决定与完成标准
+
+用户需要明确确认目标与非目标、规则与反例、UI 分支及当前基线、业务级 Ticket 范围、交接内容和研发待决事项。批准必须绑定当前资产、依据、范围和真实回复；资产变化后重新判断受影响批准。
+
+本仓完成时应同时满足：
+
+- 业务方案交接包已由当前批准资产生成并通过本轮验证。
+- 交接包含根词汇快照、规则/场景、UI 依据、业务 Ticket 和下游待决项。
+- 没有越界生成 OpenAPI、技术 Ticket、Slice Contract 或运行时代码。
+- 结论只写“战略可交接”，不写“产品完成”或“可发布”。
+
+## 同步与恢复
+
+```sh
+npx create-yss-harness-design@latest sync --target-dir . --plan --prune
+npx create-yss-harness-design@latest sync --target-dir . --apply --prune
+npx create-yss-harness-design@latest recover --target-dir .
+npx create-yss-harness-design@latest recover --target-dir . --apply
+```
+
+metadata v1 战略实例可由同家族 CLI 在首次 `sync --apply` 的事务内迁移到 v2；业务方案和批准不自动迁移。跨家族转换始终拒绝。`--prune` 只清理未被用户修改的退出分发文件，成功事务的撤销使用保存的 Git 基线或备份。
+
+职责案例见[设备借用案例](设备借用贯穿案例.md)，阶段导航见[本仓工作流](产品生命周期工作流.md)。
