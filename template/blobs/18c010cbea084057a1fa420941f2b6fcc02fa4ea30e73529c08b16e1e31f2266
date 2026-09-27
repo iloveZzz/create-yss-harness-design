@@ -21,7 +21,7 @@
       "work-unit.spec-synthesis": [
         "gate.spec-baseline-approved"
       ],
-      "work-unit.prototype-design": [
+      "work-unit.prototype-design-v2": [
         "gate.product-design-approved"
       ]
     },
@@ -132,7 +132,6 @@
       "yss-implementation-contract-compiler",
       "yss-domain",
       "yss-ui",
-      "yss-page-module-development",
       "yss-web-controller",
       "yss-repository",
       "implement",
@@ -169,7 +168,6 @@
         "yss-implementation-contract-compiler",
         "yss-domain",
         "yss-ui",
-        "yss-page-module-development",
         "yss-web-controller",
         "yss-repository",
         "implement",
@@ -208,7 +206,6 @@
         "yss-implementation-contract-compiler",
         "yss-domain",
         "yss-ui",
-        "yss-page-module-development",
         "yss-web-controller",
         "yss-repository",
         "implement",
@@ -240,7 +237,6 @@
         "yss-implementation-contract-compiler",
         "yss-domain",
         "yss-ui",
-        "yss-page-module-development",
         "yss-web-controller",
         "yss-repository",
         "implement",
@@ -304,7 +300,7 @@
     }
   ],
   "gate_policy": {
-    "default_if_unlisted": "reject-unlisted",
+    "default_if_unlisted": "biological-human",
     "evidence_only": [],
     "orchestrator": [],
     "digital_human_review": [
@@ -353,18 +349,7 @@
       "additional_reviewers": "uncovered-expertise-or-external-requirement",
       "adjacent_checks": "one-review-with-per-check-conclusions",
       "suggestions": "backlog-without-blocking",
-      "violations_or_missing_evidence": "blocking",
-      "review_bundles": [
-        {
-          "bundle_id": "review-bundle.plan",
-          "work_unit": "work-unit.plan-requirements",
-          "aggregate_gate": "gate.plan-approved",
-          "checks": [
-            "check.domain-strategy-approved",
-            "check.stage-decision-package-approved"
-          ]
-        }
-      ]
+      "violations_or_missing_evidence": "blocking"
     },
     "continuation_reviews": {
       "gate.plan-approved": [

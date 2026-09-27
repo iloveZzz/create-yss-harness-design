@@ -6,7 +6,7 @@
   "metadataFile": ".yss-harness-design.json",
   "templateName": "yss-harness-design-agent",
   "templateSource": "github:iloveZzz/yss-harness-design-agent",
-  "templateCommit": "d420552cfe9e95ce95a36edba0ebb120896500cc",
+  "templateCommit": "15953d4f0191b06e026df285a95f4535d3243151",
   "sourceState": "committed",
   "manifestHash": "5c78f0b551b9706759fe9fa50aae6644516f39a2da8793bc4fa320594c292a6e",
   "files": {
@@ -3762,9 +3762,9 @@
     },
     ".template-spec/design/README.md": {
       "type": "file",
-      "digest": "6792e431ab8f32a36b5f4554e6c78f048850a38c1e35c98ca998fe78372d21dd",
+      "digest": "f0ee7a08444be3b66fdfbc05cfa1ed5ccbebd65b03e7210d5db7b463f7691847",
       "mode": 420,
-      "blob": "blobs/6792e431ab8f32a36b5f4554e6c78f048850a38c1e35c98ca998fe78372d21dd"
+      "blob": "blobs/f0ee7a08444be3b66fdfbc05cfa1ed5ccbebd65b03e7210d5db7b463f7691847"
     },
     ".template-spec/design/design.md": {
       "type": "file",
@@ -4092,9 +4092,9 @@
     },
     ".template-spec/process/schemas/lifecycle-checkpoint.schema.json": {
       "type": "file",
-      "digest": "aee622d9d208d2390eec66ffd10e295fef0cd551a04865bb8833e315c72df079",
+      "digest": "d6a403631ad9a6209a40affc584816eb1bcd91c6ba10e1ddbccd3e9eaa49028f",
       "mode": 420,
-      "blob": "blobs/aee622d9d208d2390eec66ffd10e295fef0cd551a04865bb8833e315c72df079"
+      "blob": "blobs/d6a403631ad9a6209a40affc584816eb1bcd91c6ba10e1ddbccd3e9eaa49028f"
     },
     ".template-spec/process/schemas/lifecycle-registry.schema.json": {
       "type": "file",
@@ -4506,9 +4506,9 @@
     },
     "scripts/fixtures/existing-ui-baseline/design-source-roles.json": {
       "type": "file",
-      "digest": "9488823afabbd5dfb6e55b52bb97507cc08145ac4011f96aac785a1981a2d2f1",
+      "digest": "18c010cbea084057a1fa420941f2b6fcc02fa4ea30e73529c08b16e1e31f2266",
       "mode": 420,
-      "blob": "blobs/9488823afabbd5dfb6e55b52bb97507cc08145ac4011f96aac785a1981a2d2f1"
+      "blob": "blobs/18c010cbea084057a1fa420941f2b6fcc02fa4ea30e73529c08b16e1e31f2266"
     },
     "scripts/fixtures/existing-ui-baseline/fixture.mjs": {
       "type": "file",
@@ -4518,9 +4518,9 @@
     },
     "scripts/fixtures/strategic-handoff/aggregate-source-roles.json": {
       "type": "file",
-      "digest": "735ba10a5792a833bc85afa236485b1ec2b5fb42b286be55a7d85245d4484941",
+      "digest": "2d4266f980fb28e86ba63d6a3d6f4638275963e4cacfe93520565be9d153ea4c",
       "mode": 420,
-      "blob": "blobs/735ba10a5792a833bc85afa236485b1ec2b5fb42b286be55a7d85245d4484941"
+      "blob": "blobs/2d4266f980fb28e86ba63d6a3d6f4638275963e4cacfe93520565be9d153ea4c"
     },
     "scripts/fixtures/strategic-handoff/base-stage.json": {
       "type": "file",
@@ -4866,9 +4866,9 @@
     },
     "scripts/lib/stage-tracking.mjs": {
       "type": "file",
-      "digest": "0c0b228e25402f377e374479da6096fa8f334365b29e3188068931cb7fe9066e",
+      "digest": "5f1adf674bdc545c942fb43fdb7391d5b714980cddd8a7277158b1ae56f466bd",
       "mode": 420,
-      "blob": "blobs/0c0b228e25402f377e374479da6096fa8f334365b29e3188068931cb7fe9066e"
+      "blob": "blobs/5f1adf674bdc545c942fb43fdb7391d5b714980cddd8a7277158b1ae56f466bd"
     },
     "scripts/lib/strategic-feedback.mjs": {
       "type": "file",
@@ -4950,9 +4950,9 @@
     },
     "scripts/lib/user-decision.mjs": {
       "type": "file",
-      "digest": "b4f53bec8c6b2d491f299aebaef569627f66e5db42c0b28be4878c21303d6e5b",
+      "digest": "bf7b9f31999d51b953e890c677e6a56d6bd8153f58fac8ba02c85c35eda2bf25",
       "mode": 420,
-      "blob": "blobs/b4f53bec8c6b2d491f299aebaef569627f66e5db42c0b28be4878c21303d6e5b"
+      "blob": "blobs/bf7b9f31999d51b953e890c677e6a56d6bd8153f58fac8ba02c85c35eda2bf25"
     },
     "scripts/lib/validation-phase.mjs": {
       "type": "file",
@@ -9438,9 +9438,19 @@
       "digest": "2aadf90f185cca03ed1ad747b846880d3e61da054666d05b56154331f4845deb",
       "mode": 420
     },
+    ".template-spec/design/README.md": {
+      "type": "file",
+      "digest": "6792e431ab8f32a36b5f4554e6c78f048850a38c1e35c98ca998fe78372d21dd",
+      "mode": 420
+    },
     ".template-spec/process/schemas/digital-human-task-package.schema.json": {
       "type": "file",
       "digest": "c36b5bbb12fbfae4288e3ccbd2e9c1853706b2844e4727e5c18bf735365d91a8",
+      "mode": 420
+    },
+    ".template-spec/process/schemas/lifecycle-checkpoint.schema.json": {
+      "type": "file",
+      "digest": "aee622d9d208d2390eec66ffd10e295fef0cd551a04865bb8833e315c72df079",
       "mode": 420
     },
     "AGENTS.md": {
@@ -9924,8 +9934,8 @@
       "mode": 420
     }
   },
-  "transitionBaselinesHash": "5f77a947c4e09213a69dc853a3ab4199240dbdadb542344baa3f528084922e48",
-  "snapshotHash": "81529e0bb7476fac2457ee2a40d1ecb4f88c0ef10ba734b77fbe2d91118d10e7",
+  "transitionBaselinesHash": "82545da5dc751f6edd9f64f854a3fef61aa2b736b6090a2e88c7070bc0df2e84",
+  "snapshotHash": "bc5b4090967cdde04556c7241b7d964fc9607959604d9a304e493eb5e32ce770",
   "projectionRepresentation": "materialized-files",
   "pathEncoding": "sha256-blobs-v1"
 }
