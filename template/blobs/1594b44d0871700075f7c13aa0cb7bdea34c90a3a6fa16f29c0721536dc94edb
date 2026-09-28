@@ -11,23 +11,21 @@ One-off notes are out of scope. Use this skill to compile or lint a persistent w
 
 ## Mode
 
-| User intent | Mode | Completion |
+| 用户意图 | 入口 | 完成条件 |
 |---|---|---|
-| 从零构建知识库 | `init` | 三层目录 + schema + index + log + 文章 + `.wiki-manifest.json`，lint 退出 0 |
-| 源变了，更新受影响页 | `refresh` | 只改漂移命中的文章；human-owned 不改；lint 0；log 有 REFRESH |
-| 全局按新源重编译 | `rebuild` | raw 对齐 live；稳定 ID 与 human-owned 保留；LLM 页全量重写；lint 0；log 有 REBUILD |
-| 健康检查 | `lint` | 结构脚本 exit 0 + 已跑 advise 并报告条数；对变更页做 live 源抽查 |
-| 把点名外源或已落盘 research 笔记编进 wiki | `ingest` | raw 登记 + manifest 源 + 四态候选经确认后写页；lint 0；log 有 `INGEST` |
+| 构建 / 更新 / 重编译 | [compile](references/compile.md) init / refresh / rebuild | 事务 finalized，结构检查通过，报告剩余 freshness |
+| 点名外源摄取 | [ingest](references/ingest.md) | 候选已确认，计划内写入，结构检查与状态报告 |
+| 健康检查 | [lint](references/lint.md) | 结构与当前性分开报告，advise 只读 |
+| 查询 | [query](references/query.md) | 有界检索、按风险核验、引用证据、零写入 |
+| v1 升级 / 中断恢复 / 反馈 | [transactions](references/transactions.md) | 显式选择，保留恢复证据；不冒充内容已刷新 |
 
-Ambiguous → ask. Existing wiki + "构建" → ask refresh vs rebuild, do not init over it.
-
-Query is not a mode. Follow [query.md](references/query.md). Query never writes and never ingests.
+已明确的信息与授权直接复用。Existing wiki + ambiguous “构建” → clarify refresh/rebuild; never init over it. 所有写操作统一 plan/apply；查询不是编译模式。
 
 ## Layout
 
 ```
 <wiki-root>/
-  raw/                  # immutable copies + labelled extracts
+  raw/                  # retained snapshots + labelled extracts
   wiki/                 # articles + index.md + log.md + CLAUDE.md
   .wiki-manifest.json   # compile graph (sources ↔ articles)
 ```
@@ -35,11 +33,12 @@ Query is not a mode. Follow [query.md](references/query.md). Query never writes 
 Scripts live in this skill's `scripts/` directory (the folder that contains this `SKILL.md`). Run them from the repo root so `--wiki` / `--repo` resolve correctly:
 
 ```bash
-node <skill-root>/scripts/inventory.mjs hash --wiki <wiki-root>
+node <skill-root>/scripts/inventory.mjs hash --wiki <wiki-root>  # observation only
 node <skill-root>/scripts/inventory.mjs status --wiki <wiki-root>
 node <skill-root>/scripts/lint-wikilinks.mjs <wiki-root>
 node <skill-root>/scripts/advise.mjs <wiki-root>
-node <skill-root>/scripts/extract.mjs skill-names --in <live-lock.json> --out <wiki-root>/<rawPath>
+node <skill-root>/scripts/query.mjs --wiki <wiki-root> --query "关键词"
+node <skill-root>/scripts/migrate.mjs --wiki <wiki-root>  # preview only
 ```
 
 `status` is a stable alias of `drift`. `<skill-root>` is the canonical skill directory or a projection that points at it. Do not hard-code `.agents/skills/llm-wiki`.
@@ -50,6 +49,6 @@ node <skill-root>/scripts/extract.mjs skill-names --in <live-lock.json> --out <w
 2. If the user is asking a repository question, load [query.md](references/query.md) and stop. Do not lint, ingest, or append `log.md`.
 3. Load the mode algorithm: [compile.md](references/compile.md) for init/refresh/rebuild, [ingest.md](references/ingest.md) for ingest. For init/rebuild corpus choice, load [discover.md](references/discover.md). For writing, load [writing.md](references/writing.md). For checks, load [lint.md](references/lint.md).
 4. **Fact order:** called code > table comments / config defaults > stale raw copies. After writing, re-read live sources for a sample of claims (`N = min(5, changed pages)`).
-5. Run structural lint and advise. Append `log.md`. Stop.
+5. 写入完成后结构 lint、status、advise；日志由事务 finalize 唯一追加。分别报告结构结果与剩余 stale/missing/unverified。
 
 `refresh` without a manifest: stop. Rebuild, or reconstruct the manifest from existing「来源」sections — do not guess `sourceIds`.

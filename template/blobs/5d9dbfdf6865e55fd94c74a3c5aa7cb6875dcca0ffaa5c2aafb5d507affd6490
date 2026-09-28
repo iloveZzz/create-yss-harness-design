@@ -4,7 +4,7 @@
 
 - `# H1` immediately followed by a summary paragraph.
 - `[[ArticleId]]` only; no relative `[[../other-wiki]]` inside a Karpathy wiki (cross-wiki use markdown links).
-- Close with `## 来源` listing raw files and live code paths actually read.
+- Close with nonempty `## 来源` listing raw/live paths and line ranges actually read. Record factual article dependencies in dependsOnArticles; ordinary links are navigation.
 - Optional `## Status` only when cited sources conflict or live disagrees with old raw. See [schema.md](schema.md). Missing Status is not a defect.
 - Do not invent enum values, table names, or endpoints. If unread, write「见源码」.
 
@@ -25,11 +25,11 @@ Core pages: deep (state machines, HTTP semantics, transactions). Extension pages
 When 2+ article groups have no shared files:
 
 - Each prompt lists exact write paths. Those agents must not touch `index.md`, `log.md`, `.wiki-manifest.json`, or `CLAUDE.md`.
-- Return: paths written + wikilink count per file.
-- Orchestrator merges, lints, samples facts, appends log.
+- Return candidate contents + paths + consumed source versions + claim evidence. Write only isolated staging, never published articles.
+- Orchestrator checks evidence and uses the unified transaction to publish index, articles, manifest and log.
 
 When article groups share no files, dispatch parallel subagents with disjoint write scopes.
 
 ## Human-owned
 
-Frontmatter `human-owned: true` or manifest `humanOwned: true`. Refresh/rebuild leave the body; they may repair `[[wikilink]]` targets only. Do not add or rewrite `## Status` on these pages.
+Frontmatter `human-owned: true` or manifest `humanOwned: true`. Refresh/rebuild leave the body; only explicitly authorized link repairs may change `[[wikilink]]` targets. Conflicting flags are reported; neither side overrides a true flag. Do not add or rewrite `## Status` on these pages.

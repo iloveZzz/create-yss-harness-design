@@ -7,7 +7,7 @@
   "templateName": "yss-harness-design-agent",
   "templateSource": "github:iloveZzz/yss-harness-design-agent",
   "templateCommit": "6c9e47c3863f3f998443f7e5cc723ae750e21d1f",
-  "sourceState": "committed",
+  "sourceState": "working-tree",
   "manifestHash": "5c78f0b551b9706759fe9fa50aae6644516f39a2da8793bc4fa320594c292a6e",
   "files": {
     ".agents/skills/ask-matt/PHASE-BOUNDARIES.md": {
@@ -168,15 +168,15 @@
     },
     ".agents/skills/llm-wiki/SKILL.md": {
       "type": "file",
-      "digest": "6633e57ceb41c51ab9e265b7dadeb57cfa58475ee48e64ef9292ba336760385d",
+      "digest": "1594b44d0871700075f7c13aa0cb7bdea34c90a3a6fa16f29c0721536dc94edb",
       "mode": 420,
-      "blob": "blobs/6633e57ceb41c51ab9e265b7dadeb57cfa58475ee48e64ef9292ba336760385d"
+      "blob": "blobs/1594b44d0871700075f7c13aa0cb7bdea34c90a3a6fa16f29c0721536dc94edb"
     },
     ".agents/skills/llm-wiki/assets/CLAUDE.md.template": {
       "type": "file",
-      "digest": "60f756cdef57ce890d65bc965b588e8a09503184ff55f9e3d9609cbb40b654f6",
+      "digest": "9f488ae57b4b72b041feac96fb7858813b7d630b786836ea38dc47f0191ca98e",
       "mode": 420,
-      "blob": "blobs/60f756cdef57ce890d65bc965b588e8a09503184ff55f9e3d9609cbb40b654f6"
+      "blob": "blobs/9f488ae57b4b72b041feac96fb7858813b7d630b786836ea38dc47f0191ca98e"
     },
     ".agents/skills/llm-wiki/assets/fixtures/broken-wiki/wiki/CLAUDE.md": {
       "type": "file",
@@ -204,9 +204,9 @@
     },
     ".agents/skills/llm-wiki/references/compile.md": {
       "type": "file",
-      "digest": "516d154e67450bac8475b6088ca38ff0feb52682a2b06fb6ae7871541bbb089e",
+      "digest": "cad9587c5f38d5d7d0a53d64bc22d9e0a81551c98e73722ff3e5ddfeec4a24b4",
       "mode": 420,
-      "blob": "blobs/516d154e67450bac8475b6088ca38ff0feb52682a2b06fb6ae7871541bbb089e"
+      "blob": "blobs/cad9587c5f38d5d7d0a53d64bc22d9e0a81551c98e73722ff3e5ddfeec4a24b4"
     },
     ".agents/skills/llm-wiki/references/discover.md": {
       "type": "file",
@@ -216,81 +216,135 @@
     },
     ".agents/skills/llm-wiki/references/ingest.md": {
       "type": "file",
-      "digest": "188fa89752be386025189d4e9be758925b99731fb5f5eae018436954c800f3f0",
+      "digest": "a49b0aeedbb442bb1402245c4effec2ff32f514ed0a50c02a9fe66e71d445f12",
       "mode": 420,
-      "blob": "blobs/188fa89752be386025189d4e9be758925b99731fb5f5eae018436954c800f3f0"
+      "blob": "blobs/a49b0aeedbb442bb1402245c4effec2ff32f514ed0a50c02a9fe66e71d445f12"
     },
     ".agents/skills/llm-wiki/references/lint.md": {
       "type": "file",
-      "digest": "82ceed19186125ce166a3e1b5dea09c46d339e4880c935c34c801ec8af602d71",
+      "digest": "4f6f5ff0e86b6b314c9268a9945e051b46cab84445d8e8d9033846b032d84fe6",
       "mode": 420,
-      "blob": "blobs/82ceed19186125ce166a3e1b5dea09c46d339e4880c935c34c801ec8af602d71"
+      "blob": "blobs/4f6f5ff0e86b6b314c9268a9945e051b46cab84445d8e8d9033846b032d84fe6"
     },
     ".agents/skills/llm-wiki/references/query.md": {
       "type": "file",
-      "digest": "33271b45622f18e0e01b1b24b37b6c7475ff26d7a782dec2e556e78a530c2908",
+      "digest": "a62e234b6bcd81ed11a0a88e13c9d8d219106d0be14925f92bf5ae32bf080145",
       "mode": 420,
-      "blob": "blobs/33271b45622f18e0e01b1b24b37b6c7475ff26d7a782dec2e556e78a530c2908"
+      "blob": "blobs/a62e234b6bcd81ed11a0a88e13c9d8d219106d0be14925f92bf5ae32bf080145"
     },
     ".agents/skills/llm-wiki/references/schema.md": {
       "type": "file",
-      "digest": "85e6765916f88b7f93e1183755f2b245768d1974fcc841cd6a27df8094659a17",
+      "digest": "84ad615d6a585643403e4d5282fc135c3d44627d5736a794a75279a22fd713e8",
       "mode": 420,
-      "blob": "blobs/85e6765916f88b7f93e1183755f2b245768d1974fcc841cd6a27df8094659a17"
+      "blob": "blobs/84ad615d6a585643403e4d5282fc135c3d44627d5736a794a75279a22fd713e8"
+    },
+    ".agents/skills/llm-wiki/references/transactions.md": {
+      "type": "file",
+      "digest": "4719f98346e1cd697ca497d256911d57e4a1be0c22b44158b958fcaa7e1796ed",
+      "mode": 420,
+      "blob": "blobs/4719f98346e1cd697ca497d256911d57e4a1be0c22b44158b958fcaa7e1796ed"
     },
     ".agents/skills/llm-wiki/references/writing.md": {
       "type": "file",
-      "digest": "999770fcdd752a4e8ffe8c19f300c711cac6290daa8da7663d678f0738902347",
+      "digest": "5d9dbfdf6865e55fd94c74a3c5aa7cb6875dcca0ffaa5c2aafb5d507affd6490",
       "mode": 420,
-      "blob": "blobs/999770fcdd752a4e8ffe8c19f300c711cac6290daa8da7663d678f0738902347"
+      "blob": "blobs/5d9dbfdf6865e55fd94c74a3c5aa7cb6875dcca0ffaa5c2aafb5d507affd6490"
     },
     ".agents/skills/llm-wiki/scripts/advise.mjs": {
       "type": "file",
-      "digest": "c278dddfce2b19d143298dc9496a7f2d36d213ff0b62ceadfba0883a74cfd9e1",
+      "digest": "f207582ac236d05a03d390c4b3e2b607a371316577786b148ebe0e790b65f8f1",
       "mode": 420,
-      "blob": "blobs/c278dddfce2b19d143298dc9496a7f2d36d213ff0b62ceadfba0883a74cfd9e1"
+      "blob": "blobs/f207582ac236d05a03d390c4b3e2b607a371316577786b148ebe0e790b65f8f1"
     },
     ".agents/skills/llm-wiki/scripts/advise.test.mjs": {
       "type": "file",
-      "digest": "1d5e4a4c8a0213e447cd7e04ee45b0ab4a7c9ce59ce2997192830b35386ed34d",
+      "digest": "a5bd7de4085f23be157fb1491c56ebfcc8409975f62fb22677e6dd2542780337",
       "mode": 420,
-      "blob": "blobs/1d5e4a4c8a0213e447cd7e04ee45b0ab4a7c9ce59ce2997192830b35386ed34d"
+      "blob": "blobs/a5bd7de4085f23be157fb1491c56ebfcc8409975f62fb22677e6dd2542780337"
+    },
+    ".agents/skills/llm-wiki/scripts/core.mjs": {
+      "type": "file",
+      "digest": "2da51b580c612134dc18a6e415bebb13744442381bfc75af7f58210008a45443",
+      "mode": 420,
+      "blob": "blobs/2da51b580c612134dc18a6e415bebb13744442381bfc75af7f58210008a45443"
     },
     ".agents/skills/llm-wiki/scripts/extract.mjs": {
       "type": "file",
-      "digest": "6caa36c906e6b1c10e9e63c036849d4dad41137d4b3ee52ec936decadff28ea1",
+      "digest": "460ec019d4e6742c8731510f438ad7eec13092f0d4d05229fbe899879c728bd4",
       "mode": 420,
-      "blob": "blobs/6caa36c906e6b1c10e9e63c036849d4dad41137d4b3ee52ec936decadff28ea1"
+      "blob": "blobs/460ec019d4e6742c8731510f438ad7eec13092f0d4d05229fbe899879c728bd4"
     },
     ".agents/skills/llm-wiki/scripts/extract.test.mjs": {
       "type": "file",
-      "digest": "ef51b157fd09df502636e70fa1b5c5353524e73751069041207b8c9870ad0d05",
+      "digest": "512b61a894597e4e679eccd855de523695474d167cbdc87fd3a944766c60a168",
       "mode": 420,
-      "blob": "blobs/ef51b157fd09df502636e70fa1b5c5353524e73751069041207b8c9870ad0d05"
+      "blob": "blobs/512b61a894597e4e679eccd855de523695474d167cbdc87fd3a944766c60a168"
+    },
+    ".agents/skills/llm-wiki/scripts/feedback.mjs": {
+      "type": "file",
+      "digest": "54b032da5c660cb3b1cc2663ba8659c1c9e25f6b3e2f11131a5654e16e48d39f",
+      "mode": 420,
+      "blob": "blobs/54b032da5c660cb3b1cc2663ba8659c1c9e25f6b3e2f11131a5654e16e48d39f"
     },
     ".agents/skills/llm-wiki/scripts/inventory.mjs": {
       "type": "file",
-      "digest": "fd4a9194589490076f824669fea55681c669d8d0fbf4d10f2508968364eb89e8",
+      "digest": "5f6640952f59d7a03b542de46014f222e727ca130db67a1fbe668e451145dcc4",
       "mode": 420,
-      "blob": "blobs/fd4a9194589490076f824669fea55681c669d8d0fbf4d10f2508968364eb89e8"
+      "blob": "blobs/5f6640952f59d7a03b542de46014f222e727ca130db67a1fbe668e451145dcc4"
     },
     ".agents/skills/llm-wiki/scripts/inventory.test.mjs": {
       "type": "file",
-      "digest": "53a9c08059180a1175f7386b016e6ca1b53aa6933eecd6559a6d45166336343a",
+      "digest": "d77b5e499ec084eb17a3580a150810107b46b648547b14c30a6daa20c2c86ff4",
       "mode": 420,
-      "blob": "blobs/53a9c08059180a1175f7386b016e6ca1b53aa6933eecd6559a6d45166336343a"
+      "blob": "blobs/d77b5e499ec084eb17a3580a150810107b46b648547b14c30a6daa20c2c86ff4"
     },
     ".agents/skills/llm-wiki/scripts/lint-wikilinks.mjs": {
       "type": "file",
-      "digest": "e5de65d74a51129a277e6b06308b1770b81d7fbe4803cf7522d81f64fea4d49d",
+      "digest": "4fc83bfd0478139ef16afd91ca005c3d998afa8fed451ba997c00e9c8ef75bc9",
       "mode": 420,
-      "blob": "blobs/e5de65d74a51129a277e6b06308b1770b81d7fbe4803cf7522d81f64fea4d49d"
+      "blob": "blobs/4fc83bfd0478139ef16afd91ca005c3d998afa8fed451ba997c00e9c8ef75bc9"
     },
     ".agents/skills/llm-wiki/scripts/lint-wikilinks.test.mjs": {
       "type": "file",
-      "digest": "c2f3da3f177d9922d33b40933c981df7b13b80f2fc7eedaa9231b1d7564841c8",
+      "digest": "e54ab8d3ed1f32b91a17632304fc7a8ecef1b6b9f74e37079cff580aa8a28b58",
       "mode": 420,
-      "blob": "blobs/c2f3da3f177d9922d33b40933c981df7b13b80f2fc7eedaa9231b1d7564841c8"
+      "blob": "blobs/e54ab8d3ed1f32b91a17632304fc7a8ecef1b6b9f74e37079cff580aa8a28b58"
+    },
+    ".agents/skills/llm-wiki/scripts/migrate.mjs": {
+      "type": "file",
+      "digest": "9a71d8390af862076dcb3d48fad293439ee94afa1bb97a68f7ca746b5725b590",
+      "mode": 420,
+      "blob": "blobs/9a71d8390af862076dcb3d48fad293439ee94afa1bb97a68f7ca746b5725b590"
+    },
+    ".agents/skills/llm-wiki/scripts/query.mjs": {
+      "type": "file",
+      "digest": "8a493683af1268f37fd8074010f8eb5d22b422efe0c692249057ae52eae1a2ad",
+      "mode": 420,
+      "blob": "blobs/8a493683af1268f37fd8074010f8eb5d22b422efe0c692249057ae52eae1a2ad"
+    },
+    ".agents/skills/llm-wiki/scripts/regressions.test.mjs": {
+      "type": "file",
+      "digest": "8b01ab2692c27c0b64e901672b217beec7f9419a43b13c55c0e7f2e3e92defb2",
+      "mode": 420,
+      "blob": "blobs/8b01ab2692c27c0b64e901672b217beec7f9419a43b13c55c0e7f2e3e92defb2"
+    },
+    ".agents/skills/llm-wiki/scripts/sources.mjs": {
+      "type": "file",
+      "digest": "fa1ef9abf52b164babc28e0b6a957e1d5aa48609343e52ea6f9a0d790c86e109",
+      "mode": 420,
+      "blob": "blobs/fa1ef9abf52b164babc28e0b6a957e1d5aa48609343e52ea6f9a0d790c86e109"
+    },
+    ".agents/skills/llm-wiki/scripts/transaction.mjs": {
+      "type": "file",
+      "digest": "4f7e9e08b0624fdd43f884e28e779ff67667db2acd416ecfd83c2625ed9e828f",
+      "mode": 420,
+      "blob": "blobs/4f7e9e08b0624fdd43f884e28e779ff67667db2acd416ecfd83c2625ed9e828f"
+    },
+    ".agents/skills/llm-wiki/scripts/v2.test.mjs": {
+      "type": "file",
+      "digest": "efc3a5e1f940538c2842c29b3787c8b0ec28a874ad93546982a1665df1560779",
+      "mode": 420,
+      "blob": "blobs/efc3a5e1f940538c2842c29b3787c8b0ec28a874ad93546982a1665df1560779"
     },
     ".agents/skills/maintaining-skills/SKILL.md": {
       "type": "file",
@@ -996,15 +1050,15 @@
     },
     ".codex/skills/llm-wiki/SKILL.md": {
       "type": "file",
-      "digest": "6633e57ceb41c51ab9e265b7dadeb57cfa58475ee48e64ef9292ba336760385d",
+      "digest": "1594b44d0871700075f7c13aa0cb7bdea34c90a3a6fa16f29c0721536dc94edb",
       "mode": 420,
-      "blob": "blobs/6633e57ceb41c51ab9e265b7dadeb57cfa58475ee48e64ef9292ba336760385d"
+      "blob": "blobs/1594b44d0871700075f7c13aa0cb7bdea34c90a3a6fa16f29c0721536dc94edb"
     },
     ".codex/skills/llm-wiki/assets/CLAUDE.md.template": {
       "type": "file",
-      "digest": "60f756cdef57ce890d65bc965b588e8a09503184ff55f9e3d9609cbb40b654f6",
+      "digest": "9f488ae57b4b72b041feac96fb7858813b7d630b786836ea38dc47f0191ca98e",
       "mode": 420,
-      "blob": "blobs/60f756cdef57ce890d65bc965b588e8a09503184ff55f9e3d9609cbb40b654f6"
+      "blob": "blobs/9f488ae57b4b72b041feac96fb7858813b7d630b786836ea38dc47f0191ca98e"
     },
     ".codex/skills/llm-wiki/assets/fixtures/broken-wiki/wiki/CLAUDE.md": {
       "type": "file",
@@ -1032,9 +1086,9 @@
     },
     ".codex/skills/llm-wiki/references/compile.md": {
       "type": "file",
-      "digest": "516d154e67450bac8475b6088ca38ff0feb52682a2b06fb6ae7871541bbb089e",
+      "digest": "cad9587c5f38d5d7d0a53d64bc22d9e0a81551c98e73722ff3e5ddfeec4a24b4",
       "mode": 420,
-      "blob": "blobs/516d154e67450bac8475b6088ca38ff0feb52682a2b06fb6ae7871541bbb089e"
+      "blob": "blobs/cad9587c5f38d5d7d0a53d64bc22d9e0a81551c98e73722ff3e5ddfeec4a24b4"
     },
     ".codex/skills/llm-wiki/references/discover.md": {
       "type": "file",
@@ -1044,81 +1098,135 @@
     },
     ".codex/skills/llm-wiki/references/ingest.md": {
       "type": "file",
-      "digest": "188fa89752be386025189d4e9be758925b99731fb5f5eae018436954c800f3f0",
+      "digest": "a49b0aeedbb442bb1402245c4effec2ff32f514ed0a50c02a9fe66e71d445f12",
       "mode": 420,
-      "blob": "blobs/188fa89752be386025189d4e9be758925b99731fb5f5eae018436954c800f3f0"
+      "blob": "blobs/a49b0aeedbb442bb1402245c4effec2ff32f514ed0a50c02a9fe66e71d445f12"
     },
     ".codex/skills/llm-wiki/references/lint.md": {
       "type": "file",
-      "digest": "82ceed19186125ce166a3e1b5dea09c46d339e4880c935c34c801ec8af602d71",
+      "digest": "4f6f5ff0e86b6b314c9268a9945e051b46cab84445d8e8d9033846b032d84fe6",
       "mode": 420,
-      "blob": "blobs/82ceed19186125ce166a3e1b5dea09c46d339e4880c935c34c801ec8af602d71"
+      "blob": "blobs/4f6f5ff0e86b6b314c9268a9945e051b46cab84445d8e8d9033846b032d84fe6"
     },
     ".codex/skills/llm-wiki/references/query.md": {
       "type": "file",
-      "digest": "33271b45622f18e0e01b1b24b37b6c7475ff26d7a782dec2e556e78a530c2908",
+      "digest": "a62e234b6bcd81ed11a0a88e13c9d8d219106d0be14925f92bf5ae32bf080145",
       "mode": 420,
-      "blob": "blobs/33271b45622f18e0e01b1b24b37b6c7475ff26d7a782dec2e556e78a530c2908"
+      "blob": "blobs/a62e234b6bcd81ed11a0a88e13c9d8d219106d0be14925f92bf5ae32bf080145"
     },
     ".codex/skills/llm-wiki/references/schema.md": {
       "type": "file",
-      "digest": "85e6765916f88b7f93e1183755f2b245768d1974fcc841cd6a27df8094659a17",
+      "digest": "84ad615d6a585643403e4d5282fc135c3d44627d5736a794a75279a22fd713e8",
       "mode": 420,
-      "blob": "blobs/85e6765916f88b7f93e1183755f2b245768d1974fcc841cd6a27df8094659a17"
+      "blob": "blobs/84ad615d6a585643403e4d5282fc135c3d44627d5736a794a75279a22fd713e8"
+    },
+    ".codex/skills/llm-wiki/references/transactions.md": {
+      "type": "file",
+      "digest": "4719f98346e1cd697ca497d256911d57e4a1be0c22b44158b958fcaa7e1796ed",
+      "mode": 420,
+      "blob": "blobs/4719f98346e1cd697ca497d256911d57e4a1be0c22b44158b958fcaa7e1796ed"
     },
     ".codex/skills/llm-wiki/references/writing.md": {
       "type": "file",
-      "digest": "999770fcdd752a4e8ffe8c19f300c711cac6290daa8da7663d678f0738902347",
+      "digest": "5d9dbfdf6865e55fd94c74a3c5aa7cb6875dcca0ffaa5c2aafb5d507affd6490",
       "mode": 420,
-      "blob": "blobs/999770fcdd752a4e8ffe8c19f300c711cac6290daa8da7663d678f0738902347"
+      "blob": "blobs/5d9dbfdf6865e55fd94c74a3c5aa7cb6875dcca0ffaa5c2aafb5d507affd6490"
     },
     ".codex/skills/llm-wiki/scripts/advise.mjs": {
       "type": "file",
-      "digest": "c278dddfce2b19d143298dc9496a7f2d36d213ff0b62ceadfba0883a74cfd9e1",
+      "digest": "f207582ac236d05a03d390c4b3e2b607a371316577786b148ebe0e790b65f8f1",
       "mode": 420,
-      "blob": "blobs/c278dddfce2b19d143298dc9496a7f2d36d213ff0b62ceadfba0883a74cfd9e1"
+      "blob": "blobs/f207582ac236d05a03d390c4b3e2b607a371316577786b148ebe0e790b65f8f1"
     },
     ".codex/skills/llm-wiki/scripts/advise.test.mjs": {
       "type": "file",
-      "digest": "1d5e4a4c8a0213e447cd7e04ee45b0ab4a7c9ce59ce2997192830b35386ed34d",
+      "digest": "a5bd7de4085f23be157fb1491c56ebfcc8409975f62fb22677e6dd2542780337",
       "mode": 420,
-      "blob": "blobs/1d5e4a4c8a0213e447cd7e04ee45b0ab4a7c9ce59ce2997192830b35386ed34d"
+      "blob": "blobs/a5bd7de4085f23be157fb1491c56ebfcc8409975f62fb22677e6dd2542780337"
+    },
+    ".codex/skills/llm-wiki/scripts/core.mjs": {
+      "type": "file",
+      "digest": "2da51b580c612134dc18a6e415bebb13744442381bfc75af7f58210008a45443",
+      "mode": 420,
+      "blob": "blobs/2da51b580c612134dc18a6e415bebb13744442381bfc75af7f58210008a45443"
     },
     ".codex/skills/llm-wiki/scripts/extract.mjs": {
       "type": "file",
-      "digest": "6caa36c906e6b1c10e9e63c036849d4dad41137d4b3ee52ec936decadff28ea1",
+      "digest": "460ec019d4e6742c8731510f438ad7eec13092f0d4d05229fbe899879c728bd4",
       "mode": 420,
-      "blob": "blobs/6caa36c906e6b1c10e9e63c036849d4dad41137d4b3ee52ec936decadff28ea1"
+      "blob": "blobs/460ec019d4e6742c8731510f438ad7eec13092f0d4d05229fbe899879c728bd4"
     },
     ".codex/skills/llm-wiki/scripts/extract.test.mjs": {
       "type": "file",
-      "digest": "ef51b157fd09df502636e70fa1b5c5353524e73751069041207b8c9870ad0d05",
+      "digest": "512b61a894597e4e679eccd855de523695474d167cbdc87fd3a944766c60a168",
       "mode": 420,
-      "blob": "blobs/ef51b157fd09df502636e70fa1b5c5353524e73751069041207b8c9870ad0d05"
+      "blob": "blobs/512b61a894597e4e679eccd855de523695474d167cbdc87fd3a944766c60a168"
+    },
+    ".codex/skills/llm-wiki/scripts/feedback.mjs": {
+      "type": "file",
+      "digest": "54b032da5c660cb3b1cc2663ba8659c1c9e25f6b3e2f11131a5654e16e48d39f",
+      "mode": 420,
+      "blob": "blobs/54b032da5c660cb3b1cc2663ba8659c1c9e25f6b3e2f11131a5654e16e48d39f"
     },
     ".codex/skills/llm-wiki/scripts/inventory.mjs": {
       "type": "file",
-      "digest": "fd4a9194589490076f824669fea55681c669d8d0fbf4d10f2508968364eb89e8",
+      "digest": "5f6640952f59d7a03b542de46014f222e727ca130db67a1fbe668e451145dcc4",
       "mode": 420,
-      "blob": "blobs/fd4a9194589490076f824669fea55681c669d8d0fbf4d10f2508968364eb89e8"
+      "blob": "blobs/5f6640952f59d7a03b542de46014f222e727ca130db67a1fbe668e451145dcc4"
     },
     ".codex/skills/llm-wiki/scripts/inventory.test.mjs": {
       "type": "file",
-      "digest": "53a9c08059180a1175f7386b016e6ca1b53aa6933eecd6559a6d45166336343a",
+      "digest": "d77b5e499ec084eb17a3580a150810107b46b648547b14c30a6daa20c2c86ff4",
       "mode": 420,
-      "blob": "blobs/53a9c08059180a1175f7386b016e6ca1b53aa6933eecd6559a6d45166336343a"
+      "blob": "blobs/d77b5e499ec084eb17a3580a150810107b46b648547b14c30a6daa20c2c86ff4"
     },
     ".codex/skills/llm-wiki/scripts/lint-wikilinks.mjs": {
       "type": "file",
-      "digest": "e5de65d74a51129a277e6b06308b1770b81d7fbe4803cf7522d81f64fea4d49d",
+      "digest": "4fc83bfd0478139ef16afd91ca005c3d998afa8fed451ba997c00e9c8ef75bc9",
       "mode": 420,
-      "blob": "blobs/e5de65d74a51129a277e6b06308b1770b81d7fbe4803cf7522d81f64fea4d49d"
+      "blob": "blobs/4fc83bfd0478139ef16afd91ca005c3d998afa8fed451ba997c00e9c8ef75bc9"
     },
     ".codex/skills/llm-wiki/scripts/lint-wikilinks.test.mjs": {
       "type": "file",
-      "digest": "c2f3da3f177d9922d33b40933c981df7b13b80f2fc7eedaa9231b1d7564841c8",
+      "digest": "e54ab8d3ed1f32b91a17632304fc7a8ecef1b6b9f74e37079cff580aa8a28b58",
       "mode": 420,
-      "blob": "blobs/c2f3da3f177d9922d33b40933c981df7b13b80f2fc7eedaa9231b1d7564841c8"
+      "blob": "blobs/e54ab8d3ed1f32b91a17632304fc7a8ecef1b6b9f74e37079cff580aa8a28b58"
+    },
+    ".codex/skills/llm-wiki/scripts/migrate.mjs": {
+      "type": "file",
+      "digest": "9a71d8390af862076dcb3d48fad293439ee94afa1bb97a68f7ca746b5725b590",
+      "mode": 420,
+      "blob": "blobs/9a71d8390af862076dcb3d48fad293439ee94afa1bb97a68f7ca746b5725b590"
+    },
+    ".codex/skills/llm-wiki/scripts/query.mjs": {
+      "type": "file",
+      "digest": "8a493683af1268f37fd8074010f8eb5d22b422efe0c692249057ae52eae1a2ad",
+      "mode": 420,
+      "blob": "blobs/8a493683af1268f37fd8074010f8eb5d22b422efe0c692249057ae52eae1a2ad"
+    },
+    ".codex/skills/llm-wiki/scripts/regressions.test.mjs": {
+      "type": "file",
+      "digest": "8b01ab2692c27c0b64e901672b217beec7f9419a43b13c55c0e7f2e3e92defb2",
+      "mode": 420,
+      "blob": "blobs/8b01ab2692c27c0b64e901672b217beec7f9419a43b13c55c0e7f2e3e92defb2"
+    },
+    ".codex/skills/llm-wiki/scripts/sources.mjs": {
+      "type": "file",
+      "digest": "fa1ef9abf52b164babc28e0b6a957e1d5aa48609343e52ea6f9a0d790c86e109",
+      "mode": 420,
+      "blob": "blobs/fa1ef9abf52b164babc28e0b6a957e1d5aa48609343e52ea6f9a0d790c86e109"
+    },
+    ".codex/skills/llm-wiki/scripts/transaction.mjs": {
+      "type": "file",
+      "digest": "4f7e9e08b0624fdd43f884e28e779ff67667db2acd416ecfd83c2625ed9e828f",
+      "mode": 420,
+      "blob": "blobs/4f7e9e08b0624fdd43f884e28e779ff67667db2acd416ecfd83c2625ed9e828f"
+    },
+    ".codex/skills/llm-wiki/scripts/v2.test.mjs": {
+      "type": "file",
+      "digest": "efc3a5e1f940538c2842c29b3787c8b0ec28a874ad93546982a1665df1560779",
+      "mode": 420,
+      "blob": "blobs/efc3a5e1f940538c2842c29b3787c8b0ec28a874ad93546982a1665df1560779"
     },
     ".codex/skills/maintaining-skills/SKILL.md": {
       "type": "file",
@@ -2160,15 +2268,15 @@
     },
     ".cursor/skills/llm-wiki/SKILL.md": {
       "type": "file",
-      "digest": "6633e57ceb41c51ab9e265b7dadeb57cfa58475ee48e64ef9292ba336760385d",
+      "digest": "1594b44d0871700075f7c13aa0cb7bdea34c90a3a6fa16f29c0721536dc94edb",
       "mode": 420,
-      "blob": "blobs/6633e57ceb41c51ab9e265b7dadeb57cfa58475ee48e64ef9292ba336760385d"
+      "blob": "blobs/1594b44d0871700075f7c13aa0cb7bdea34c90a3a6fa16f29c0721536dc94edb"
     },
     ".cursor/skills/llm-wiki/assets/CLAUDE.md.template": {
       "type": "file",
-      "digest": "60f756cdef57ce890d65bc965b588e8a09503184ff55f9e3d9609cbb40b654f6",
+      "digest": "9f488ae57b4b72b041feac96fb7858813b7d630b786836ea38dc47f0191ca98e",
       "mode": 420,
-      "blob": "blobs/60f756cdef57ce890d65bc965b588e8a09503184ff55f9e3d9609cbb40b654f6"
+      "blob": "blobs/9f488ae57b4b72b041feac96fb7858813b7d630b786836ea38dc47f0191ca98e"
     },
     ".cursor/skills/llm-wiki/assets/fixtures/broken-wiki/wiki/CLAUDE.md": {
       "type": "file",
@@ -2196,9 +2304,9 @@
     },
     ".cursor/skills/llm-wiki/references/compile.md": {
       "type": "file",
-      "digest": "516d154e67450bac8475b6088ca38ff0feb52682a2b06fb6ae7871541bbb089e",
+      "digest": "cad9587c5f38d5d7d0a53d64bc22d9e0a81551c98e73722ff3e5ddfeec4a24b4",
       "mode": 420,
-      "blob": "blobs/516d154e67450bac8475b6088ca38ff0feb52682a2b06fb6ae7871541bbb089e"
+      "blob": "blobs/cad9587c5f38d5d7d0a53d64bc22d9e0a81551c98e73722ff3e5ddfeec4a24b4"
     },
     ".cursor/skills/llm-wiki/references/discover.md": {
       "type": "file",
@@ -2208,81 +2316,135 @@
     },
     ".cursor/skills/llm-wiki/references/ingest.md": {
       "type": "file",
-      "digest": "188fa89752be386025189d4e9be758925b99731fb5f5eae018436954c800f3f0",
+      "digest": "a49b0aeedbb442bb1402245c4effec2ff32f514ed0a50c02a9fe66e71d445f12",
       "mode": 420,
-      "blob": "blobs/188fa89752be386025189d4e9be758925b99731fb5f5eae018436954c800f3f0"
+      "blob": "blobs/a49b0aeedbb442bb1402245c4effec2ff32f514ed0a50c02a9fe66e71d445f12"
     },
     ".cursor/skills/llm-wiki/references/lint.md": {
       "type": "file",
-      "digest": "82ceed19186125ce166a3e1b5dea09c46d339e4880c935c34c801ec8af602d71",
+      "digest": "4f6f5ff0e86b6b314c9268a9945e051b46cab84445d8e8d9033846b032d84fe6",
       "mode": 420,
-      "blob": "blobs/82ceed19186125ce166a3e1b5dea09c46d339e4880c935c34c801ec8af602d71"
+      "blob": "blobs/4f6f5ff0e86b6b314c9268a9945e051b46cab84445d8e8d9033846b032d84fe6"
     },
     ".cursor/skills/llm-wiki/references/query.md": {
       "type": "file",
-      "digest": "33271b45622f18e0e01b1b24b37b6c7475ff26d7a782dec2e556e78a530c2908",
+      "digest": "a62e234b6bcd81ed11a0a88e13c9d8d219106d0be14925f92bf5ae32bf080145",
       "mode": 420,
-      "blob": "blobs/33271b45622f18e0e01b1b24b37b6c7475ff26d7a782dec2e556e78a530c2908"
+      "blob": "blobs/a62e234b6bcd81ed11a0a88e13c9d8d219106d0be14925f92bf5ae32bf080145"
     },
     ".cursor/skills/llm-wiki/references/schema.md": {
       "type": "file",
-      "digest": "85e6765916f88b7f93e1183755f2b245768d1974fcc841cd6a27df8094659a17",
+      "digest": "84ad615d6a585643403e4d5282fc135c3d44627d5736a794a75279a22fd713e8",
       "mode": 420,
-      "blob": "blobs/85e6765916f88b7f93e1183755f2b245768d1974fcc841cd6a27df8094659a17"
+      "blob": "blobs/84ad615d6a585643403e4d5282fc135c3d44627d5736a794a75279a22fd713e8"
+    },
+    ".cursor/skills/llm-wiki/references/transactions.md": {
+      "type": "file",
+      "digest": "4719f98346e1cd697ca497d256911d57e4a1be0c22b44158b958fcaa7e1796ed",
+      "mode": 420,
+      "blob": "blobs/4719f98346e1cd697ca497d256911d57e4a1be0c22b44158b958fcaa7e1796ed"
     },
     ".cursor/skills/llm-wiki/references/writing.md": {
       "type": "file",
-      "digest": "999770fcdd752a4e8ffe8c19f300c711cac6290daa8da7663d678f0738902347",
+      "digest": "5d9dbfdf6865e55fd94c74a3c5aa7cb6875dcca0ffaa5c2aafb5d507affd6490",
       "mode": 420,
-      "blob": "blobs/999770fcdd752a4e8ffe8c19f300c711cac6290daa8da7663d678f0738902347"
+      "blob": "blobs/5d9dbfdf6865e55fd94c74a3c5aa7cb6875dcca0ffaa5c2aafb5d507affd6490"
     },
     ".cursor/skills/llm-wiki/scripts/advise.mjs": {
       "type": "file",
-      "digest": "c278dddfce2b19d143298dc9496a7f2d36d213ff0b62ceadfba0883a74cfd9e1",
+      "digest": "f207582ac236d05a03d390c4b3e2b607a371316577786b148ebe0e790b65f8f1",
       "mode": 420,
-      "blob": "blobs/c278dddfce2b19d143298dc9496a7f2d36d213ff0b62ceadfba0883a74cfd9e1"
+      "blob": "blobs/f207582ac236d05a03d390c4b3e2b607a371316577786b148ebe0e790b65f8f1"
     },
     ".cursor/skills/llm-wiki/scripts/advise.test.mjs": {
       "type": "file",
-      "digest": "1d5e4a4c8a0213e447cd7e04ee45b0ab4a7c9ce59ce2997192830b35386ed34d",
+      "digest": "a5bd7de4085f23be157fb1491c56ebfcc8409975f62fb22677e6dd2542780337",
       "mode": 420,
-      "blob": "blobs/1d5e4a4c8a0213e447cd7e04ee45b0ab4a7c9ce59ce2997192830b35386ed34d"
+      "blob": "blobs/a5bd7de4085f23be157fb1491c56ebfcc8409975f62fb22677e6dd2542780337"
+    },
+    ".cursor/skills/llm-wiki/scripts/core.mjs": {
+      "type": "file",
+      "digest": "2da51b580c612134dc18a6e415bebb13744442381bfc75af7f58210008a45443",
+      "mode": 420,
+      "blob": "blobs/2da51b580c612134dc18a6e415bebb13744442381bfc75af7f58210008a45443"
     },
     ".cursor/skills/llm-wiki/scripts/extract.mjs": {
       "type": "file",
-      "digest": "6caa36c906e6b1c10e9e63c036849d4dad41137d4b3ee52ec936decadff28ea1",
+      "digest": "460ec019d4e6742c8731510f438ad7eec13092f0d4d05229fbe899879c728bd4",
       "mode": 420,
-      "blob": "blobs/6caa36c906e6b1c10e9e63c036849d4dad41137d4b3ee52ec936decadff28ea1"
+      "blob": "blobs/460ec019d4e6742c8731510f438ad7eec13092f0d4d05229fbe899879c728bd4"
     },
     ".cursor/skills/llm-wiki/scripts/extract.test.mjs": {
       "type": "file",
-      "digest": "ef51b157fd09df502636e70fa1b5c5353524e73751069041207b8c9870ad0d05",
+      "digest": "512b61a894597e4e679eccd855de523695474d167cbdc87fd3a944766c60a168",
       "mode": 420,
-      "blob": "blobs/ef51b157fd09df502636e70fa1b5c5353524e73751069041207b8c9870ad0d05"
+      "blob": "blobs/512b61a894597e4e679eccd855de523695474d167cbdc87fd3a944766c60a168"
+    },
+    ".cursor/skills/llm-wiki/scripts/feedback.mjs": {
+      "type": "file",
+      "digest": "54b032da5c660cb3b1cc2663ba8659c1c9e25f6b3e2f11131a5654e16e48d39f",
+      "mode": 420,
+      "blob": "blobs/54b032da5c660cb3b1cc2663ba8659c1c9e25f6b3e2f11131a5654e16e48d39f"
     },
     ".cursor/skills/llm-wiki/scripts/inventory.mjs": {
       "type": "file",
-      "digest": "fd4a9194589490076f824669fea55681c669d8d0fbf4d10f2508968364eb89e8",
+      "digest": "5f6640952f59d7a03b542de46014f222e727ca130db67a1fbe668e451145dcc4",
       "mode": 420,
-      "blob": "blobs/fd4a9194589490076f824669fea55681c669d8d0fbf4d10f2508968364eb89e8"
+      "blob": "blobs/5f6640952f59d7a03b542de46014f222e727ca130db67a1fbe668e451145dcc4"
     },
     ".cursor/skills/llm-wiki/scripts/inventory.test.mjs": {
       "type": "file",
-      "digest": "53a9c08059180a1175f7386b016e6ca1b53aa6933eecd6559a6d45166336343a",
+      "digest": "d77b5e499ec084eb17a3580a150810107b46b648547b14c30a6daa20c2c86ff4",
       "mode": 420,
-      "blob": "blobs/53a9c08059180a1175f7386b016e6ca1b53aa6933eecd6559a6d45166336343a"
+      "blob": "blobs/d77b5e499ec084eb17a3580a150810107b46b648547b14c30a6daa20c2c86ff4"
     },
     ".cursor/skills/llm-wiki/scripts/lint-wikilinks.mjs": {
       "type": "file",
-      "digest": "e5de65d74a51129a277e6b06308b1770b81d7fbe4803cf7522d81f64fea4d49d",
+      "digest": "4fc83bfd0478139ef16afd91ca005c3d998afa8fed451ba997c00e9c8ef75bc9",
       "mode": 420,
-      "blob": "blobs/e5de65d74a51129a277e6b06308b1770b81d7fbe4803cf7522d81f64fea4d49d"
+      "blob": "blobs/4fc83bfd0478139ef16afd91ca005c3d998afa8fed451ba997c00e9c8ef75bc9"
     },
     ".cursor/skills/llm-wiki/scripts/lint-wikilinks.test.mjs": {
       "type": "file",
-      "digest": "c2f3da3f177d9922d33b40933c981df7b13b80f2fc7eedaa9231b1d7564841c8",
+      "digest": "e54ab8d3ed1f32b91a17632304fc7a8ecef1b6b9f74e37079cff580aa8a28b58",
       "mode": 420,
-      "blob": "blobs/c2f3da3f177d9922d33b40933c981df7b13b80f2fc7eedaa9231b1d7564841c8"
+      "blob": "blobs/e54ab8d3ed1f32b91a17632304fc7a8ecef1b6b9f74e37079cff580aa8a28b58"
+    },
+    ".cursor/skills/llm-wiki/scripts/migrate.mjs": {
+      "type": "file",
+      "digest": "9a71d8390af862076dcb3d48fad293439ee94afa1bb97a68f7ca746b5725b590",
+      "mode": 420,
+      "blob": "blobs/9a71d8390af862076dcb3d48fad293439ee94afa1bb97a68f7ca746b5725b590"
+    },
+    ".cursor/skills/llm-wiki/scripts/query.mjs": {
+      "type": "file",
+      "digest": "8a493683af1268f37fd8074010f8eb5d22b422efe0c692249057ae52eae1a2ad",
+      "mode": 420,
+      "blob": "blobs/8a493683af1268f37fd8074010f8eb5d22b422efe0c692249057ae52eae1a2ad"
+    },
+    ".cursor/skills/llm-wiki/scripts/regressions.test.mjs": {
+      "type": "file",
+      "digest": "8b01ab2692c27c0b64e901672b217beec7f9419a43b13c55c0e7f2e3e92defb2",
+      "mode": 420,
+      "blob": "blobs/8b01ab2692c27c0b64e901672b217beec7f9419a43b13c55c0e7f2e3e92defb2"
+    },
+    ".cursor/skills/llm-wiki/scripts/sources.mjs": {
+      "type": "file",
+      "digest": "fa1ef9abf52b164babc28e0b6a957e1d5aa48609343e52ea6f9a0d790c86e109",
+      "mode": 420,
+      "blob": "blobs/fa1ef9abf52b164babc28e0b6a957e1d5aa48609343e52ea6f9a0d790c86e109"
+    },
+    ".cursor/skills/llm-wiki/scripts/transaction.mjs": {
+      "type": "file",
+      "digest": "4f7e9e08b0624fdd43f884e28e779ff67667db2acd416ecfd83c2625ed9e828f",
+      "mode": 420,
+      "blob": "blobs/4f7e9e08b0624fdd43f884e28e779ff67667db2acd416ecfd83c2625ed9e828f"
+    },
+    ".cursor/skills/llm-wiki/scripts/v2.test.mjs": {
+      "type": "file",
+      "digest": "efc3a5e1f940538c2842c29b3787c8b0ec28a874ad93546982a1665df1560779",
+      "mode": 420,
+      "blob": "blobs/efc3a5e1f940538c2842c29b3787c8b0ec28a874ad93546982a1665df1560779"
     },
     ".cursor/skills/maintaining-skills/SKILL.md": {
       "type": "file",
@@ -3000,15 +3162,15 @@
     },
     ".pi/skills/llm-wiki/SKILL.md": {
       "type": "file",
-      "digest": "6633e57ceb41c51ab9e265b7dadeb57cfa58475ee48e64ef9292ba336760385d",
+      "digest": "1594b44d0871700075f7c13aa0cb7bdea34c90a3a6fa16f29c0721536dc94edb",
       "mode": 420,
-      "blob": "blobs/6633e57ceb41c51ab9e265b7dadeb57cfa58475ee48e64ef9292ba336760385d"
+      "blob": "blobs/1594b44d0871700075f7c13aa0cb7bdea34c90a3a6fa16f29c0721536dc94edb"
     },
     ".pi/skills/llm-wiki/assets/CLAUDE.md.template": {
       "type": "file",
-      "digest": "60f756cdef57ce890d65bc965b588e8a09503184ff55f9e3d9609cbb40b654f6",
+      "digest": "9f488ae57b4b72b041feac96fb7858813b7d630b786836ea38dc47f0191ca98e",
       "mode": 420,
-      "blob": "blobs/60f756cdef57ce890d65bc965b588e8a09503184ff55f9e3d9609cbb40b654f6"
+      "blob": "blobs/9f488ae57b4b72b041feac96fb7858813b7d630b786836ea38dc47f0191ca98e"
     },
     ".pi/skills/llm-wiki/assets/fixtures/broken-wiki/wiki/CLAUDE.md": {
       "type": "file",
@@ -3036,9 +3198,9 @@
     },
     ".pi/skills/llm-wiki/references/compile.md": {
       "type": "file",
-      "digest": "516d154e67450bac8475b6088ca38ff0feb52682a2b06fb6ae7871541bbb089e",
+      "digest": "cad9587c5f38d5d7d0a53d64bc22d9e0a81551c98e73722ff3e5ddfeec4a24b4",
       "mode": 420,
-      "blob": "blobs/516d154e67450bac8475b6088ca38ff0feb52682a2b06fb6ae7871541bbb089e"
+      "blob": "blobs/cad9587c5f38d5d7d0a53d64bc22d9e0a81551c98e73722ff3e5ddfeec4a24b4"
     },
     ".pi/skills/llm-wiki/references/discover.md": {
       "type": "file",
@@ -3048,81 +3210,135 @@
     },
     ".pi/skills/llm-wiki/references/ingest.md": {
       "type": "file",
-      "digest": "188fa89752be386025189d4e9be758925b99731fb5f5eae018436954c800f3f0",
+      "digest": "a49b0aeedbb442bb1402245c4effec2ff32f514ed0a50c02a9fe66e71d445f12",
       "mode": 420,
-      "blob": "blobs/188fa89752be386025189d4e9be758925b99731fb5f5eae018436954c800f3f0"
+      "blob": "blobs/a49b0aeedbb442bb1402245c4effec2ff32f514ed0a50c02a9fe66e71d445f12"
     },
     ".pi/skills/llm-wiki/references/lint.md": {
       "type": "file",
-      "digest": "82ceed19186125ce166a3e1b5dea09c46d339e4880c935c34c801ec8af602d71",
+      "digest": "4f6f5ff0e86b6b314c9268a9945e051b46cab84445d8e8d9033846b032d84fe6",
       "mode": 420,
-      "blob": "blobs/82ceed19186125ce166a3e1b5dea09c46d339e4880c935c34c801ec8af602d71"
+      "blob": "blobs/4f6f5ff0e86b6b314c9268a9945e051b46cab84445d8e8d9033846b032d84fe6"
     },
     ".pi/skills/llm-wiki/references/query.md": {
       "type": "file",
-      "digest": "33271b45622f18e0e01b1b24b37b6c7475ff26d7a782dec2e556e78a530c2908",
+      "digest": "a62e234b6bcd81ed11a0a88e13c9d8d219106d0be14925f92bf5ae32bf080145",
       "mode": 420,
-      "blob": "blobs/33271b45622f18e0e01b1b24b37b6c7475ff26d7a782dec2e556e78a530c2908"
+      "blob": "blobs/a62e234b6bcd81ed11a0a88e13c9d8d219106d0be14925f92bf5ae32bf080145"
     },
     ".pi/skills/llm-wiki/references/schema.md": {
       "type": "file",
-      "digest": "85e6765916f88b7f93e1183755f2b245768d1974fcc841cd6a27df8094659a17",
+      "digest": "84ad615d6a585643403e4d5282fc135c3d44627d5736a794a75279a22fd713e8",
       "mode": 420,
-      "blob": "blobs/85e6765916f88b7f93e1183755f2b245768d1974fcc841cd6a27df8094659a17"
+      "blob": "blobs/84ad615d6a585643403e4d5282fc135c3d44627d5736a794a75279a22fd713e8"
+    },
+    ".pi/skills/llm-wiki/references/transactions.md": {
+      "type": "file",
+      "digest": "4719f98346e1cd697ca497d256911d57e4a1be0c22b44158b958fcaa7e1796ed",
+      "mode": 420,
+      "blob": "blobs/4719f98346e1cd697ca497d256911d57e4a1be0c22b44158b958fcaa7e1796ed"
     },
     ".pi/skills/llm-wiki/references/writing.md": {
       "type": "file",
-      "digest": "999770fcdd752a4e8ffe8c19f300c711cac6290daa8da7663d678f0738902347",
+      "digest": "5d9dbfdf6865e55fd94c74a3c5aa7cb6875dcca0ffaa5c2aafb5d507affd6490",
       "mode": 420,
-      "blob": "blobs/999770fcdd752a4e8ffe8c19f300c711cac6290daa8da7663d678f0738902347"
+      "blob": "blobs/5d9dbfdf6865e55fd94c74a3c5aa7cb6875dcca0ffaa5c2aafb5d507affd6490"
     },
     ".pi/skills/llm-wiki/scripts/advise.mjs": {
       "type": "file",
-      "digest": "c278dddfce2b19d143298dc9496a7f2d36d213ff0b62ceadfba0883a74cfd9e1",
+      "digest": "f207582ac236d05a03d390c4b3e2b607a371316577786b148ebe0e790b65f8f1",
       "mode": 420,
-      "blob": "blobs/c278dddfce2b19d143298dc9496a7f2d36d213ff0b62ceadfba0883a74cfd9e1"
+      "blob": "blobs/f207582ac236d05a03d390c4b3e2b607a371316577786b148ebe0e790b65f8f1"
     },
     ".pi/skills/llm-wiki/scripts/advise.test.mjs": {
       "type": "file",
-      "digest": "1d5e4a4c8a0213e447cd7e04ee45b0ab4a7c9ce59ce2997192830b35386ed34d",
+      "digest": "a5bd7de4085f23be157fb1491c56ebfcc8409975f62fb22677e6dd2542780337",
       "mode": 420,
-      "blob": "blobs/1d5e4a4c8a0213e447cd7e04ee45b0ab4a7c9ce59ce2997192830b35386ed34d"
+      "blob": "blobs/a5bd7de4085f23be157fb1491c56ebfcc8409975f62fb22677e6dd2542780337"
+    },
+    ".pi/skills/llm-wiki/scripts/core.mjs": {
+      "type": "file",
+      "digest": "2da51b580c612134dc18a6e415bebb13744442381bfc75af7f58210008a45443",
+      "mode": 420,
+      "blob": "blobs/2da51b580c612134dc18a6e415bebb13744442381bfc75af7f58210008a45443"
     },
     ".pi/skills/llm-wiki/scripts/extract.mjs": {
       "type": "file",
-      "digest": "6caa36c906e6b1c10e9e63c036849d4dad41137d4b3ee52ec936decadff28ea1",
+      "digest": "460ec019d4e6742c8731510f438ad7eec13092f0d4d05229fbe899879c728bd4",
       "mode": 420,
-      "blob": "blobs/6caa36c906e6b1c10e9e63c036849d4dad41137d4b3ee52ec936decadff28ea1"
+      "blob": "blobs/460ec019d4e6742c8731510f438ad7eec13092f0d4d05229fbe899879c728bd4"
     },
     ".pi/skills/llm-wiki/scripts/extract.test.mjs": {
       "type": "file",
-      "digest": "ef51b157fd09df502636e70fa1b5c5353524e73751069041207b8c9870ad0d05",
+      "digest": "512b61a894597e4e679eccd855de523695474d167cbdc87fd3a944766c60a168",
       "mode": 420,
-      "blob": "blobs/ef51b157fd09df502636e70fa1b5c5353524e73751069041207b8c9870ad0d05"
+      "blob": "blobs/512b61a894597e4e679eccd855de523695474d167cbdc87fd3a944766c60a168"
+    },
+    ".pi/skills/llm-wiki/scripts/feedback.mjs": {
+      "type": "file",
+      "digest": "54b032da5c660cb3b1cc2663ba8659c1c9e25f6b3e2f11131a5654e16e48d39f",
+      "mode": 420,
+      "blob": "blobs/54b032da5c660cb3b1cc2663ba8659c1c9e25f6b3e2f11131a5654e16e48d39f"
     },
     ".pi/skills/llm-wiki/scripts/inventory.mjs": {
       "type": "file",
-      "digest": "fd4a9194589490076f824669fea55681c669d8d0fbf4d10f2508968364eb89e8",
+      "digest": "5f6640952f59d7a03b542de46014f222e727ca130db67a1fbe668e451145dcc4",
       "mode": 420,
-      "blob": "blobs/fd4a9194589490076f824669fea55681c669d8d0fbf4d10f2508968364eb89e8"
+      "blob": "blobs/5f6640952f59d7a03b542de46014f222e727ca130db67a1fbe668e451145dcc4"
     },
     ".pi/skills/llm-wiki/scripts/inventory.test.mjs": {
       "type": "file",
-      "digest": "53a9c08059180a1175f7386b016e6ca1b53aa6933eecd6559a6d45166336343a",
+      "digest": "d77b5e499ec084eb17a3580a150810107b46b648547b14c30a6daa20c2c86ff4",
       "mode": 420,
-      "blob": "blobs/53a9c08059180a1175f7386b016e6ca1b53aa6933eecd6559a6d45166336343a"
+      "blob": "blobs/d77b5e499ec084eb17a3580a150810107b46b648547b14c30a6daa20c2c86ff4"
     },
     ".pi/skills/llm-wiki/scripts/lint-wikilinks.mjs": {
       "type": "file",
-      "digest": "e5de65d74a51129a277e6b06308b1770b81d7fbe4803cf7522d81f64fea4d49d",
+      "digest": "4fc83bfd0478139ef16afd91ca005c3d998afa8fed451ba997c00e9c8ef75bc9",
       "mode": 420,
-      "blob": "blobs/e5de65d74a51129a277e6b06308b1770b81d7fbe4803cf7522d81f64fea4d49d"
+      "blob": "blobs/4fc83bfd0478139ef16afd91ca005c3d998afa8fed451ba997c00e9c8ef75bc9"
     },
     ".pi/skills/llm-wiki/scripts/lint-wikilinks.test.mjs": {
       "type": "file",
-      "digest": "c2f3da3f177d9922d33b40933c981df7b13b80f2fc7eedaa9231b1d7564841c8",
+      "digest": "e54ab8d3ed1f32b91a17632304fc7a8ecef1b6b9f74e37079cff580aa8a28b58",
       "mode": 420,
-      "blob": "blobs/c2f3da3f177d9922d33b40933c981df7b13b80f2fc7eedaa9231b1d7564841c8"
+      "blob": "blobs/e54ab8d3ed1f32b91a17632304fc7a8ecef1b6b9f74e37079cff580aa8a28b58"
+    },
+    ".pi/skills/llm-wiki/scripts/migrate.mjs": {
+      "type": "file",
+      "digest": "9a71d8390af862076dcb3d48fad293439ee94afa1bb97a68f7ca746b5725b590",
+      "mode": 420,
+      "blob": "blobs/9a71d8390af862076dcb3d48fad293439ee94afa1bb97a68f7ca746b5725b590"
+    },
+    ".pi/skills/llm-wiki/scripts/query.mjs": {
+      "type": "file",
+      "digest": "8a493683af1268f37fd8074010f8eb5d22b422efe0c692249057ae52eae1a2ad",
+      "mode": 420,
+      "blob": "blobs/8a493683af1268f37fd8074010f8eb5d22b422efe0c692249057ae52eae1a2ad"
+    },
+    ".pi/skills/llm-wiki/scripts/regressions.test.mjs": {
+      "type": "file",
+      "digest": "8b01ab2692c27c0b64e901672b217beec7f9419a43b13c55c0e7f2e3e92defb2",
+      "mode": 420,
+      "blob": "blobs/8b01ab2692c27c0b64e901672b217beec7f9419a43b13c55c0e7f2e3e92defb2"
+    },
+    ".pi/skills/llm-wiki/scripts/sources.mjs": {
+      "type": "file",
+      "digest": "fa1ef9abf52b164babc28e0b6a957e1d5aa48609343e52ea6f9a0d790c86e109",
+      "mode": 420,
+      "blob": "blobs/fa1ef9abf52b164babc28e0b6a957e1d5aa48609343e52ea6f9a0d790c86e109"
+    },
+    ".pi/skills/llm-wiki/scripts/transaction.mjs": {
+      "type": "file",
+      "digest": "4f7e9e08b0624fdd43f884e28e779ff67667db2acd416ecfd83c2625ed9e828f",
+      "mode": 420,
+      "blob": "blobs/4f7e9e08b0624fdd43f884e28e779ff67667db2acd416ecfd83c2625ed9e828f"
+    },
+    ".pi/skills/llm-wiki/scripts/v2.test.mjs": {
+      "type": "file",
+      "digest": "efc3a5e1f940538c2842c29b3787c8b0ec28a874ad93546982a1665df1560779",
+      "mode": 420,
+      "blob": "blobs/efc3a5e1f940538c2842c29b3787c8b0ec28a874ad93546982a1665df1560779"
     },
     ".pi/skills/maintaining-skills/SKILL.md": {
       "type": "file",
@@ -5382,9 +5598,9 @@
     },
     "skills-lock.json": {
       "type": "file",
-      "digest": "085fba25894eef83cbc0954be57a8102301862125a9a2c2d098024be2e1cc8fb",
+      "digest": "b3d01eb311bc1dd703eab58a9babcd3dbdd12dfad3ef18b22a0b74e265357bc0",
       "mode": 420,
-      "blob": "blobs/085fba25894eef83cbc0954be57a8102301862125a9a2c2d098024be2e1cc8fb"
+      "blob": "blobs/b3d01eb311bc1dd703eab58a9babcd3dbdd12dfad3ef18b22a0b74e265357bc0"
     },
     "yss-project.yaml": {
       "type": "file",
@@ -8372,9 +8588,84 @@
       "digest": "159973952d2640a52da4595e08c73d20de72cab3e04fa592e9b2c3845f02a0f6",
       "mode": 420
     },
+    ".agents/skills/llm-wiki/assets/CLAUDE.md.template": {
+      "type": "file",
+      "digest": "60f756cdef57ce890d65bc965b588e8a09503184ff55f9e3d9609cbb40b654f6",
+      "mode": 420
+    },
+    ".agents/skills/llm-wiki/references/compile.md": {
+      "type": "file",
+      "digest": "516d154e67450bac8475b6088ca38ff0feb52682a2b06fb6ae7871541bbb089e",
+      "mode": 420
+    },
     ".agents/skills/llm-wiki/references/discover.md": {
       "type": "file",
       "digest": "126e06e6ccca2f8f228a743e5a15b59ea6653286d8471df8bab35073fb3a2a86",
+      "mode": 420
+    },
+    ".agents/skills/llm-wiki/references/ingest.md": {
+      "type": "file",
+      "digest": "188fa89752be386025189d4e9be758925b99731fb5f5eae018436954c800f3f0",
+      "mode": 420
+    },
+    ".agents/skills/llm-wiki/references/lint.md": {
+      "type": "file",
+      "digest": "82ceed19186125ce166a3e1b5dea09c46d339e4880c935c34c801ec8af602d71",
+      "mode": 420
+    },
+    ".agents/skills/llm-wiki/references/query.md": {
+      "type": "file",
+      "digest": "33271b45622f18e0e01b1b24b37b6c7475ff26d7a782dec2e556e78a530c2908",
+      "mode": 420
+    },
+    ".agents/skills/llm-wiki/references/schema.md": {
+      "type": "file",
+      "digest": "85e6765916f88b7f93e1183755f2b245768d1974fcc841cd6a27df8094659a17",
+      "mode": 420
+    },
+    ".agents/skills/llm-wiki/references/writing.md": {
+      "type": "file",
+      "digest": "999770fcdd752a4e8ffe8c19f300c711cac6290daa8da7663d678f0738902347",
+      "mode": 420
+    },
+    ".agents/skills/llm-wiki/scripts/advise.mjs": {
+      "type": "file",
+      "digest": "c278dddfce2b19d143298dc9496a7f2d36d213ff0b62ceadfba0883a74cfd9e1",
+      "mode": 420
+    },
+    ".agents/skills/llm-wiki/scripts/advise.test.mjs": {
+      "type": "file",
+      "digest": "1d5e4a4c8a0213e447cd7e04ee45b0ab4a7c9ce59ce2997192830b35386ed34d",
+      "mode": 420
+    },
+    ".agents/skills/llm-wiki/scripts/extract.mjs": {
+      "type": "file",
+      "digest": "6caa36c906e6b1c10e9e63c036849d4dad41137d4b3ee52ec936decadff28ea1",
+      "mode": 420
+    },
+    ".agents/skills/llm-wiki/scripts/extract.test.mjs": {
+      "type": "file",
+      "digest": "ef51b157fd09df502636e70fa1b5c5353524e73751069041207b8c9870ad0d05",
+      "mode": 420
+    },
+    ".agents/skills/llm-wiki/scripts/inventory.mjs": {
+      "type": "file",
+      "digest": "fd4a9194589490076f824669fea55681c669d8d0fbf4d10f2508968364eb89e8",
+      "mode": 420
+    },
+    ".agents/skills/llm-wiki/scripts/inventory.test.mjs": {
+      "type": "file",
+      "digest": "53a9c08059180a1175f7386b016e6ca1b53aa6933eecd6559a6d45166336343a",
+      "mode": 420
+    },
+    ".agents/skills/llm-wiki/scripts/lint-wikilinks.mjs": {
+      "type": "file",
+      "digest": "e5de65d74a51129a277e6b06308b1770b81d7fbe4803cf7522d81f64fea4d49d",
+      "mode": 420
+    },
+    ".agents/skills/llm-wiki/scripts/lint-wikilinks.test.mjs": {
+      "type": "file",
+      "digest": "c2f3da3f177d9922d33b40933c981df7b13b80f2fc7eedaa9231b1d7564841c8",
       "mode": 420
     },
     ".agents/skills/maintaining-skills/SKILL.md": {
@@ -8642,9 +8933,84 @@
       "digest": "159973952d2640a52da4595e08c73d20de72cab3e04fa592e9b2c3845f02a0f6",
       "mode": 420
     },
+    ".codex/skills/llm-wiki/assets/CLAUDE.md.template": {
+      "type": "file",
+      "digest": "60f756cdef57ce890d65bc965b588e8a09503184ff55f9e3d9609cbb40b654f6",
+      "mode": 420
+    },
+    ".codex/skills/llm-wiki/references/compile.md": {
+      "type": "file",
+      "digest": "516d154e67450bac8475b6088ca38ff0feb52682a2b06fb6ae7871541bbb089e",
+      "mode": 420
+    },
     ".codex/skills/llm-wiki/references/discover.md": {
       "type": "file",
       "digest": "126e06e6ccca2f8f228a743e5a15b59ea6653286d8471df8bab35073fb3a2a86",
+      "mode": 420
+    },
+    ".codex/skills/llm-wiki/references/ingest.md": {
+      "type": "file",
+      "digest": "188fa89752be386025189d4e9be758925b99731fb5f5eae018436954c800f3f0",
+      "mode": 420
+    },
+    ".codex/skills/llm-wiki/references/lint.md": {
+      "type": "file",
+      "digest": "82ceed19186125ce166a3e1b5dea09c46d339e4880c935c34c801ec8af602d71",
+      "mode": 420
+    },
+    ".codex/skills/llm-wiki/references/query.md": {
+      "type": "file",
+      "digest": "33271b45622f18e0e01b1b24b37b6c7475ff26d7a782dec2e556e78a530c2908",
+      "mode": 420
+    },
+    ".codex/skills/llm-wiki/references/schema.md": {
+      "type": "file",
+      "digest": "85e6765916f88b7f93e1183755f2b245768d1974fcc841cd6a27df8094659a17",
+      "mode": 420
+    },
+    ".codex/skills/llm-wiki/references/writing.md": {
+      "type": "file",
+      "digest": "999770fcdd752a4e8ffe8c19f300c711cac6290daa8da7663d678f0738902347",
+      "mode": 420
+    },
+    ".codex/skills/llm-wiki/scripts/advise.mjs": {
+      "type": "file",
+      "digest": "c278dddfce2b19d143298dc9496a7f2d36d213ff0b62ceadfba0883a74cfd9e1",
+      "mode": 420
+    },
+    ".codex/skills/llm-wiki/scripts/advise.test.mjs": {
+      "type": "file",
+      "digest": "1d5e4a4c8a0213e447cd7e04ee45b0ab4a7c9ce59ce2997192830b35386ed34d",
+      "mode": 420
+    },
+    ".codex/skills/llm-wiki/scripts/extract.mjs": {
+      "type": "file",
+      "digest": "6caa36c906e6b1c10e9e63c036849d4dad41137d4b3ee52ec936decadff28ea1",
+      "mode": 420
+    },
+    ".codex/skills/llm-wiki/scripts/extract.test.mjs": {
+      "type": "file",
+      "digest": "ef51b157fd09df502636e70fa1b5c5353524e73751069041207b8c9870ad0d05",
+      "mode": 420
+    },
+    ".codex/skills/llm-wiki/scripts/inventory.mjs": {
+      "type": "file",
+      "digest": "fd4a9194589490076f824669fea55681c669d8d0fbf4d10f2508968364eb89e8",
+      "mode": 420
+    },
+    ".codex/skills/llm-wiki/scripts/inventory.test.mjs": {
+      "type": "file",
+      "digest": "53a9c08059180a1175f7386b016e6ca1b53aa6933eecd6559a6d45166336343a",
+      "mode": 420
+    },
+    ".codex/skills/llm-wiki/scripts/lint-wikilinks.mjs": {
+      "type": "file",
+      "digest": "e5de65d74a51129a277e6b06308b1770b81d7fbe4803cf7522d81f64fea4d49d",
+      "mode": 420
+    },
+    ".codex/skills/llm-wiki/scripts/lint-wikilinks.test.mjs": {
+      "type": "file",
+      "digest": "c2f3da3f177d9922d33b40933c981df7b13b80f2fc7eedaa9231b1d7564841c8",
       "mode": 420
     },
     ".codex/skills/maintaining-skills/SKILL.md": {
@@ -8972,9 +9338,84 @@
       "digest": "159973952d2640a52da4595e08c73d20de72cab3e04fa592e9b2c3845f02a0f6",
       "mode": 420
     },
+    ".cursor/skills/llm-wiki/assets/CLAUDE.md.template": {
+      "type": "file",
+      "digest": "60f756cdef57ce890d65bc965b588e8a09503184ff55f9e3d9609cbb40b654f6",
+      "mode": 420
+    },
+    ".cursor/skills/llm-wiki/references/compile.md": {
+      "type": "file",
+      "digest": "516d154e67450bac8475b6088ca38ff0feb52682a2b06fb6ae7871541bbb089e",
+      "mode": 420
+    },
     ".cursor/skills/llm-wiki/references/discover.md": {
       "type": "file",
       "digest": "126e06e6ccca2f8f228a743e5a15b59ea6653286d8471df8bab35073fb3a2a86",
+      "mode": 420
+    },
+    ".cursor/skills/llm-wiki/references/ingest.md": {
+      "type": "file",
+      "digest": "188fa89752be386025189d4e9be758925b99731fb5f5eae018436954c800f3f0",
+      "mode": 420
+    },
+    ".cursor/skills/llm-wiki/references/lint.md": {
+      "type": "file",
+      "digest": "82ceed19186125ce166a3e1b5dea09c46d339e4880c935c34c801ec8af602d71",
+      "mode": 420
+    },
+    ".cursor/skills/llm-wiki/references/query.md": {
+      "type": "file",
+      "digest": "33271b45622f18e0e01b1b24b37b6c7475ff26d7a782dec2e556e78a530c2908",
+      "mode": 420
+    },
+    ".cursor/skills/llm-wiki/references/schema.md": {
+      "type": "file",
+      "digest": "85e6765916f88b7f93e1183755f2b245768d1974fcc841cd6a27df8094659a17",
+      "mode": 420
+    },
+    ".cursor/skills/llm-wiki/references/writing.md": {
+      "type": "file",
+      "digest": "999770fcdd752a4e8ffe8c19f300c711cac6290daa8da7663d678f0738902347",
+      "mode": 420
+    },
+    ".cursor/skills/llm-wiki/scripts/advise.mjs": {
+      "type": "file",
+      "digest": "c278dddfce2b19d143298dc9496a7f2d36d213ff0b62ceadfba0883a74cfd9e1",
+      "mode": 420
+    },
+    ".cursor/skills/llm-wiki/scripts/advise.test.mjs": {
+      "type": "file",
+      "digest": "1d5e4a4c8a0213e447cd7e04ee45b0ab4a7c9ce59ce2997192830b35386ed34d",
+      "mode": 420
+    },
+    ".cursor/skills/llm-wiki/scripts/extract.mjs": {
+      "type": "file",
+      "digest": "6caa36c906e6b1c10e9e63c036849d4dad41137d4b3ee52ec936decadff28ea1",
+      "mode": 420
+    },
+    ".cursor/skills/llm-wiki/scripts/extract.test.mjs": {
+      "type": "file",
+      "digest": "ef51b157fd09df502636e70fa1b5c5353524e73751069041207b8c9870ad0d05",
+      "mode": 420
+    },
+    ".cursor/skills/llm-wiki/scripts/inventory.mjs": {
+      "type": "file",
+      "digest": "fd4a9194589490076f824669fea55681c669d8d0fbf4d10f2508968364eb89e8",
+      "mode": 420
+    },
+    ".cursor/skills/llm-wiki/scripts/inventory.test.mjs": {
+      "type": "file",
+      "digest": "53a9c08059180a1175f7386b016e6ca1b53aa6933eecd6559a6d45166336343a",
+      "mode": 420
+    },
+    ".cursor/skills/llm-wiki/scripts/lint-wikilinks.mjs": {
+      "type": "file",
+      "digest": "e5de65d74a51129a277e6b06308b1770b81d7fbe4803cf7522d81f64fea4d49d",
+      "mode": 420
+    },
+    ".cursor/skills/llm-wiki/scripts/lint-wikilinks.test.mjs": {
+      "type": "file",
+      "digest": "c2f3da3f177d9922d33b40933c981df7b13b80f2fc7eedaa9231b1d7564841c8",
       "mode": 420
     },
     ".cursor/skills/maintaining-skills/SKILL.md": {
@@ -9252,9 +9693,84 @@
       "digest": "159973952d2640a52da4595e08c73d20de72cab3e04fa592e9b2c3845f02a0f6",
       "mode": 420
     },
+    ".pi/skills/llm-wiki/assets/CLAUDE.md.template": {
+      "type": "file",
+      "digest": "60f756cdef57ce890d65bc965b588e8a09503184ff55f9e3d9609cbb40b654f6",
+      "mode": 420
+    },
+    ".pi/skills/llm-wiki/references/compile.md": {
+      "type": "file",
+      "digest": "516d154e67450bac8475b6088ca38ff0feb52682a2b06fb6ae7871541bbb089e",
+      "mode": 420
+    },
     ".pi/skills/llm-wiki/references/discover.md": {
       "type": "file",
       "digest": "126e06e6ccca2f8f228a743e5a15b59ea6653286d8471df8bab35073fb3a2a86",
+      "mode": 420
+    },
+    ".pi/skills/llm-wiki/references/ingest.md": {
+      "type": "file",
+      "digest": "188fa89752be386025189d4e9be758925b99731fb5f5eae018436954c800f3f0",
+      "mode": 420
+    },
+    ".pi/skills/llm-wiki/references/lint.md": {
+      "type": "file",
+      "digest": "82ceed19186125ce166a3e1b5dea09c46d339e4880c935c34c801ec8af602d71",
+      "mode": 420
+    },
+    ".pi/skills/llm-wiki/references/query.md": {
+      "type": "file",
+      "digest": "33271b45622f18e0e01b1b24b37b6c7475ff26d7a782dec2e556e78a530c2908",
+      "mode": 420
+    },
+    ".pi/skills/llm-wiki/references/schema.md": {
+      "type": "file",
+      "digest": "85e6765916f88b7f93e1183755f2b245768d1974fcc841cd6a27df8094659a17",
+      "mode": 420
+    },
+    ".pi/skills/llm-wiki/references/writing.md": {
+      "type": "file",
+      "digest": "999770fcdd752a4e8ffe8c19f300c711cac6290daa8da7663d678f0738902347",
+      "mode": 420
+    },
+    ".pi/skills/llm-wiki/scripts/advise.mjs": {
+      "type": "file",
+      "digest": "c278dddfce2b19d143298dc9496a7f2d36d213ff0b62ceadfba0883a74cfd9e1",
+      "mode": 420
+    },
+    ".pi/skills/llm-wiki/scripts/advise.test.mjs": {
+      "type": "file",
+      "digest": "1d5e4a4c8a0213e447cd7e04ee45b0ab4a7c9ce59ce2997192830b35386ed34d",
+      "mode": 420
+    },
+    ".pi/skills/llm-wiki/scripts/extract.mjs": {
+      "type": "file",
+      "digest": "6caa36c906e6b1c10e9e63c036849d4dad41137d4b3ee52ec936decadff28ea1",
+      "mode": 420
+    },
+    ".pi/skills/llm-wiki/scripts/extract.test.mjs": {
+      "type": "file",
+      "digest": "ef51b157fd09df502636e70fa1b5c5353524e73751069041207b8c9870ad0d05",
+      "mode": 420
+    },
+    ".pi/skills/llm-wiki/scripts/inventory.mjs": {
+      "type": "file",
+      "digest": "fd4a9194589490076f824669fea55681c669d8d0fbf4d10f2508968364eb89e8",
+      "mode": 420
+    },
+    ".pi/skills/llm-wiki/scripts/inventory.test.mjs": {
+      "type": "file",
+      "digest": "53a9c08059180a1175f7386b016e6ca1b53aa6933eecd6559a6d45166336343a",
+      "mode": 420
+    },
+    ".pi/skills/llm-wiki/scripts/lint-wikilinks.mjs": {
+      "type": "file",
+      "digest": "e5de65d74a51129a277e6b06308b1770b81d7fbe4803cf7522d81f64fea4d49d",
+      "mode": 420
+    },
+    ".pi/skills/llm-wiki/scripts/lint-wikilinks.test.mjs": {
+      "type": "file",
+      "digest": "c2f3da3f177d9922d33b40933c981df7b13b80f2fc7eedaa9231b1d7564841c8",
       "mode": 420
     },
     ".pi/skills/maintaining-skills/SKILL.md": {
@@ -9988,8 +10504,8 @@
       "mode": 420
     }
   },
-  "transitionBaselinesHash": "c6191fa8117edba1bad48e1d4bb3c396811dd409ad79fa98efe15f7f994a1ec7",
-  "snapshotHash": "ffe09cbc61757b5cdda7b808f39b8c127b14da3df1e47ab034dbd9c371bc8237",
+  "transitionBaselinesHash": "d95539fc80c700a605ef37121c679ac3672661d0ddf0674abc0ca19f3c068423",
+  "snapshotHash": "c01cfc24842c428e724d4c4c0690ebb09e431519bccdcd2b7cc85a745160724e",
   "projectionRepresentation": "materialized-files",
   "pathEncoding": "sha256-blobs-v1"
 }
