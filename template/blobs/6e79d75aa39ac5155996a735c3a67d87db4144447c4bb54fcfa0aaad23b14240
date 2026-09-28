@@ -1,3 +1,5 @@
+import { enforceHarnessTaskScope } from './harness-execution-scope.mjs';
+import { validateReadOnlyIntake } from './read-only-intake.mjs';
 import { assertTrackingEntry } from './stage-tracking.mjs';
 import { existsSync, readFileSync } from "node:fs";
 import { spawnSync } from "node:child_process";
@@ -5,7 +7,10 @@ import path from "node:path";
 import { parseDocument } from "../vendor/yaml.mjs";
 import { loadDigitalHumanRoles, taskPackageDefaults } from "./digital-human-roles.mjs";
 import { loadRegistry, ROOT } from "./lifecycle-registry.mjs";
-import { loadMaintenanceCheckpoint, validateMaintenanceCheckpoint } from "./maintenance-intensity.mjs";
+import { readRepositoryMode } from './repository-mode.mjs';
+const maintenanceValidators = readRepositoryMode(ROOT)==='template-source' ? await import('./maintenance-intensity.mjs') : null;
+function loadMaintenanceCheckpoint(...args){if(!maintenanceValidators)throw new TypeError('project-instance 不允许模板维护合同');return maintenanceValidators.loadMaintenanceCheckpoint(...args);}
+function validateMaintenanceCheckpoint(...args){if(!maintenanceValidators)throw new TypeError('project-instance 不允许模板维护合同');return maintenanceValidators.validateMaintenanceCheckpoint(...args);}
 import { validateNextRoute } from "./lifecycle-transition.mjs";
 import { assertPlanSpecEntry } from './plan-spec-entry.mjs';
 import { harnessProfileContract } from "./harness-profile.mjs";
@@ -13,7 +18,7 @@ import { harnessProfileContract } from "./harness-profile.mjs";
 export const TASK_PACKAGE_SCHEMA = path.join(ROOT, ".template-spec/process/schemas/digital-human-task-package.schema.json");
 export const LEGACY_TASK_PACKAGE_SCHEMA = path.join(ROOT, ".template-spec/process/schemas/subagent-task-package.schema.json");
 export const TASK_PACKAGE_REGISTRY_REF = ".template-spec/agents/digital-human-roles.yaml";
-export const CONTRACT_KINDS = new Set(["lifecycle-work-unit", "slice-implementation", "template-maintenance"]);
+export const CONTRACT_KINDS = new Set(["lifecycle-work-unit", "slice-implementation", "template-maintenance", "read-only-intake"]);
 export const EXECUTION_STATES = new Set(["Explorer", "Drafter", "Worker", "Reviewer", "Verifier"]);
 export const WORKFLOW_STATUSES = new Set(["not-started", "active", "paused", "resolved", "failed"]);
 
@@ -196,8 +201,14 @@ function validateContract(value, registry, lifecycle) {
   }
 }
 
-export function validateTaskPackage(value, { rolesDoc, lifecycleDoc } = {}) {
+export function validateTaskPackage(value, { rolesDoc, lifecycleDoc, root = ROOT, runDir } = {}) {
   validateTaskPackageSchema(value);
+  if (value.schema_version === 2) {
+    enforceHarnessTaskScope(value,{root});
+    const registry = rolesDoc || loadDigitalHumanRoles();
+    validateSkillSource(value,registry);
+    return validateReadOnlyIntake(value,{root,runDir,roles:registry,lifecycle:lifecycleDoc||loadRegistry()});
+  }
   const registry = rolesDoc || loadDigitalHumanRoles();
   const lifecycle = lifecycleDoc || loadRegistry();
   validateCommon(value, registry, lifecycle);
