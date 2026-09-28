@@ -8,7 +8,7 @@ Matt skills 决定如何工作；YSS Strategic Design 决定是否允许推进�
 
 - 所有入口先读取 `yss-project.yaml`。缺失、解析失败、schema 不支持或 `repository_mode` 非法时，停止路由并进入 migration-check。
 - **直接调用 `ask-matt`** 时，它只能提供通用 Matt flow 导航，不得写生命周期资产、改变门禁或 Ticket 状态；有效 YSS 仓库必须在任何写入前把最终阶段、影响面、门禁和状态裁决交回 `yss-strategic-design`。
-- **直接调用兼容入口**（`ask-matt`、`grill-with-docs`、`to-spec`、`to-tickets`、`triage`、`wayfinder`）时，用户仍是正式资产的创建者；战略编排器先校验前置条件，再接受结果并重新计算阶段、门禁和状态。它们不得自动调用，也不得越过 Strategic Design Handoff。
+- **直接调用兼容入口**（`ask-matt`、`to-spec`、`to-tickets`、`triage`、`wayfinder`）时，用户仍是正式资产的创建者；战略编排器先校验前置条件，再接受结果并重新计算阶段、门禁和状态。它们不得自动调用，也不得越过 Strategic Design Handoff。
 - **直接调用 `yss-strategic-design`** 时，不机械嵌套调用任何 Matt user-invoked skill；编排器直接使用原生工作单元和允许的 model-invoked 原语。
 - `template-source` 只允许进入模板维护流程。命中 `to-spec`、`to-tickets`、Release 或 Retrospective 时返回 `blocked`，原因是 `template-source-product-artifact-forbidden`；所有兼容入口都不得为具体产品生成超出本 profile 的资产。
 - `project-instance` 才允许进入 Plan → DDD 战略设计 → Spec → 产品设计 → 业务 Ticket → Strategic Design Handoff 链路。
@@ -17,8 +17,8 @@ Matt skills 决定如何工作；YSS Strategic Design 决定是否允许推进�
 |---|---|---|
 | 首次启用或配置缺失 | `setup-matt-pocock-skills`（用户显式） | `needs-human`，说明缺失项；用户完成 setup 后重新计算 readiness |
 | 通用入口 | `ask-matt` | 检测到 YSS 后由本编排器最终裁决 |
-| 需求澄清 | `grill-with-docs`（用户显式）或 `grilling`、`domain-modeling`（生命周期原语） | 按退出判定检查未决项和回流 |
-| 信息在其他人手中 | `to-questionnaire` | 使用 `external-input-required` 暂停；答案回流后记录 response、重新分类影响面，再进入 `grill-with-docs` 或 `to-spec` |
+| 需求澄清 | 原生需求澄清，按需使用 `grilling`、`domain-modeling`（生命周期原语） | 按退出判定检查未决项和回流 |
+| 信息在其他人手中 | 生命周期外部输入问卷 | 使用 `external-input-required` 暂停；答案回流后记录 response、重新分类影响面，再进入 原生需求澄清 或 `to-spec` |
 | 大型模糊工作 | `wayfinder` | map 真正完成后 `handoff → to-spec` |
 | 技术或战略事实 | `yss-research`（`research` 为 deprecated alias） | `technical-evidence` 核验一手技术资料；`strategy-evidence` 为领域战略和阶段决策提供可审计证据；研究包不得自行修改或批准下游资产 |
 | runnable 问题 | `prototype` | 生成单文件可分享 HTML，保留 `prototype/<name>` 分支作为主来源；必须 source/return handoff 和结论回填，不得替代阶段 4 的低保真评审、Ant Design v6 高保真 HTML、AntD CLI 证据和用户确认 |
@@ -29,7 +29,7 @@ Matt skills 决定如何工作；YSS Strategic Design 决定是否允许推进�
 | merge / rebase 冲突 | `resolving-merge-conflicts` | 只处理当前 Harness 的资产冲突；发现语义漂移时暂停并重算影响面 |
 | 跨上下文 | `handoff` | 保存来源、阶段、未决项、命令和下一责任人 |
 | 阶段边界 | `PHASE-BOUNDARIES.md` | 按 `Continue → /clear → /handoff → subagent → /compact` 选择上下文动作；只记录证据，不扩展生命周期状态 |
-| 解释未落地 | `wait-what` | 只重新解释当前结论，不改变阶段、门禁、Ticket 或 `ready-for-agent` |
+| 解释未落地 | 普通解释对话 | 只重新解释当前结论，不改变阶段、门禁、Ticket 或 `ready-for-agent` |
 | 人工步骤 | 人工 checkpoint | 记录 Agent 无法替代的点击、审批、凭据和迁移步骤；秘密值必须隐藏并脱敏 |
 | 编写 Agent 文档 | `writing-for-agents`；维护 skill 时使用 `maintaining-skills` | 共享 skill 只改 `.agents/skills`；流程文档保持简体中文 |
 
@@ -68,7 +68,7 @@ Router 状态映射为：`draft → completed`、`blocked → blocked`、`ready-
 
 | Matt flow | 进入条件 | 生命周期结果 |
 |---|---|---|
-| `to-spec`（用户显式） | Plan work unit 或 `grill-with-docs` 已满足退出条件，且不存在未回流 runnable blocker；用户问题、MVP/非目标、成功标准、测试 seam 和术语审查均有证据 | 生命周期只准备/验收；Spec 初稿为 `ready-for-human`，不等于批准 |
+| `to-spec`（用户显式） | Plan work unit 或 原生需求澄清 已满足退出条件，且不存在未回流 runnable blocker；用户问题、MVP/非目标、成功标准、测试 seam 和术语审查均有证据 | 生命周期只准备/验收；Spec 初稿为 `ready-for-human`，不等于批准 |
 | `to-tickets`（用户显式） | 必要门禁、业务范围、验收标准、依赖和风险均已明确 | 生命周期只准备/验收；只能生成业务级 Ticket，初始统一为 `ready-for-human` |
 | `implement`（已移除） | 不适用 | 直接返回 `blocked`，转交下游研发 profile |
 

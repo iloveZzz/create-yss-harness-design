@@ -17,7 +17,6 @@
 |---|---|
 | `issue-tracker.md` | Ticket / Spec / triage 在 Local Markdown、GitLab Issues 与 GitHub Issues 间路由的操作约定 |
 | `triage-labels.md` | 标准五态 triage 标签与含义 |
-| `domain.md` | 领域文档读取和维护规则 |
 | `skills-maintenance.md` | Engineering Skills 的安装、升级和验证说明 |
 | `yss-skill-registry.yaml` | 技能分层、别名与运行时入口（shadow，不替代锁文件） |
 | `gitlab-workflow-skills.md` | GitLab、MR、CI 和自动 gitworks 的技能配置与使用规则 |

@@ -21,3 +21,18 @@
 ## 2026-09-14：HTML 原型与 Provider 退役
 
 `yss-antdv-next-design`、`yss-antd-design` 从当前技能、默认生成路线及分发中移除。新原型使用 `yss-prototype-stage` 的 html-css-js 适配器；历史原型、fact pack、截图及用户决定保持只读。在途继续演进时新建 HTML 工作版本，重新验证并确认；普通同步不直接删除消费项目的历史或用户修改资产。
+
+## 2026-09-28 入口收敛
+
+以下旧 Skill ID 已硬退役：新调用返回 `skill-retired` 和迁移提示，不能自动执行替代入口或改变阶段状态。历史证据只读保留。
+
+| 旧入口 | 承接位置 |
+|---|---|
+| wait-what | 普通解释对话，按文档写作规范或 i-have-adhd 调整表达 |
+| grill-with-docs | 当前生命周期的 work-unit.plan-requirements，保留 Context 校验、对账和退出判定 |
+| to-questionnaire | 当前生命周期外部输入问卷，保留 external-input-required 与答案回流合同 |
+| improve-codebase-architecture | codebase-design 显式架构审计模式及可选 HTML 报告 |
+
+Data Analytics 平台包从本模板及 frontend 分发退出；不卸载用户另装插件。frontend-commit / java-backend-commit 保留专项入口并读取内部 git-commit-core。prototype 仅做逻辑与状态试验；正式 UI 由生命周期产品设计阶段承接。
+
+存量实例先预览同步计划。只按旧版本基线移除未修改的受管文件，用户修改保留并报告冲突；不自动迁移历史审批、问卷或快照。

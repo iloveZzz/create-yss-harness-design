@@ -136,7 +136,6 @@ roles:
   - domain-modeling
   - yss-research
   - competitive-intelligence
-  - grill-with-docs
   forbidden_skills:
   - yss-tactical-design
   - yss-openapi-governance
