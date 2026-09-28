@@ -6,7 +6,7 @@
   "metadataFile": ".yss-harness-design.json",
   "templateName": "yss-harness-design-agent",
   "templateSource": "github:iloveZzz/yss-harness-design-agent",
-  "templateCommit": "6c9e47c3863f3f998443f7e5cc723ae750e21d1f",
+  "templateCommit": "0e1f9407e6d7915bb6c293f228257e691ef9dc9d",
   "sourceState": "committed",
   "manifestHash": "5c78f0b551b9706759fe9fa50aae6644516f39a2da8793bc4fa320594c292a6e",
   "files": {
@@ -618,9 +618,9 @@
     },
     ".agents/skills/yss-research/SKILL.md": {
       "type": "file",
-      "digest": "a86999e302fe8fb390f800e73cc9456f0d5a7c8ae45b8ca37cc760d7951df8fa",
+      "digest": "789fa6131272d11d9758df4efd54ef5c6d8c265c2581bebeae56633685680696",
       "mode": 420,
-      "blob": "blobs/a86999e302fe8fb390f800e73cc9456f0d5a7c8ae45b8ca37cc760d7951df8fa"
+      "blob": "blobs/789fa6131272d11d9758df4efd54ef5c6d8c265c2581bebeae56633685680696"
     },
     ".agents/skills/yss-research/agents/openai.yaml": {
       "type": "file",
@@ -1782,9 +1782,9 @@
     },
     ".codex/skills/yss-research/SKILL.md": {
       "type": "file",
-      "digest": "a86999e302fe8fb390f800e73cc9456f0d5a7c8ae45b8ca37cc760d7951df8fa",
+      "digest": "789fa6131272d11d9758df4efd54ef5c6d8c265c2581bebeae56633685680696",
       "mode": 420,
-      "blob": "blobs/a86999e302fe8fb390f800e73cc9456f0d5a7c8ae45b8ca37cc760d7951df8fa"
+      "blob": "blobs/789fa6131272d11d9758df4efd54ef5c6d8c265c2581bebeae56633685680696"
     },
     ".codex/skills/yss-research/agents/openai.yaml": {
       "type": "file",
@@ -2610,9 +2610,9 @@
     },
     ".cursor/skills/yss-research/SKILL.md": {
       "type": "file",
-      "digest": "a86999e302fe8fb390f800e73cc9456f0d5a7c8ae45b8ca37cc760d7951df8fa",
+      "digest": "789fa6131272d11d9758df4efd54ef5c6d8c265c2581bebeae56633685680696",
       "mode": 420,
-      "blob": "blobs/a86999e302fe8fb390f800e73cc9456f0d5a7c8ae45b8ca37cc760d7951df8fa"
+      "blob": "blobs/789fa6131272d11d9758df4efd54ef5c6d8c265c2581bebeae56633685680696"
     },
     ".cursor/skills/yss-research/agents/openai.yaml": {
       "type": "file",
@@ -3450,9 +3450,9 @@
     },
     ".pi/skills/yss-research/SKILL.md": {
       "type": "file",
-      "digest": "a86999e302fe8fb390f800e73cc9456f0d5a7c8ae45b8ca37cc760d7951df8fa",
+      "digest": "789fa6131272d11d9758df4efd54ef5c6d8c265c2581bebeae56633685680696",
       "mode": 420,
-      "blob": "blobs/a86999e302fe8fb390f800e73cc9456f0d5a7c8ae45b8ca37cc760d7951df8fa"
+      "blob": "blobs/789fa6131272d11d9758df4efd54ef5c6d8c265c2581bebeae56633685680696"
     },
     ".pi/skills/yss-research/agents/openai.yaml": {
       "type": "file",
@@ -3924,9 +3924,9 @@
     },
     ".template-spec/process/contract-reading.md": {
       "type": "file",
-      "digest": "98a23bc210fb14364a14954475abcf65055be38370c89864443a1bb91cc3eca4",
+      "digest": "eab5de51710634426841c2ae04369be6ade0944f509effae616e83c104b54320",
       "mode": 420,
-      "blob": "blobs/98a23bc210fb14364a14954475abcf65055be38370c89864443a1bb91cc3eca4"
+      "blob": "blobs/eab5de51710634426841c2ae04369be6ade0944f509effae616e83c104b54320"
     },
     ".template-spec/process/delivery-preflight.md": {
       "type": "file",
@@ -4000,6 +4000,12 @@
       "mode": 420,
       "blob": "blobs/3de8aa4325431dfac8ddafad3802dadfc51957195c10b7bafdf47c9375decb74"
     },
+    ".template-spec/process/research-completion.md": {
+      "type": "file",
+      "digest": "3adfcd90d7f25f1fc7c989862d9ee1e39c4a8a4afb68d90784ebe56ca320991e",
+      "mode": 420,
+      "blob": "blobs/3adfcd90d7f25f1fc7c989862d9ee1e39c4a8a4afb68d90784ebe56ca320991e"
+    },
     ".template-spec/process/schemas/api-contract-decision-v2.schema.json": {
       "type": "file",
       "digest": "e874b18a8cde8e8101d4f29be04a95cba94243a0abeab4853cfeb11cb459668c",
@@ -4050,9 +4056,9 @@
     },
     ".template-spec/process/schemas/digital-human-task-package.schema.json": {
       "type": "file",
-      "digest": "199cc3f5c1ec1c7f735329565717ee13bb1da17b6571da1c1a2e2728c2e9315d",
+      "digest": "78ee716f228660fa07666974ab51d69306e4d510ffbca0c31d9d9c05005bb976",
       "mode": 420,
-      "blob": "blobs/199cc3f5c1ec1c7f735329565717ee13bb1da17b6571da1c1a2e2728c2e9315d"
+      "blob": "blobs/78ee716f228660fa07666974ab51d69306e4d510ffbca0c31d9d9c05005bb976"
     },
     ".template-spec/process/schemas/existing-ui-baseline.schema.json": {
       "type": "file",
@@ -4452,9 +4458,9 @@
     },
     "scripts/contract": {
       "type": "file",
-      "digest": "c6ff2e1e0b8587f3892f241a651ce9382dbf377a5b059b75996af465f4ba40ed",
+      "digest": "4ae8a46d2bcc5db1aa821b7e8cf83bf57da437d336bdfe28242a9ff1b5cd53e7",
       "mode": 493,
-      "blob": "blobs/c6ff2e1e0b8587f3892f241a651ce9382dbf377a5b059b75996af465f4ba40ed"
+      "blob": "blobs/4ae8a46d2bcc5db1aa821b7e8cf83bf57da437d336bdfe28242a9ff1b5cd53e7"
     },
     "scripts/export-yss-skills": {
       "type": "file",
@@ -4638,9 +4644,9 @@
     },
     "scripts/lib/contract-views.mjs": {
       "type": "file",
-      "digest": "694d4fd94f4ecf50a9d6408ebc845ed70f02f5c673bf59f636370f8b1216df94",
+      "digest": "7687f06db3c048c4980d957f54e8135628056154070798ec136c4b410c4beb80",
       "mode": 420,
-      "blob": "blobs/694d4fd94f4ecf50a9d6408ebc845ed70f02f5c673bf59f636370f8b1216df94"
+      "blob": "blobs/7687f06db3c048c4980d957f54e8135628056154070798ec136c4b410c4beb80"
     },
     "scripts/lib/decision-continuation.mjs": {
       "type": "file",
@@ -9989,7 +9995,7 @@
     }
   },
   "transitionBaselinesHash": "c6191fa8117edba1bad48e1d4bb3c396811dd409ad79fa98efe15f7f994a1ec7",
-  "snapshotHash": "ffe09cbc61757b5cdda7b808f39b8c127b14da3df1e47ab034dbd9c371bc8237",
+  "snapshotHash": "e636d98eb691e90460d8d5c78614ca9b1d69864b430b0a7dc4fd0ae3e04ed638",
   "projectionRepresentation": "materialized-files",
   "pathEncoding": "sha256-blobs-v1"
 }
