@@ -3,6 +3,9 @@ name: yss-strategic-design
 description: 编排 YSS 产品或模块从机会调研到业务边界与协作、Spec、页面原型、业务级 Ticket 和业务方案交接；不进入下游技术设计、实现、审查或发布。
 ---
 
+已显式托管的首批阅读包：权威源编辑结束后运行 `scripts/contract render --checkpoint <ref>`；审阅准备或交接前运行 `check-views`。阅读生成失败只恢复派生页，不重做成功源事务。详见 `.template-spec/process/contract-reading.md`。
+
+
 # YSS 业务方案设计
 
 这是生命周期主控 skill：负责识别阶段、判定影响面、检查产物与门禁、选择下一工作单元并验收结果。业务实现必须交给对应的 Matt/YSS 专项 skill；本 skill 不替代它们。

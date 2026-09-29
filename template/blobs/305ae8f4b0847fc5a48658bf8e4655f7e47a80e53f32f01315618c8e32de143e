@@ -1,3 +1,4 @@
+import {assertReadingTransition} from './reading-view-bundle.mjs';
 import { ROOT } from './lifecycle-registry.mjs';
 import { assertTrackingTransition } from './stage-tracking.mjs';
 import { existsSync, readFileSync } from "node:fs";
@@ -132,6 +133,8 @@ function validateTicketReference(ref, trackerKind) {
  * by `validateWorkflowExecutionResult` before this function is called.
  */
 export function validateNextRoute(currentWorkUnit, nextRoute, state = {}, options = {}) {
+  try { assertReadingTransition(options.root || ROOT, state, currentWorkUnit); }
+  catch (error) { return blockedResult(['reading-views-stale'], [error.message]); }
   try { assertTrackingTransition(currentWorkUnit, nextRoute, state, { root: options.root || ROOT }); }
   catch (error) { return blockedResult(['stage-tracking-blocked'], [error.message]); }
   const profileId = state.profileId || state.profile_id || ((state.repository_mode === 'project-instance' || state.workflow_reference?.source === 'yss-strategic-design') ? STRATEGIC_PROFILE_ID : null);
