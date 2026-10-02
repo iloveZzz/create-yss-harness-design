@@ -32,7 +32,7 @@
     "prepack": "node scripts/verify-bundle.mjs"
   },
   "engines": {
-    "node": ">=22 <27"
+    "node": ">=22.13 <27"
   },
   "license": "UNLICENSED",
   "type": "module",

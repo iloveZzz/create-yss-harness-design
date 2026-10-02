@@ -1,0 +1,30 @@
+schema_version: 2
+gate_id: gate.spec-baseline-approved
+decision: pending
+actor_kind: digital-human
+role_id: role.product-manager
+runtime_id: runtime.generic
+runtime_instance_ref: "runtime.generic:role.product-manager"
+principal_ref: "instance:role.product-manager"
+drafter_role_id: role.requirements-manager
+countersigner_role_ids:
+  - role.product-manager
+evidence_refs: []
+biological_veto: false
+notes: 会签必须可读取；起草者不得出现在 countersigner_role_ids。运行时表情/reaction 无效。
+# 关键门禁正式放行时必填；模板/历史结构校验不构成批准。
+subject_ref: null
+approval_scope: []
+user_decision_ref: null
+# 已有交付范围授权时可引用独立当前审查支持的延续证明；不能仅填写 approved。
+continuation_ref: null
+# 聚合门禁 / 内部专业审查绑定的当前主体字节 SHA-256（64 位十六进制）。
+subject_digest: null
+# 专业检查必须与起草者为不同执行实例；不仅仅比较职称。
+drafter_principal_ref: null
+
+# 新批准使用能力审查任务；只读 intake v2 不得作为正式审查任务。
+review_task_ref: null
+review_task_digest: null
+capability_ids: []
+basis: []
