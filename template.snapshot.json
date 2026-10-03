@@ -6,7 +6,7 @@
   "metadataFile": ".yss-harness-design.json",
   "templateName": "yss-harness-design-agent",
   "templateSource": "github:iloveZzz/yss-harness-design-agent",
-  "templateCommit": "4159f465477b30c64e605c4fa3ccf594b8d9ecb8",
+  "templateCommit": "1db08cda684decc8f26529caa779c78eeed7e155",
   "sourceState": "committed",
   "manifestHash": "5c78f0b551b9706759fe9fa50aae6644516f39a2da8793bc4fa320594c292a6e",
   "files": {
@@ -42,9 +42,9 @@
     },
     ".agents/skills/code-review/references/candidate-capture.md": {
       "type": "file",
-      "digest": "e88f535ab04c31fef1485e7a1b2c6b84403634382176edacf22baf1026ed62c9",
+      "digest": "59c94fda6345a25c8f7f5c8358e7fc3a47b5c26040bea86bbca562504bb4c42d",
       "mode": 420,
-      "blob": "blobs/e88f535ab04c31fef1485e7a1b2c6b84403634382176edacf22baf1026ed62c9"
+      "blob": "blobs/59c94fda6345a25c8f7f5c8358e7fc3a47b5c26040bea86bbca562504bb4c42d"
     },
     ".agents/skills/code-review/references/legacy-convergence.md": {
       "type": "file",
@@ -258,9 +258,9 @@
     },
     ".agents/skills/llm-wiki/references/transactions.md": {
       "type": "file",
-      "digest": "4719f98346e1cd697ca497d256911d57e4a1be0c22b44158b958fcaa7e1796ed",
+      "digest": "0811f816623d41c51cb241569835f4525008255c288e25eea5fc06e95b69209d",
       "mode": 420,
-      "blob": "blobs/4719f98346e1cd697ca497d256911d57e4a1be0c22b44158b958fcaa7e1796ed"
+      "blob": "blobs/0811f816623d41c51cb241569835f4525008255c288e25eea5fc06e95b69209d"
     },
     ".agents/skills/llm-wiki/references/writing.md": {
       "type": "file",
@@ -282,9 +282,9 @@
     },
     ".agents/skills/llm-wiki/scripts/core.mjs": {
       "type": "file",
-      "digest": "2da51b580c612134dc18a6e415bebb13744442381bfc75af7f58210008a45443",
+      "digest": "204d64ece005c58eda88529ead6c91bcf6b675ef6f4ac2ffeffa0b2f99854d6a",
       "mode": 420,
-      "blob": "blobs/2da51b580c612134dc18a6e415bebb13744442381bfc75af7f58210008a45443"
+      "blob": "blobs/204d64ece005c58eda88529ead6c91bcf6b675ef6f4ac2ffeffa0b2f99854d6a"
     },
     ".agents/skills/llm-wiki/scripts/extract.mjs": {
       "type": "file",
@@ -354,15 +354,15 @@
     },
     ".agents/skills/llm-wiki/scripts/transaction.mjs": {
       "type": "file",
-      "digest": "4f7e9e08b0624fdd43f884e28e779ff67667db2acd416ecfd83c2625ed9e828f",
+      "digest": "98e4c6bd525869cd87ca2fba3a1eb285a3b269c2201a8c0ad018c02d9a43d8ac",
       "mode": 420,
-      "blob": "blobs/4f7e9e08b0624fdd43f884e28e779ff67667db2acd416ecfd83c2625ed9e828f"
+      "blob": "blobs/98e4c6bd525869cd87ca2fba3a1eb285a3b269c2201a8c0ad018c02d9a43d8ac"
     },
     ".agents/skills/llm-wiki/scripts/v2.test.mjs": {
       "type": "file",
-      "digest": "efc3a5e1f940538c2842c29b3787c8b0ec28a874ad93546982a1665df1560779",
+      "digest": "21816b2201b2b95eded009fa9755abfb0f6735f3f6bc3174fe3e8ea74d25bb4e",
       "mode": 420,
-      "blob": "blobs/efc3a5e1f940538c2842c29b3787c8b0ec28a874ad93546982a1665df1560779"
+      "blob": "blobs/21816b2201b2b95eded009fa9755abfb0f6735f3f6bc3174fe3e8ea74d25bb4e"
     },
     ".agents/skills/maintaining-skills/SKILL.md": {
       "type": "file",
@@ -2496,9 +2496,9 @@
     },
     ".agents/skills/yss-research/SKILL.md": {
       "type": "file",
-      "digest": "145d5df415d24fa3b407f58f2733be3d5c30606d312d78c60aab00475beeaab5",
+      "digest": "0b3689fd63990d9281fb06d574e23b1651588cfae388f45b731c4659b9a44f97",
       "mode": 420,
-      "blob": "blobs/145d5df415d24fa3b407f58f2733be3d5c30606d312d78c60aab00475beeaab5"
+      "blob": "blobs/0b3689fd63990d9281fb06d574e23b1651588cfae388f45b731c4659b9a44f97"
     },
     ".agents/skills/yss-research/agents/openai.yaml": {
       "type": "file",
@@ -2526,9 +2526,9 @@
     },
     ".agents/skills/yss-research/references/competitive-analysis.md": {
       "type": "file",
-      "digest": "b2d5090b1473fa6ddbab6960c6149f11593bc2329e82a3fc3fb1ae97eb707820",
+      "digest": "3379b1d0e59358181d409c53acc846256a8ed7fe6f9b11f5f7fe5bac9948f37a",
       "mode": 420,
-      "blob": "blobs/b2d5090b1473fa6ddbab6960c6149f11593bc2329e82a3fc3fb1ae97eb707820"
+      "blob": "blobs/3379b1d0e59358181d409c53acc846256a8ed7fe6f9b11f5f7fe5bac9948f37a"
     },
     ".agents/skills/yss-research/references/competitive-analysis.schema.json": {
       "type": "file",
@@ -2796,9 +2796,9 @@
     },
     ".codex/skills/code-review/references/candidate-capture.md": {
       "type": "file",
-      "digest": "e88f535ab04c31fef1485e7a1b2c6b84403634382176edacf22baf1026ed62c9",
+      "digest": "59c94fda6345a25c8f7f5c8358e7fc3a47b5c26040bea86bbca562504bb4c42d",
       "mode": 420,
-      "blob": "blobs/e88f535ab04c31fef1485e7a1b2c6b84403634382176edacf22baf1026ed62c9"
+      "blob": "blobs/59c94fda6345a25c8f7f5c8358e7fc3a47b5c26040bea86bbca562504bb4c42d"
     },
     ".codex/skills/code-review/references/legacy-convergence.md": {
       "type": "file",
@@ -3012,9 +3012,9 @@
     },
     ".codex/skills/llm-wiki/references/transactions.md": {
       "type": "file",
-      "digest": "4719f98346e1cd697ca497d256911d57e4a1be0c22b44158b958fcaa7e1796ed",
+      "digest": "0811f816623d41c51cb241569835f4525008255c288e25eea5fc06e95b69209d",
       "mode": 420,
-      "blob": "blobs/4719f98346e1cd697ca497d256911d57e4a1be0c22b44158b958fcaa7e1796ed"
+      "blob": "blobs/0811f816623d41c51cb241569835f4525008255c288e25eea5fc06e95b69209d"
     },
     ".codex/skills/llm-wiki/references/writing.md": {
       "type": "file",
@@ -3036,9 +3036,9 @@
     },
     ".codex/skills/llm-wiki/scripts/core.mjs": {
       "type": "file",
-      "digest": "2da51b580c612134dc18a6e415bebb13744442381bfc75af7f58210008a45443",
+      "digest": "204d64ece005c58eda88529ead6c91bcf6b675ef6f4ac2ffeffa0b2f99854d6a",
       "mode": 420,
-      "blob": "blobs/2da51b580c612134dc18a6e415bebb13744442381bfc75af7f58210008a45443"
+      "blob": "blobs/204d64ece005c58eda88529ead6c91bcf6b675ef6f4ac2ffeffa0b2f99854d6a"
     },
     ".codex/skills/llm-wiki/scripts/extract.mjs": {
       "type": "file",
@@ -3108,15 +3108,15 @@
     },
     ".codex/skills/llm-wiki/scripts/transaction.mjs": {
       "type": "file",
-      "digest": "4f7e9e08b0624fdd43f884e28e779ff67667db2acd416ecfd83c2625ed9e828f",
+      "digest": "98e4c6bd525869cd87ca2fba3a1eb285a3b269c2201a8c0ad018c02d9a43d8ac",
       "mode": 420,
-      "blob": "blobs/4f7e9e08b0624fdd43f884e28e779ff67667db2acd416ecfd83c2625ed9e828f"
+      "blob": "blobs/98e4c6bd525869cd87ca2fba3a1eb285a3b269c2201a8c0ad018c02d9a43d8ac"
     },
     ".codex/skills/llm-wiki/scripts/v2.test.mjs": {
       "type": "file",
-      "digest": "efc3a5e1f940538c2842c29b3787c8b0ec28a874ad93546982a1665df1560779",
+      "digest": "21816b2201b2b95eded009fa9755abfb0f6735f3f6bc3174fe3e8ea74d25bb4e",
       "mode": 420,
-      "blob": "blobs/efc3a5e1f940538c2842c29b3787c8b0ec28a874ad93546982a1665df1560779"
+      "blob": "blobs/21816b2201b2b95eded009fa9755abfb0f6735f3f6bc3174fe3e8ea74d25bb4e"
     },
     ".codex/skills/maintaining-skills/SKILL.md": {
       "type": "file",
@@ -5586,9 +5586,9 @@
     },
     ".codex/skills/yss-research/SKILL.md": {
       "type": "file",
-      "digest": "145d5df415d24fa3b407f58f2733be3d5c30606d312d78c60aab00475beeaab5",
+      "digest": "0b3689fd63990d9281fb06d574e23b1651588cfae388f45b731c4659b9a44f97",
       "mode": 420,
-      "blob": "blobs/145d5df415d24fa3b407f58f2733be3d5c30606d312d78c60aab00475beeaab5"
+      "blob": "blobs/0b3689fd63990d9281fb06d574e23b1651588cfae388f45b731c4659b9a44f97"
     },
     ".codex/skills/yss-research/agents/openai.yaml": {
       "type": "file",
@@ -5616,9 +5616,9 @@
     },
     ".codex/skills/yss-research/references/competitive-analysis.md": {
       "type": "file",
-      "digest": "b2d5090b1473fa6ddbab6960c6149f11593bc2329e82a3fc3fb1ae97eb707820",
+      "digest": "3379b1d0e59358181d409c53acc846256a8ed7fe6f9b11f5f7fe5bac9948f37a",
       "mode": 420,
-      "blob": "blobs/b2d5090b1473fa6ddbab6960c6149f11593bc2329e82a3fc3fb1ae97eb707820"
+      "blob": "blobs/3379b1d0e59358181d409c53acc846256a8ed7fe6f9b11f5f7fe5bac9948f37a"
     },
     ".codex/skills/yss-research/references/competitive-analysis.schema.json": {
       "type": "file",
@@ -5886,9 +5886,9 @@
     },
     ".cursor/skills/code-review/references/candidate-capture.md": {
       "type": "file",
-      "digest": "e88f535ab04c31fef1485e7a1b2c6b84403634382176edacf22baf1026ed62c9",
+      "digest": "59c94fda6345a25c8f7f5c8358e7fc3a47b5c26040bea86bbca562504bb4c42d",
       "mode": 420,
-      "blob": "blobs/e88f535ab04c31fef1485e7a1b2c6b84403634382176edacf22baf1026ed62c9"
+      "blob": "blobs/59c94fda6345a25c8f7f5c8358e7fc3a47b5c26040bea86bbca562504bb4c42d"
     },
     ".cursor/skills/code-review/references/legacy-convergence.md": {
       "type": "file",
@@ -6102,9 +6102,9 @@
     },
     ".cursor/skills/llm-wiki/references/transactions.md": {
       "type": "file",
-      "digest": "4719f98346e1cd697ca497d256911d57e4a1be0c22b44158b958fcaa7e1796ed",
+      "digest": "0811f816623d41c51cb241569835f4525008255c288e25eea5fc06e95b69209d",
       "mode": 420,
-      "blob": "blobs/4719f98346e1cd697ca497d256911d57e4a1be0c22b44158b958fcaa7e1796ed"
+      "blob": "blobs/0811f816623d41c51cb241569835f4525008255c288e25eea5fc06e95b69209d"
     },
     ".cursor/skills/llm-wiki/references/writing.md": {
       "type": "file",
@@ -6126,9 +6126,9 @@
     },
     ".cursor/skills/llm-wiki/scripts/core.mjs": {
       "type": "file",
-      "digest": "2da51b580c612134dc18a6e415bebb13744442381bfc75af7f58210008a45443",
+      "digest": "204d64ece005c58eda88529ead6c91bcf6b675ef6f4ac2ffeffa0b2f99854d6a",
       "mode": 420,
-      "blob": "blobs/2da51b580c612134dc18a6e415bebb13744442381bfc75af7f58210008a45443"
+      "blob": "blobs/204d64ece005c58eda88529ead6c91bcf6b675ef6f4ac2ffeffa0b2f99854d6a"
     },
     ".cursor/skills/llm-wiki/scripts/extract.mjs": {
       "type": "file",
@@ -6198,15 +6198,15 @@
     },
     ".cursor/skills/llm-wiki/scripts/transaction.mjs": {
       "type": "file",
-      "digest": "4f7e9e08b0624fdd43f884e28e779ff67667db2acd416ecfd83c2625ed9e828f",
+      "digest": "98e4c6bd525869cd87ca2fba3a1eb285a3b269c2201a8c0ad018c02d9a43d8ac",
       "mode": 420,
-      "blob": "blobs/4f7e9e08b0624fdd43f884e28e779ff67667db2acd416ecfd83c2625ed9e828f"
+      "blob": "blobs/98e4c6bd525869cd87ca2fba3a1eb285a3b269c2201a8c0ad018c02d9a43d8ac"
     },
     ".cursor/skills/llm-wiki/scripts/v2.test.mjs": {
       "type": "file",
-      "digest": "efc3a5e1f940538c2842c29b3787c8b0ec28a874ad93546982a1665df1560779",
+      "digest": "21816b2201b2b95eded009fa9755abfb0f6735f3f6bc3174fe3e8ea74d25bb4e",
       "mode": 420,
-      "blob": "blobs/efc3a5e1f940538c2842c29b3787c8b0ec28a874ad93546982a1665df1560779"
+      "blob": "blobs/21816b2201b2b95eded009fa9755abfb0f6735f3f6bc3174fe3e8ea74d25bb4e"
     },
     ".cursor/skills/maintaining-skills/SKILL.md": {
       "type": "file",
@@ -8340,9 +8340,9 @@
     },
     ".cursor/skills/yss-research/SKILL.md": {
       "type": "file",
-      "digest": "145d5df415d24fa3b407f58f2733be3d5c30606d312d78c60aab00475beeaab5",
+      "digest": "0b3689fd63990d9281fb06d574e23b1651588cfae388f45b731c4659b9a44f97",
       "mode": 420,
-      "blob": "blobs/145d5df415d24fa3b407f58f2733be3d5c30606d312d78c60aab00475beeaab5"
+      "blob": "blobs/0b3689fd63990d9281fb06d574e23b1651588cfae388f45b731c4659b9a44f97"
     },
     ".cursor/skills/yss-research/agents/openai.yaml": {
       "type": "file",
@@ -8370,9 +8370,9 @@
     },
     ".cursor/skills/yss-research/references/competitive-analysis.md": {
       "type": "file",
-      "digest": "b2d5090b1473fa6ddbab6960c6149f11593bc2329e82a3fc3fb1ae97eb707820",
+      "digest": "3379b1d0e59358181d409c53acc846256a8ed7fe6f9b11f5f7fe5bac9948f37a",
       "mode": 420,
-      "blob": "blobs/b2d5090b1473fa6ddbab6960c6149f11593bc2329e82a3fc3fb1ae97eb707820"
+      "blob": "blobs/3379b1d0e59358181d409c53acc846256a8ed7fe6f9b11f5f7fe5bac9948f37a"
     },
     ".cursor/skills/yss-research/references/competitive-analysis.schema.json": {
       "type": "file",
@@ -8652,9 +8652,9 @@
     },
     ".pi/skills/code-review/references/candidate-capture.md": {
       "type": "file",
-      "digest": "e88f535ab04c31fef1485e7a1b2c6b84403634382176edacf22baf1026ed62c9",
+      "digest": "59c94fda6345a25c8f7f5c8358e7fc3a47b5c26040bea86bbca562504bb4c42d",
       "mode": 420,
-      "blob": "blobs/e88f535ab04c31fef1485e7a1b2c6b84403634382176edacf22baf1026ed62c9"
+      "blob": "blobs/59c94fda6345a25c8f7f5c8358e7fc3a47b5c26040bea86bbca562504bb4c42d"
     },
     ".pi/skills/code-review/references/legacy-convergence.md": {
       "type": "file",
@@ -8868,9 +8868,9 @@
     },
     ".pi/skills/llm-wiki/references/transactions.md": {
       "type": "file",
-      "digest": "4719f98346e1cd697ca497d256911d57e4a1be0c22b44158b958fcaa7e1796ed",
+      "digest": "0811f816623d41c51cb241569835f4525008255c288e25eea5fc06e95b69209d",
       "mode": 420,
-      "blob": "blobs/4719f98346e1cd697ca497d256911d57e4a1be0c22b44158b958fcaa7e1796ed"
+      "blob": "blobs/0811f816623d41c51cb241569835f4525008255c288e25eea5fc06e95b69209d"
     },
     ".pi/skills/llm-wiki/references/writing.md": {
       "type": "file",
@@ -8892,9 +8892,9 @@
     },
     ".pi/skills/llm-wiki/scripts/core.mjs": {
       "type": "file",
-      "digest": "2da51b580c612134dc18a6e415bebb13744442381bfc75af7f58210008a45443",
+      "digest": "204d64ece005c58eda88529ead6c91bcf6b675ef6f4ac2ffeffa0b2f99854d6a",
       "mode": 420,
-      "blob": "blobs/2da51b580c612134dc18a6e415bebb13744442381bfc75af7f58210008a45443"
+      "blob": "blobs/204d64ece005c58eda88529ead6c91bcf6b675ef6f4ac2ffeffa0b2f99854d6a"
     },
     ".pi/skills/llm-wiki/scripts/extract.mjs": {
       "type": "file",
@@ -8964,15 +8964,15 @@
     },
     ".pi/skills/llm-wiki/scripts/transaction.mjs": {
       "type": "file",
-      "digest": "4f7e9e08b0624fdd43f884e28e779ff67667db2acd416ecfd83c2625ed9e828f",
+      "digest": "98e4c6bd525869cd87ca2fba3a1eb285a3b269c2201a8c0ad018c02d9a43d8ac",
       "mode": 420,
-      "blob": "blobs/4f7e9e08b0624fdd43f884e28e779ff67667db2acd416ecfd83c2625ed9e828f"
+      "blob": "blobs/98e4c6bd525869cd87ca2fba3a1eb285a3b269c2201a8c0ad018c02d9a43d8ac"
     },
     ".pi/skills/llm-wiki/scripts/v2.test.mjs": {
       "type": "file",
-      "digest": "efc3a5e1f940538c2842c29b3787c8b0ec28a874ad93546982a1665df1560779",
+      "digest": "21816b2201b2b95eded009fa9755abfb0f6735f3f6bc3174fe3e8ea74d25bb4e",
       "mode": 420,
-      "blob": "blobs/efc3a5e1f940538c2842c29b3787c8b0ec28a874ad93546982a1665df1560779"
+      "blob": "blobs/21816b2201b2b95eded009fa9755abfb0f6735f3f6bc3174fe3e8ea74d25bb4e"
     },
     ".pi/skills/maintaining-skills/SKILL.md": {
       "type": "file",
@@ -11106,9 +11106,9 @@
     },
     ".pi/skills/yss-research/SKILL.md": {
       "type": "file",
-      "digest": "145d5df415d24fa3b407f58f2733be3d5c30606d312d78c60aab00475beeaab5",
+      "digest": "0b3689fd63990d9281fb06d574e23b1651588cfae388f45b731c4659b9a44f97",
       "mode": 420,
-      "blob": "blobs/145d5df415d24fa3b407f58f2733be3d5c30606d312d78c60aab00475beeaab5"
+      "blob": "blobs/0b3689fd63990d9281fb06d574e23b1651588cfae388f45b731c4659b9a44f97"
     },
     ".pi/skills/yss-research/agents/openai.yaml": {
       "type": "file",
@@ -11136,9 +11136,9 @@
     },
     ".pi/skills/yss-research/references/competitive-analysis.md": {
       "type": "file",
-      "digest": "b2d5090b1473fa6ddbab6960c6149f11593bc2329e82a3fc3fb1ae97eb707820",
+      "digest": "3379b1d0e59358181d409c53acc846256a8ed7fe6f9b11f5f7fe5bac9948f37a",
       "mode": 420,
-      "blob": "blobs/b2d5090b1473fa6ddbab6960c6149f11593bc2329e82a3fc3fb1ae97eb707820"
+      "blob": "blobs/3379b1d0e59358181d409c53acc846256a8ed7fe6f9b11f5f7fe5bac9948f37a"
     },
     ".pi/skills/yss-research/references/competitive-analysis.schema.json": {
       "type": "file",
@@ -11382,9 +11382,9 @@
     },
     ".template-spec/agents/backend-architecture-profiles.md": {
       "type": "file",
-      "digest": "a10045a32a1738d2ab0fb602bcca2adc21c26ebcc14e508e8e6d9468d0b009cd",
+      "digest": "09bc05b98db3e65157dc822a2e66f185f1b3732ecec408faf8e140464d374c76",
       "mode": 420,
-      "blob": "blobs/a10045a32a1738d2ab0fb602bcca2adc21c26ebcc14e508e8e6d9468d0b009cd"
+      "blob": "blobs/09bc05b98db3e65157dc822a2e66f185f1b3732ecec408faf8e140464d374c76"
     },
     ".template-spec/agents/digital-human-roles.md": {
       "type": "file",
@@ -11568,9 +11568,9 @@
     },
     ".template-spec/engineering/backend-platforms.json": {
       "type": "file",
-      "digest": "b9ca61d8480050ae3ffd538cd1428471280d8c46a6d90c217ff211f78c66ec60",
+      "digest": "d3996fe8bf12fa8339bb96473620407f55ebac27597d6bb3906a4934ca7897b2",
       "mode": 420,
-      "blob": "blobs/b9ca61d8480050ae3ffd538cd1428471280d8c46a6d90c217ff211f78c66ec60"
+      "blob": "blobs/d3996fe8bf12fa8339bb96473620407f55ebac27597d6bb3906a4934ca7897b2"
     },
     ".template-spec/engineering/backend-platforms.md": {
       "type": "file",
@@ -12352,6 +12352,18 @@
       "mode": 493,
       "blob": "blobs/1a85ffb099895b2aff22fd2792817553dcc8ae1480f555ef9180d419d972b83c"
     },
+    "scripts/cache-template-commit": {
+      "type": "file",
+      "digest": "54abe477f4607c0d073d7d04c6fea33a638d2c03ea06e091ef8db196c82e3604",
+      "mode": 493,
+      "blob": "blobs/54abe477f4607c0d073d7d04c6fea33a638d2c03ea06e091ef8db196c82e3604"
+    },
+    "scripts/capture-maintenance-candidate": {
+      "type": "file",
+      "digest": "f507b4098d79372839b2b5a7b3986aa73532ef760c3428f98d14809c13a32d19",
+      "mode": 493,
+      "blob": "blobs/f507b4098d79372839b2b5a7b3986aa73532ef760c3428f98d14809c13a32d19"
+    },
     "scripts/check-plan-stage-coverage": {
       "type": "file",
       "digest": "c38fcbb0fcd9fa61414543bfba67329d3e60a1716f73f52edf52466ea392b0e8",
@@ -12489,6 +12501,12 @@
       "digest": "e7083a3a10e8fccabec27c8b29299ce914339ecbbd68c22d3d1358f88c8b2f73",
       "mode": 493,
       "blob": "blobs/e7083a3a10e8fccabec27c8b29299ce914339ecbbd68c22d3d1358f88c8b2f73"
+    },
+    "scripts/inspect-maintenance-candidate": {
+      "type": "file",
+      "digest": "2db099a4187196e7ead997b608613e02f2e3f4f04867813a591ee7144ea56948",
+      "mode": 493,
+      "blob": "blobs/2db099a4187196e7ead997b608613e02f2e3f4f04867813a591ee7144ea56948"
     },
     "scripts/inspect-plan-spec": {
       "type": "file",
@@ -12798,15 +12816,39 @@
     },
     "scripts/lib/maintenance-candidate.mjs": {
       "type": "file",
-      "digest": "4c5c89e66bd71383d8e99a7711370728d0fcf463644977a2af3b14b496dd1ffd",
+      "digest": "6fcc81d9294b63ced4687d0f35c36396d6295e62e105d67869ecfec94cc56505",
       "mode": 420,
-      "blob": "blobs/4c5c89e66bd71383d8e99a7711370728d0fcf463644977a2af3b14b496dd1ffd"
+      "blob": "blobs/6fcc81d9294b63ced4687d0f35c36396d6295e62e105d67869ecfec94cc56505"
+    },
+    "scripts/lib/maintenance-counterexample.mjs": {
+      "type": "file",
+      "digest": "562fd67a2fff41731529132861281e3265644169a3622044dff53930492ee7ba",
+      "mode": 420,
+      "blob": "blobs/562fd67a2fff41731529132861281e3265644169a3622044dff53930492ee7ba"
     },
     "scripts/lib/maintenance-intensity.mjs": {
       "type": "file",
-      "digest": "2116548a9d6ff18856d1f73afbde412045289228be6cab1f65b9d58484e186f8",
+      "digest": "c7ab5a258404fa2ca471caa75f17b0206ceb34fa8a2266ae0f6b05524fd3f0ba",
       "mode": 420,
-      "blob": "blobs/2116548a9d6ff18856d1f73afbde412045289228be6cab1f65b9d58484e186f8"
+      "blob": "blobs/c7ab5a258404fa2ca471caa75f17b0206ceb34fa8a2266ae0f6b05524fd3f0ba"
+    },
+    "scripts/lib/maintenance-research.mjs": {
+      "type": "file",
+      "digest": "7e6091dd91e3e9a028204636824188e0e75fa259e1d9436128dbe9f8ca86889e",
+      "mode": 420,
+      "blob": "blobs/7e6091dd91e3e9a028204636824188e0e75fa259e1d9436128dbe9f8ca86889e"
+    },
+    "scripts/lib/maintenance-review.mjs": {
+      "type": "file",
+      "digest": "5ec1474d4f430b674d443064587d41a49ef5a4c838bdc459a3bc29297428b4f6",
+      "mode": 420,
+      "blob": "blobs/5ec1474d4f430b674d443064587d41a49ef5a4c838bdc459a3bc29297428b4f6"
+    },
+    "scripts/lib/maintenance-storage.mjs": {
+      "type": "file",
+      "digest": "7e92a98f1b653e62736058d5247df8c3f656e62e06b69d02f6681cf872fc8628",
+      "mode": 420,
+      "blob": "blobs/7e92a98f1b653e62736058d5247df8c3f656e62e06b69d02f6681cf872fc8628"
     },
     "scripts/lib/openapi-draft-validation.mjs": {
       "type": "file",
@@ -12852,9 +12894,9 @@
     },
     "scripts/lib/read-only-intake.mjs": {
       "type": "file",
-      "digest": "1ce7e967746f04651de22d7991aeb9e7af1a92e586b0597e1bcd64ee20e0932a",
+      "digest": "de8db5e083bfac5d33172628411e55cd53111ea197ad34144971205a80be6dfe",
       "mode": 420,
-      "blob": "blobs/1ce7e967746f04651de22d7991aeb9e7af1a92e586b0597e1bcd64ee20e0932a"
+      "blob": "blobs/de8db5e083bfac5d33172628411e55cd53111ea197ad34144971205a80be6dfe"
     },
     "scripts/lib/reading-view-adapters.mjs": {
       "type": "file",
@@ -13060,6 +13102,12 @@
       "mode": 420,
       "blob": "blobs/a8f0efd51cb8e742c6f71443f20633b934c2f0c513e361374f696f2a3774c977"
     },
+    "scripts/lib/template-commit-cache.mjs": {
+      "type": "file",
+      "digest": "b03500d85aed5fe8a99f5a1b0a1d8bf2b84db5980165140ff1c980d50bc24fa0",
+      "mode": 420,
+      "blob": "blobs/b03500d85aed5fe8a99f5a1b0a1d8bf2b84db5980165140ff1c980d50bc24fa0"
+    },
     "scripts/lib/template-verification.mjs": {
       "type": "file",
       "digest": "1667ea43116e6637d5a174306bd83e818f42476b0ef62f1f62ed736de30fbf27",
@@ -13101,6 +13149,12 @@
       "digest": "8b66527cfa8ce51fd74e274c4fae2b6f2b9cad59f911837d9cdf9bdec2602e6a",
       "mode": 493,
       "blob": "blobs/8b66527cfa8ce51fd74e274c4fae2b6f2b9cad59f911837d9cdf9bdec2602e6a"
+    },
+    "scripts/maintenance-path": {
+      "type": "file",
+      "digest": "e4d900a88c7d6c9c6c9c67570c6f0225f3a57a412475b8362e11cdc179940de1",
+      "mode": 493,
+      "blob": "blobs/e4d900a88c7d6c9c6c9c67570c6f0225f3a57a412475b8362e11cdc179940de1"
     },
     "scripts/migrate-strategic-gates": {
       "type": "file",
@@ -13408,6 +13462,12 @@
       "mode": 493,
       "blob": "blobs/fe366a9dd225549ac4f0bc2de040d3adbe44a7b025d5f2fe285999b626db3b7c"
     },
+    "scripts/verify-maintenance-review-record": {
+      "type": "file",
+      "digest": "79b2f7bf1ccb0b7591fc6f0953e0c208ef23cf9dbc7becaf65b444814c88724f",
+      "mode": 493,
+      "blob": "blobs/79b2f7bf1ccb0b7591fc6f0953e0c208ef23cf9dbc7becaf65b444814c88724f"
+    },
     "scripts/verify-matt-yss-integration-scenarios": {
       "type": "file",
       "digest": "93fe098f6157d20d57aa921b9496a93538dc3b5297a1447ddb6b3c360deab6dc",
@@ -13560,9 +13620,9 @@
     },
     "skills-lock.json": {
       "type": "file",
-      "digest": "8cbe624800b45e992c3431cd6827cb2959e04d385857e04a08cd29575929c323",
+      "digest": "0389598a55398210de2bf0ae4401b3e395cfce1d3e43f164df31324f29d4b957",
       "mode": 420,
-      "blob": "blobs/8cbe624800b45e992c3431cd6827cb2959e04d385857e04a08cd29575929c323"
+      "blob": "blobs/0389598a55398210de2bf0ae4401b3e395cfce1d3e43f164df31324f29d4b957"
     },
     "yss-project.yaml": {
       "type": "file",
@@ -17880,6 +17940,11 @@
       "digest": "85e6765916f88b7f93e1183755f2b245768d1974fcc841cd6a27df8094659a17",
       "mode": 420
     },
+    ".agents/skills/llm-wiki/references/transactions.md": {
+      "type": "file",
+      "digest": "4719f98346e1cd697ca497d256911d57e4a1be0c22b44158b958fcaa7e1796ed",
+      "mode": 420
+    },
     ".agents/skills/llm-wiki/references/writing.md": {
       "type": "file",
       "digest": "999770fcdd752a4e8ffe8c19f300c711cac6290daa8da7663d678f0738902347",
@@ -17893,6 +17958,11 @@
     ".agents/skills/llm-wiki/scripts/advise.test.mjs": {
       "type": "file",
       "digest": "1d5e4a4c8a0213e447cd7e04ee45b0ab4a7c9ce59ce2997192830b35386ed34d",
+      "mode": 420
+    },
+    ".agents/skills/llm-wiki/scripts/core.mjs": {
+      "type": "file",
+      "digest": "2da51b580c612134dc18a6e415bebb13744442381bfc75af7f58210008a45443",
       "mode": 420
     },
     ".agents/skills/llm-wiki/scripts/extract.mjs": {
@@ -17923,6 +17993,16 @@
     ".agents/skills/llm-wiki/scripts/lint-wikilinks.test.mjs": {
       "type": "file",
       "digest": "c2f3da3f177d9922d33b40933c981df7b13b80f2fc7eedaa9231b1d7564841c8",
+      "mode": 420
+    },
+    ".agents/skills/llm-wiki/scripts/transaction.mjs": {
+      "type": "file",
+      "digest": "4f7e9e08b0624fdd43f884e28e779ff67667db2acd416ecfd83c2625ed9e828f",
+      "mode": 420
+    },
+    ".agents/skills/llm-wiki/scripts/v2.test.mjs": {
+      "type": "file",
+      "digest": "efc3a5e1f940538c2842c29b3787c8b0ec28a874ad93546982a1665df1560779",
       "mode": 420
     },
     ".agents/skills/maintaining-skills/SKILL.md": {
@@ -18365,6 +18445,11 @@
       "digest": "e2698027594ffbcaa1e327541288c8cab1b8913271b1ec76cc80d457b8a8322d",
       "mode": 420
     },
+    ".agents/skills/yss-research/references/competitive-analysis.md": {
+      "type": "file",
+      "digest": "b2d5090b1473fa6ddbab6960c6149f11593bc2329e82a3fc3fb1ae97eb707820",
+      "mode": 420
+    },
     ".agents/skills/yss-research/references/evidence-contract.md": {
       "type": "file",
       "digest": "accf660bda44cec320aca3d7ea769c8c724ac7adaf543879035d56a030cb9fa7",
@@ -18575,6 +18660,11 @@
       "digest": "85e6765916f88b7f93e1183755f2b245768d1974fcc841cd6a27df8094659a17",
       "mode": 420
     },
+    ".codex/skills/llm-wiki/references/transactions.md": {
+      "type": "file",
+      "digest": "4719f98346e1cd697ca497d256911d57e4a1be0c22b44158b958fcaa7e1796ed",
+      "mode": 420
+    },
     ".codex/skills/llm-wiki/references/writing.md": {
       "type": "file",
       "digest": "999770fcdd752a4e8ffe8c19f300c711cac6290daa8da7663d678f0738902347",
@@ -18588,6 +18678,11 @@
     ".codex/skills/llm-wiki/scripts/advise.test.mjs": {
       "type": "file",
       "digest": "1d5e4a4c8a0213e447cd7e04ee45b0ab4a7c9ce59ce2997192830b35386ed34d",
+      "mode": 420
+    },
+    ".codex/skills/llm-wiki/scripts/core.mjs": {
+      "type": "file",
+      "digest": "2da51b580c612134dc18a6e415bebb13744442381bfc75af7f58210008a45443",
       "mode": 420
     },
     ".codex/skills/llm-wiki/scripts/extract.mjs": {
@@ -18618,6 +18713,16 @@
     ".codex/skills/llm-wiki/scripts/lint-wikilinks.test.mjs": {
       "type": "file",
       "digest": "c2f3da3f177d9922d33b40933c981df7b13b80f2fc7eedaa9231b1d7564841c8",
+      "mode": 420
+    },
+    ".codex/skills/llm-wiki/scripts/transaction.mjs": {
+      "type": "file",
+      "digest": "4f7e9e08b0624fdd43f884e28e779ff67667db2acd416ecfd83c2625ed9e828f",
+      "mode": 420
+    },
+    ".codex/skills/llm-wiki/scripts/v2.test.mjs": {
+      "type": "file",
+      "digest": "efc3a5e1f940538c2842c29b3787c8b0ec28a874ad93546982a1665df1560779",
       "mode": 420
     },
     ".codex/skills/maintaining-skills/SKILL.md": {
@@ -19120,6 +19225,11 @@
       "digest": "e2698027594ffbcaa1e327541288c8cab1b8913271b1ec76cc80d457b8a8322d",
       "mode": 420
     },
+    ".codex/skills/yss-research/references/competitive-analysis.md": {
+      "type": "file",
+      "digest": "b2d5090b1473fa6ddbab6960c6149f11593bc2329e82a3fc3fb1ae97eb707820",
+      "mode": 420
+    },
     ".codex/skills/yss-research/references/evidence-contract.md": {
       "type": "file",
       "digest": "accf660bda44cec320aca3d7ea769c8c724ac7adaf543879035d56a030cb9fa7",
@@ -19330,6 +19440,11 @@
       "digest": "85e6765916f88b7f93e1183755f2b245768d1974fcc841cd6a27df8094659a17",
       "mode": 420
     },
+    ".cursor/skills/llm-wiki/references/transactions.md": {
+      "type": "file",
+      "digest": "4719f98346e1cd697ca497d256911d57e4a1be0c22b44158b958fcaa7e1796ed",
+      "mode": 420
+    },
     ".cursor/skills/llm-wiki/references/writing.md": {
       "type": "file",
       "digest": "999770fcdd752a4e8ffe8c19f300c711cac6290daa8da7663d678f0738902347",
@@ -19343,6 +19458,11 @@
     ".cursor/skills/llm-wiki/scripts/advise.test.mjs": {
       "type": "file",
       "digest": "1d5e4a4c8a0213e447cd7e04ee45b0ab4a7c9ce59ce2997192830b35386ed34d",
+      "mode": 420
+    },
+    ".cursor/skills/llm-wiki/scripts/core.mjs": {
+      "type": "file",
+      "digest": "2da51b580c612134dc18a6e415bebb13744442381bfc75af7f58210008a45443",
       "mode": 420
     },
     ".cursor/skills/llm-wiki/scripts/extract.mjs": {
@@ -19373,6 +19493,16 @@
     ".cursor/skills/llm-wiki/scripts/lint-wikilinks.test.mjs": {
       "type": "file",
       "digest": "c2f3da3f177d9922d33b40933c981df7b13b80f2fc7eedaa9231b1d7564841c8",
+      "mode": 420
+    },
+    ".cursor/skills/llm-wiki/scripts/transaction.mjs": {
+      "type": "file",
+      "digest": "4f7e9e08b0624fdd43f884e28e779ff67667db2acd416ecfd83c2625ed9e828f",
+      "mode": 420
+    },
+    ".cursor/skills/llm-wiki/scripts/v2.test.mjs": {
+      "type": "file",
+      "digest": "efc3a5e1f940538c2842c29b3787c8b0ec28a874ad93546982a1665df1560779",
       "mode": 420
     },
     ".cursor/skills/maintaining-skills/SKILL.md": {
@@ -19815,6 +19945,11 @@
       "digest": "e2698027594ffbcaa1e327541288c8cab1b8913271b1ec76cc80d457b8a8322d",
       "mode": 420
     },
+    ".cursor/skills/yss-research/references/competitive-analysis.md": {
+      "type": "file",
+      "digest": "b2d5090b1473fa6ddbab6960c6149f11593bc2329e82a3fc3fb1ae97eb707820",
+      "mode": 420
+    },
     ".cursor/skills/yss-research/references/evidence-contract.md": {
       "type": "file",
       "digest": "accf660bda44cec320aca3d7ea769c8c724ac7adaf543879035d56a030cb9fa7",
@@ -20035,6 +20170,11 @@
       "digest": "85e6765916f88b7f93e1183755f2b245768d1974fcc841cd6a27df8094659a17",
       "mode": 420
     },
+    ".pi/skills/llm-wiki/references/transactions.md": {
+      "type": "file",
+      "digest": "4719f98346e1cd697ca497d256911d57e4a1be0c22b44158b958fcaa7e1796ed",
+      "mode": 420
+    },
     ".pi/skills/llm-wiki/references/writing.md": {
       "type": "file",
       "digest": "999770fcdd752a4e8ffe8c19f300c711cac6290daa8da7663d678f0738902347",
@@ -20048,6 +20188,11 @@
     ".pi/skills/llm-wiki/scripts/advise.test.mjs": {
       "type": "file",
       "digest": "1d5e4a4c8a0213e447cd7e04ee45b0ab4a7c9ce59ce2997192830b35386ed34d",
+      "mode": 420
+    },
+    ".pi/skills/llm-wiki/scripts/core.mjs": {
+      "type": "file",
+      "digest": "2da51b580c612134dc18a6e415bebb13744442381bfc75af7f58210008a45443",
       "mode": 420
     },
     ".pi/skills/llm-wiki/scripts/extract.mjs": {
@@ -20078,6 +20223,16 @@
     ".pi/skills/llm-wiki/scripts/lint-wikilinks.test.mjs": {
       "type": "file",
       "digest": "c2f3da3f177d9922d33b40933c981df7b13b80f2fc7eedaa9231b1d7564841c8",
+      "mode": 420
+    },
+    ".pi/skills/llm-wiki/scripts/transaction.mjs": {
+      "type": "file",
+      "digest": "4f7e9e08b0624fdd43f884e28e779ff67667db2acd416ecfd83c2625ed9e828f",
+      "mode": 420
+    },
+    ".pi/skills/llm-wiki/scripts/v2.test.mjs": {
+      "type": "file",
+      "digest": "efc3a5e1f940538c2842c29b3787c8b0ec28a874ad93546982a1665df1560779",
       "mode": 420
     },
     ".pi/skills/maintaining-skills/SKILL.md": {
@@ -20520,6 +20675,11 @@
       "digest": "e2698027594ffbcaa1e327541288c8cab1b8913271b1ec76cc80d457b8a8322d",
       "mode": 420
     },
+    ".pi/skills/yss-research/references/competitive-analysis.md": {
+      "type": "file",
+      "digest": "b2d5090b1473fa6ddbab6960c6149f11593bc2329e82a3fc3fb1ae97eb707820",
+      "mode": 420
+    },
     ".pi/skills/yss-research/references/evidence-contract.md": {
       "type": "file",
       "digest": "accf660bda44cec320aca3d7ea769c8c724ac7adaf543879035d56a030cb9fa7",
@@ -20615,6 +20775,11 @@
       "digest": "5963017f28a2526ebf8de36ca73fc651d4cb3506606f8f3b6e22c6038a787405",
       "mode": 420
     },
+    ".template-spec/agents/backend-architecture-profiles.md": {
+      "type": "file",
+      "digest": "a10045a32a1738d2ab0fb602bcca2adc21c26ebcc14e508e8e6d9468d0b009cd",
+      "mode": 420
+    },
     ".template-spec/agents/digital-human-roles.md": {
       "type": "file",
       "digest": "97d97b66793306e32576c40499b5e2be6b372b801cbe6f5d79234c4ad793d72d",
@@ -20673,6 +20838,11 @@
     ".template-spec/design/tokens/variables.css": {
       "type": "file",
       "digest": "028c24f9e935f5c4b1392d131a4cd13482e6572a2ced4360ffa833aa3fbeaf66",
+      "mode": 420
+    },
+    ".template-spec/engineering/backend-platforms.json": {
+      "type": "file",
+      "digest": "b9ca61d8480050ae3ffd538cd1428471280d8c46a6d90c217ff211f78c66ec60",
       "mode": 420
     },
     ".template-spec/plan/templates/competitive-analysis-template.md": {
@@ -21165,6 +21335,11 @@
       "digest": "cee504318e190d491e31382dd10118a316e6275e2c57ffb00856c0d94b9014a0",
       "mode": 420
     },
+    "scripts/lib/maintenance-candidate.mjs": {
+      "type": "file",
+      "digest": "4c5c89e66bd71383d8e99a7711370728d0fcf463644977a2af3b14b496dd1ffd",
+      "mode": 420
+    },
     "scripts/lib/maintenance-intensity.mjs": {
       "type": "file",
       "digest": "2bbb63a27d102c7af0b6a91de7d4eb2c85e17b51845b25fdef94b45815a9ccd5",
@@ -21526,8 +21701,8 @@
       "mode": 420
     }
   },
-  "transitionBaselinesHash": "d505445410d6272fec42af1562c88654c7e601ced8b8342466583e881a87b1a1",
-  "snapshotHash": "91c1bb5f53fb7a56866dc0165cb36f1ab3bfa015b29dbea0842bc7d6340e0b8e",
+  "transitionBaselinesHash": "2386fdc695cb1fc06d9f5e84e0ed2653e97024bab9ca61e7e09a39be4cc6f1db",
+  "snapshotHash": "55e2809bbe8540924b9e008e9bb72ded24c996e0566604c356ddbc2cb0999bfa",
   "projectionRepresentation": "materialized-files",
   "pathEncoding": "sha256-blobs-v1"
 }
