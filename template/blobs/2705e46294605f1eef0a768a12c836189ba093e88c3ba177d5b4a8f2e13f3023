@@ -78,9 +78,9 @@ Router 状态映射为：`draft → completed`、`blocked → blocked`、`ready-
 
 本 profile 只审查领域战略、阶段决策包、Spec、H1/H2 原型、业务 Ticket 和 Strategic Design Handoff。原型必须由独立 `prototype-review` 审查，其余稳定资产按数字人会签合同验收；代码候选、Slice Contract 与实现审查输入属于下游研发 profile。
 
-Matt flow 的通用提交指令不构成 YSS Git 授权。只有用户明确给出 `commit_authorized` 为 `true`、非空 `commit_scope` 和 `commit_authorization_ref` 时才能 commit；只有明确给出 `push_authorized` 为 `true`、非空 `push_scope` 和 `push_authorization_ref` 时才能 push。缺少任一字段时保持工作区不变，只输出 checkpoint 判断；不得把 `orchestrate`、当前分支、测试通过或负责人要求解释为隐含授权。`git-submodule` 还必须按仓授权、禁止 detached HEAD 提交，并先推子仓再更新父仓 gitlink。
+Matt flow 的通用提交指令不构成 YSS Git 授权。执行 commit 必须同时具备 `commit_authorized=true`、非空 `commit_scope` 和 `commit_authorization_ref`；执行 push 必须同时具备 `push_authorized=true`、非空 `push_scope` 和 `push_authorization_ref`。commit 与 push 分别检查，commit 授权不包含 push。`git-submodule` 还必须按仓授权、禁止 detached HEAD 提交，并先推子仓再更新父仓 gitlink。
 
-“然后 commit”“做完提交”“可以帮我提交”等自然语言意向本身不是结构化授权。编排器必须取得上述三个 commit 字段；不能先把意向解释成授权，再在完成时补 scope 或引用。
+编排器可以从具体 Git 动作、仓库和改动范围明确的真实用户回复整理成上述三字段，保留可读原始来源，不要求用户再填写内部字段；原始回复和会签证据仍按本 profile 现有协议核验。结合可读原始上下文，指向明确范围的“做完提交”可整理为 commit 授权；泛泛的“继续”、`orchestrate`、当前分支或测试通过不能补足动作和范围。字段缺失、来源不可读、授权撤回或动作超出范围时不执行对应 Git 动作，只记录 checkpoint 判断；不得补造同意或扩大原回复范围。
 
 ## Setup readiness
 
